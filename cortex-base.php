@@ -30,6 +30,14 @@ if (!defined('WPINC')) {
 	die;
 }
 
+if (!defined('ATTACHMENT_REDIRECT_CODE')) {
+	define('ATTACHMENT_REDIRECT_CODE', '301'); // Default redirect code for attachments with existing parent post
+}
+
+if (!defined('ORPHAN_ATTACHMENT_REDIRECT_CODE')) {
+	define('ORPHAN_ATTACHMENT_REDIRECT_CODE', '302'); // Default redirect code for attachments with no parent post
+}
+
 /**
  * Currently plugin version.
  * Start at version 1.0.0 and use SemVer - https://semver.org

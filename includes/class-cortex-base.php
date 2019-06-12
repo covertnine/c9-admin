@@ -27,7 +27,8 @@
  * @subpackage Cortex_Base/includes
  * @author     Sam <sam@covertnine.com>
  */
-class Cortex_Base {
+class Cortex_Base
+{
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -66,8 +67,9 @@ class Cortex_Base {
 	 *
 	 * @since    1.0.0
 	 */
-	public function __construct() {
-		if ( defined( 'CORTEX_BASE_VERSION' ) ) {
+	public function __construct()
+	{
+		if (defined('CORTEX_BASE_VERSION')) {
 			$this->version = CORTEX_BASE_VERSION;
 		} else {
 			$this->version = '1.0.0';
@@ -78,7 +80,6 @@ class Cortex_Base {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
-
 	}
 
 	/**
@@ -97,33 +98,33 @@ class Cortex_Base {
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	private function load_dependencies() {
+	private function load_dependencies()
+	{
 
 		/**
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-cortex-base-loader.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-cortex-base-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-cortex-base-i18n.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-cortex-base-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-cortex-base-admin.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-cortex-base-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-cortex-base-public.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'public/class-cortex-base-public.php';
 
 		$this->loader = new Cortex_Base_Loader();
-
 	}
 
 	/**
@@ -135,12 +136,12 @@ class Cortex_Base {
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	private function set_locale() {
+	private function set_locale()
+	{
 
 		$plugin_i18n = new Cortex_Base_i18n();
 
-		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
-
+		$this->loader->add_action('plugins_loaded', $plugin_i18n, 'load_plugin_textdomain');
 	}
 
 	/**
@@ -150,13 +151,30 @@ class Cortex_Base {
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	private function define_admin_hooks() {
+	private function define_admin_hooks()
+	{
 
-		$plugin_admin = new Cortex_Base_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Cortex_Base_Admin($this->get_plugin_name(), $this->get_version());
 
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles');
+		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts');
 
+		// Add menu item
+		$this->loader->add_action('admin_menu', $plugin_admin, 'add_plugin_admin_menu');
+
+		// Add Settings link to the plugin
+		$plugin_basename = plugin_basename(plugin_dir_path(__DIR__) . $this->plugin_name . '.php');
+		$this->loader->add_filter('plugin_action_links_' . $plugin_basename, $plugin_admin, 'add_action_links');
+
+		// Core Functionality
+		$this->loader->add_action('admin_head', $plugin_admin, 'show_updated_only_to_admins', 1);
+		$this->loader->add_action('admin_menu', $plugin_admin, 'remove_admin_menu_items', 1);
+		$this->loader->add_action('template_redirect', $plugin_admin, 'attachment_redirect', 1);
+		$this->loader->add_action('admin_init', $plugin_admin, 'options_update');
+
+		$this->loader->add_filter('show_admin_bar', $plugin_admin, 'toggle_admin');
+		$this->loader->add_filter('edit_post_link', $plugin_admin, 'toggle_edit_link');
+		$this->loader->add_filter('wp_handle_upload_prefilter', $plugin_admin, 'custom_upload_filter');
 	}
 
 	/**
@@ -166,13 +184,13 @@ class Cortex_Base {
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	private function define_public_hooks() {
+	private function define_public_hooks()
+	{
 
-		$plugin_public = new Cortex_Base_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Cortex_Base_Public($this->get_plugin_name(), $this->get_version());
 
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-
+		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles');
+		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts');
 	}
 
 	/**
@@ -180,7 +198,8 @@ class Cortex_Base {
 	 *
 	 * @since    1.0.0
 	 */
-	public function run() {
+	public function run()
+	{
 		$this->loader->run();
 	}
 
@@ -191,7 +210,8 @@ class Cortex_Base {
 	 * @since     1.0.0
 	 * @return    string    The name of the plugin.
 	 */
-	public function get_plugin_name() {
+	public function get_plugin_name()
+	{
 		return $this->plugin_name;
 	}
 
@@ -201,7 +221,8 @@ class Cortex_Base {
 	 * @since     1.0.0
 	 * @return    Cortex_Base_Loader    Orchestrates the hooks of the plugin.
 	 */
-	public function get_loader() {
+	public function get_loader()
+	{
 		return $this->loader;
 	}
 
@@ -211,8 +232,8 @@ class Cortex_Base {
 	 * @since     1.0.0
 	 * @return    string    The version number of the plugin.
 	 */
-	public function get_version() {
+	public function get_version()
+	{
 		return $this->version;
 	}
-
 }
