@@ -199,8 +199,7 @@ div.wp-menu-image:before {
 /* wp buttons */
 .wp-core-ui .button-group.button-large .button,
 .wp-core-ui .button.button-large,
-.wp-core-ui button,
-.wp-admin .components-button {
+.wp-core-ui button {
     font-family: 'Muli',
         'helvetica neue',
         helvetica,
@@ -223,6 +222,7 @@ div.wp-menu-image:before {
     font-weight: 700;
     font-size: 10px;
     letter-spacing: 0.04rem;
+    text-transform: uppercase;
 }
 
 .wp-core-ui h1,
