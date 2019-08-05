@@ -1,24 +1,20 @@
 <?php
 
 /**
- * The plugin bootstrap file
+ * C9 Admin Base
  *
- * This file is read by WordPress to generate the plugin information in the plugin
- * admin area. This file also includes all of the dependencies used by the plugin,
- * registers the activation and deactivation functions, and defines a function
- * that starts the plugin.
  *
- * @link              http://covertnine.com
+ * @link              https://www.covertnine.com
  * @since             1.0.0
  * @package           Cortex_Base
  *
  * @wordpress-plugin
- * Plugin Name:       Cortex Base
+ * Plugin Name:       C9 Admin
  * Plugin URI:        https://github.com/covertnine/cortex-base
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       This plugin makes a few enhancements to the WordPress admin interface including collapsing and re-labeling navigation items to be more intuitive, image upload size limitations, as well as hiding non-essential admin notices from regular users.
  * Version:           1.0.0
  * Author:            Sam
- * Author URI:        https://covertnine.com
+ * Author URI:        https://www.covertnine.com
  * License:           GPL-2.0+
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       cortex-base
