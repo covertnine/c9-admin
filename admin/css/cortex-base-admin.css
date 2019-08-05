@@ -190,3 +190,49 @@ div.wp-menu-image:before {
 #adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover:after {
     display: none;
 }
+
+/*hide WP footer message*/
+#wpfooter #footer-left {
+    display: none;
+}
+
+/* wp buttons */
+.wp-core-ui .button-group.button-large .button,
+.wp-core-ui .button.button-large,
+.wp-core-ui button,
+.wp-admin .components-button {
+    font-family: 'Muli',
+        'helvetica neue',
+        helvetica,
+        sans-serif;
+    letter-spacing: 0.04rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px;
+}
+
+.edit-post-header .components-button.editor-post-preview,
+.edit-post-header .components-button.editor-post-publish-button,
+.edit-post-header .components-button.editor-post-publish-panel__toggle,
+.edit-post-header .components-button.editor-post-save-draft,
+.edit-post-header .components-button.editor-post-switch-to-draft {
+    font-family: 'Muli',
+        'helvetica neue',
+        helvetica,
+        sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.04rem;
+}
+
+.wp-core-ui h1,
+.wp-core-ui h2,
+.wp-core-ui h3,
+.wp-core-ui h4,
+.wp-core-ui h5,
+.wp-core-ui h6 {
+    font-family: 'Muli',
+        'helvetica neue',
+        helvetica,
+        sans-serif;
+}
