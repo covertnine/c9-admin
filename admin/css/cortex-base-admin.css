@@ -224,15 +224,3 @@ div.wp-menu-image:before {
     letter-spacing: 0.04rem;
     text-transform: uppercase;
 }
-
-.wp-core-ui h1,
-.wp-core-ui h2,
-.wp-core-ui h3,
-.wp-core-ui h4,
-.wp-core-ui h5,
-.wp-core-ui h6 {
-    font-family: 'Muli',
-        'helvetica neue',
-        helvetica,
-        sans-serif;
-}
