@@ -307,3 +307,41 @@ class Cortex_Base_Admin
 		return '';
 	}
 }
+
+// CUSTOMIZE ADMIN MENU ORDER
+   function custom_menu_order($menu_ord) {
+       if (!$menu_ord) return true;
+       return array(
+        'index.php', // this represents the dashboard link
+		'edit.php?post_type=page', //the pages tab
+		'edit.php', //the posts tab
+		'nav-menus.php',
+		'upload.php', // the media manager
+    );
+   }
+   add_filter('custom_menu_order', 'custom_menu_order');
+   add_filter('menu_order', 'custom_menu_order');
+
+   function customize_post_admin_menu_labels() {
+	global $menu;
+	global $submenu;
+	// print_r($menu);
+	// print_r($submenu["edit.php"]);
+	// print_r($submenu);
+	$menu[20][0] = 'Landing Pages';
+	$menu[10][0] = 'Media &amp; Files';
+	$menu[5][0] = 'Blog Posts';
+	$submenu['edit.php'][5][0] = 'List Blog Posts';
+	$submenu['edit.php'][10][0] = 'Add New Blog Post';
+	$submenu['edit.php'][15][0] = 'Blog Categories';
+	$submenu['edit.php'][16][0] = 'Blog Tags';
+	$submenu['upload.php'][10][0] = 'Upload Files';
+	$submenu['upload.php'][5][0] = 'All Files';
+	
+	add_menu_page( 'Navigation Links', 'Navigation Links', 'manage_options', 'nav-menus.php', '', 'dashicons-menu', 1 );
+	
+	echo '';
+	
+}
+add_action( 'admin_menu', 'customize_post_admin_menu_labels', 1000 );
+

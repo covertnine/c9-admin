@@ -2,3 +2,191 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700,900&display=swap');
+
+body {
+    background-color: #ffffff;
+    font-family: 'Muli',
+        'helvetica neue',
+        helvetica,
+        sans-serif;
+}
+
+#wp-admin-bar-root-default #wp-admin-bar-wp-logo {
+    display: none;
+}
+
+#wpadminbar {
+    background-color: #000;
+    font-family: 'Muli',
+        'helvetica neue',
+        helvetica,
+        sans-serif;
+    letter-spacing: 0.04rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 1;
+}
+
+#wpadminbar a,
+#wpadminbar * {
+    letter-spacing: 0.04rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 3.3;
+}
+
+#adminmenu {
+    margin-top: 56px;
+}
+
+#adminmenu,
+#adminmenu .wp-submenu,
+#adminmenuback,
+#adminmenuwrap {
+    background-color: #f9f9f9;
+    font-family: 'Muli', 'helvetica neue', helvetica,
+        sans-serif;
+}
+
+#adminmenu .wp-has-current-submenu .wp-submenu {
+    background-color: #f9f9f9;
+}
+
+#adminmenu a.wp-has-current-submenu:focus+.wp-submenu,
+.no-js li.wp-has-current-submenu:hover .wp-submenu {
+    background-color: #23282D;
+}
+
+#adminmenu li.current a.menu-top,
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
+.folded #adminmenu li.current.menu-top,
+.folded #adminmenu li.wp-has-current-submenu {
+    background-color: #23282D;
+}
+
+/* hide admin menu triangles to right of active item */
+ul#adminmenu a.wp-has-current-submenu:after,
+ul#adminmenu>li.current>a.current:after {
+    display: none;
+}
+
+/* nav icons */
+#adminmenu div.wp-menu-image:before,
+div.wp-menu-image:before {
+    color: #23282D;
+}
+
+#adminmenu div.wp-menu-image {
+    margin-left: -10px;
+}
+
+.folded #adminmenu div.wp-menu-image {
+    margin-left: -15px;
+}
+
+/* nav text */
+#adminmenu div.wp-menu-name,
+.wp-submenu li a {
+    text-align: center;
+}
+
+/* nav links */
+#adminmenu .opensub .wp-submenu li.current a,
+#adminmenu .wp-submenu li.current,
+#adminmenu .wp-submenu li.current a,
+#adminmenu .wp-submenu li.current a:focus,
+#adminmenu .wp-submenu li.current a:hover,
+#adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a {
+    text-align: center;
+}
+
+#adminmenu .wp-submenu li.current,
+#adminmenu .wp-submenu li.current a,
+#adminmenu .wp-submenu li.current a:focus,
+#adminmenu .wp-submenu li.current a:hover,
+#adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a,
+#adminmenu li:not(.opensub) .wp-submenu a {
+    color: #23282D;
+    text-align: center;
+}
+
+/* submenu links are light cause they're on a dark bg*/
+#adminmenu .opensub .wp-submenu a {
+    color: #ffffff;
+}
+
+#adminmenu a {
+    color: #333333;
+    letter-spacing: 0.04rem;
+}
+
+#adminmenu .wp-submenu a.current {
+    font-weight: 900;
+}
+
+#adminmenu .wp-submenu a:focus,
+#adminmenu .wp-submenu a:hover,
+#adminmenu a:hover,
+#adminmenu li.menu-top>a:focus,
+#adminmenu li:not(.opensub) .wp-submenu a:hover {
+    color: #00b9eb;
+}
+
+#adminmenu li>a .wp-menu-name {
+    font-size: 14px;
+}
+
+#adminmenu .wp-has-current-submenu ul>li>a,
+.folded #adminmenu li.menu-top .wp-submenu>li>a {
+    padding: 5px 12px 5px 45px;
+    text-align: left;
+}
+
+#adminmenu .wp-submenu-head,
+#adminmenu a.menu-top {
+    padding: 10px 15px;
+}
+
+.folded #adminmenu li.menu-top {
+    height: 54px;
+}
+
+.folded #adminmenu a.menu-top {
+    min-height: 34px;
+    height: 34px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* move over wp content for larger padded admin side menu*/
+#wpcontent,
+#wpfooter {
+    margin-left: 200px;
+}
+
+#adminmenu,
+#adminmenu .wp-submenu,
+#adminmenuback,
+#adminmenuwrap {
+    width: 200px;
+}
+
+#adminmenu .opensub .wp-submenu {
+    left: 200px;
+    background-color: #191E23;
+}
+
+#adminmenu a.menu-top:focus+.wp-submenu,
+.js #adminmenu .opensub .wp-submenu,
+.js #adminmenu .sub-open,
+.no-js li.wp-has-submenu:hover .wp-submenu {
+    top: 0px;
+}
+
+/*hide submenu triangle*/
+#adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover:after {
+    display: none;
+}
