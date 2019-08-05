@@ -125,8 +125,8 @@ class Cortex_Base_Admin
      *
      */
 		add_options_page(
-			'Cortex Base Options',
-			'Cortex Base',
+			'C9 Admin Options',
+			'C9 Admin',
 			'manage_options',
 			$this->plugin_name,
 			array($this, 'display_plugin_setup_page')
@@ -338,10 +338,22 @@ class Cortex_Base_Admin
 	$submenu['upload.php'][10][0] = 'Upload Files';
 	$submenu['upload.php'][5][0] = 'All Files';
 	
-	add_menu_page( 'Navigation Links', 'Navigation Links', 'manage_options', 'nav-menus.php', '', 'dashicons-menu', 1 );
+	add_menu_page( 'Navigation Links', 'Navigation Links', 'manage_categories', 'nav-menus.php', '', 'dashicons-menu', 1 );
 	
 	echo '';
 	
 }
 add_action( 'admin_menu', 'customize_post_admin_menu_labels', 1000 );
 
+// edit editor permissions so they can add menu links + manage user accounts
+// get the the role object
+$role_object = get_role( 'editor' );
+
+// add $cap capability to this role object
+$role_object->add_cap( 'edit_theme_options');
+$role_object->add_cap('list_users');
+$role_object->add_cap('create_users');
+$role_object->add_cap('add_users');
+$role_object->add_cap('promote_users');
+$role_object->add_cap('moderate_comments');
+$role_object->add_cap('upload_files');
