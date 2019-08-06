@@ -52,13 +52,20 @@ body {
 }
 
 #adminmenu .wp-has-current-submenu .wp-submenu,
-#adminmenu .wp-has-current-submenu a.wp-has-current-submenu:focus {
-    background-color: #f9f9f9;
+#adminmenu .wp-has-current-submenu a.wp-has-current-submenu:focus,
+#adminmenu a.wp-has-current-submenu:focus+.wp-submenu,
+#adminmenu .opensub a.wp-has-current-submenu:focus+.wp-submenu {
+    background-color: #f9f9f9 !important;
+    color: #23282d !important;
 }
 
+body:not(.folded) #adminmenu .opensub.wp-has-current-submenu:focus+.wp-submenu li a,
+body:not(.folded) #adminmenu .opensub.wp-has-current-submenu:focus+.wp-submenu li a:focus #adminmenu .opensub.wp-has-current-submenu:focus+.wp-submenu li a,
+#adminmenu .opensub.wp-has-current-submenu:focus+.wp-submenu li a:focus {
+    text-align: center !important;
+    color: #23282d !important;
+}
 
-
-#adminmenu a.wp-has-current-submenu:focus+.wp-submenu,
 .no-js li.wp-has-current-submenu:hover .wp-submenu {
     background-color: #23282D;
 }
@@ -104,6 +111,7 @@ div.wp-menu-image:before {
 #adminmenu .wp-submenu li.current a:hover,
 #adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a {
     text-align: center;
+    color: #23282D;
 }
 
 #adminmenu .wp-submenu li.current,
@@ -112,8 +120,8 @@ div.wp-menu-image:before {
 #adminmenu .wp-submenu li.current a:hover,
 #adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a,
 #adminmenu li:not(.opensub) .wp-submenu a {
-    color: #23282D;
-    text-align: center;
+    color: #23282D !important;
+    text-align: center !important;
 }
 
 /* submenu links are light cause they're on a dark bg*/
@@ -135,7 +143,7 @@ div.wp-menu-image:before {
 #adminmenu a:hover,
 #adminmenu li.menu-top>a:focus,
 #adminmenu li:not(.opensub) .wp-submenu a:hover {
-    color: #00b9eb;
+    color: #00b9eb !important;
 }
 
 #adminmenu li>a .wp-menu-name {
@@ -145,7 +153,7 @@ div.wp-menu-image:before {
 #adminmenu .wp-has-current-submenu ul>li>a,
 .folded #adminmenu li.menu-top .wp-submenu>li>a {
     padding: 5px 12px 5px 45px;
-    text-align: left;
+    text-align: center;
 }
 
 #adminmenu .wp-submenu-head,
