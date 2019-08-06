@@ -51,9 +51,12 @@ body {
         sans-serif;
 }
 
-#adminmenu .wp-has-current-submenu .wp-submenu {
+#adminmenu .wp-has-current-submenu .wp-submenu,
+#adminmenu .wp-has-current-submenu a.wp-has-current-submenu:focus {
     background-color: #f9f9f9;
 }
+
+
 
 #adminmenu a.wp-has-current-submenu:focus+.wp-submenu,
 .no-js li.wp-has-current-submenu:hover .wp-submenu {
@@ -187,7 +190,8 @@ div.wp-menu-image:before {
 }
 
 /*hide submenu triangle*/
-#adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover:after {
+#adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover:after,
+.woocommerce-page .wp-has-current-submenu:after {
     display: none;
 }
 
