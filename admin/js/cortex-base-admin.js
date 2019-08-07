@@ -34,7 +34,7 @@
       .on("mouseover mouseenter touchstart", function() {
         var menuHeight = $("body:not(.folded) #adminmenuwrap").height();
         $("body").removeClass("folded sticky-menu");
-        $("#wpcontent").css("height", menuHeight);
+        $("#wpcontent").css("min-height", menuHeight);
       })
       .on("mouseleave mouseout touchend touchcancel", function() {
         $("body").addClass("folded sticky-menu");
