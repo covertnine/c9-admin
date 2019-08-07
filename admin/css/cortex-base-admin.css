@@ -183,6 +183,11 @@ div.wp-menu-image:before {
 #adminmenuback,
 #adminmenuwrap {
     width: 200px;
+    max-height: 90vh;
+}
+
+body:not(.folded) #adminmenuwrap {
+    overflow-y: scroll;
 }
 
 #adminmenu .opensub .wp-submenu {
