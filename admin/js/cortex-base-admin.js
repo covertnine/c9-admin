@@ -32,11 +32,12 @@
     $("body").addClass("folded");
     $(".folded #adminmenuwrap")
       .on("mouseover mouseenter touchstart", function() {
-        $("body").removeClass("folded");
+        var menuHeight = $("body:not(.folded) #adminmenuwrap").height();
+        $("body").removeClass("folded sticky-menu");
+        $("#wpcontent").css("height", menuHeight);
       })
       .on("mouseleave mouseout touchend touchcancel", function() {
-        console.log("not folded");
-        $("body").addClass("folded");
+        $("body").addClass("folded sticky-menu");
       });
   });
 })(jQuery);
