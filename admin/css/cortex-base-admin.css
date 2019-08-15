@@ -226,7 +226,8 @@ div.wp-menu-image:before {
 .edit-post-header .components-button.editor-post-publish-button,
 .edit-post-header .components-button.editor-post-publish-panel__toggle,
 .edit-post-header .components-button.editor-post-save-draft,
-.edit-post-header .components-button.editor-post-switch-to-draft {
+.edit-post-header .components-button.editor-post-switch-to-draft,
+.row-actions span a {
     font-family: 'Muli',
         'helvetica neue',
         helvetica,
