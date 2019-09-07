@@ -298,7 +298,7 @@ class C9_Admin
 
 	public function toggle_admin()
 	{
-		if (get_option($this->plugin_name)['disable_admin']) {
+		if (get_option($this->plugin_name)['disable_admin'] || !is_user_logged_in()) {
 			return false;
 		} else {
 			return true;
