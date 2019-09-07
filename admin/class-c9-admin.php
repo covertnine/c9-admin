@@ -73,6 +73,13 @@ class C9_Admin
 		add_filter('show_admin_bar', array($this, 'toggle_admin'));
 		add_filter('edit_post_link', array($this, 'toggle_edit_link'));
 		add_filter('wp_handle_upload_prefilter', array($this, 'custom_upload_filter'));
+
+		add_filter('custom_menu_order', array($this, 'custom_menu_order'));
+		add_filter('menu_order', array($this, 'custom_menu_order'));
+
+		add_action('admin_menu', array($this, 'customize_post_admin_menu_labels'), 1000);
+
+		$this->edit_roles();
 	}
 
 	/**
@@ -328,55 +335,55 @@ class C9_Admin
 	{
 		return '';
 	}
+
+	// CUSTOMIZE ADMIN MENU ORDER
+	public function custom_menu_order($menu_ord)
+	{
+		if (!$menu_ord) return true;
+		return array(
+			'index.php', // this represents the dashboard link
+			'edit.php?post_type=page', //the pages tab
+			'edit.php', //the posts tab
+			'nav-menus.php',
+			'upload.php', // the media manager
+		);
+	}
+
+	function customize_post_admin_menu_labels()
+	{
+		global $menu;
+		global $submenu;
+		// print_r($menu);
+		// print_r($submenu["edit.php"]);
+		// print_r($submenu);
+		$menu[20][0] = 'Landing Pages';
+		$menu[10][0] = 'Media &amp; Files';
+		$menu[5][0] = 'Blog Posts';
+		$submenu['edit.php'][5][0] = 'List Blog Posts';
+		$submenu['edit.php'][10][0] = 'Add New Blog Post';
+		$submenu['edit.php'][15][0] = 'Blog Categories';
+		$submenu['edit.php'][16][0] = 'Blog Tags';
+		$submenu['upload.php'][10][0] = 'Upload Files';
+		$submenu['upload.php'][5][0] = 'All Files';
+
+		add_menu_page('Navigation Links', 'Navigation Links', 'manage_categories', 'nav-menus.php', '', 'dashicons-menu', 1);
+
+		echo '';
+	}
+
+	public function edit_roles()
+	{
+		// edit editor permissions so they can add menu links + manage user accounts
+		// get the the role object
+		$role_object = get_role('editor');
+
+		// add $cap capability to this role object
+		$role_object->add_cap('edit_theme_options');
+		$role_object->add_cap('list_users');
+		$role_object->add_cap('create_users');
+		$role_object->add_cap('add_users');
+		$role_object->add_cap('promote_users');
+		$role_object->add_cap('moderate_comments');
+		$role_object->add_cap('upload_files');
+	}
 }
-
-// CUSTOMIZE ADMIN MENU ORDER
-function custom_menu_order($menu_ord)
-{
-	if (!$menu_ord) return true;
-	return array(
-		'index.php', // this represents the dashboard link
-		'edit.php?post_type=page', //the pages tab
-		'edit.php', //the posts tab
-		'nav-menus.php',
-		'upload.php', // the media manager
-	);
-}
-add_filter('custom_menu_order', 'custom_menu_order');
-add_filter('menu_order', 'custom_menu_order');
-
-function customize_post_admin_menu_labels()
-{
-	global $menu;
-	global $submenu;
-	// print_r($menu);
-	// print_r($submenu["edit.php"]);
-	// print_r($submenu);
-	$menu[20][0] = 'Landing Pages';
-	$menu[10][0] = 'Media &amp; Files';
-	$menu[5][0] = 'Blog Posts';
-	$submenu['edit.php'][5][0] = 'List Blog Posts';
-	$submenu['edit.php'][10][0] = 'Add New Blog Post';
-	$submenu['edit.php'][15][0] = 'Blog Categories';
-	$submenu['edit.php'][16][0] = 'Blog Tags';
-	$submenu['upload.php'][10][0] = 'Upload Files';
-	$submenu['upload.php'][5][0] = 'All Files';
-
-	add_menu_page('Navigation Links', 'Navigation Links', 'manage_categories', 'nav-menus.php', '', 'dashicons-menu', 1);
-
-	echo '';
-}
-add_action('admin_menu', 'customize_post_admin_menu_labels', 1000);
-
-// edit editor permissions so they can add menu links + manage user accounts
-// get the the role object
-$role_object = get_role('editor');
-
-// add $cap capability to this role object
-$role_object->add_cap('edit_theme_options');
-$role_object->add_cap('list_users');
-$role_object->add_cap('create_users');
-$role_object->add_cap('add_users');
-$role_object->add_cap('promote_users');
-$role_object->add_cap('moderate_comments');
-$role_object->add_cap('upload_files');
