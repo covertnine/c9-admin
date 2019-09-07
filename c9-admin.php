@@ -10,14 +10,14 @@
  *
  * @wordpress-plugin
  * Plugin Name:       C9 Admin
- * Plugin URI:        https://github.com/covertnine/cortex-base
+ * Plugin URI:        https://github.com/covertnine/c9-admin
  * Description:       This plugin makes a few enhancements to the WordPress admin interface including collapsing and re-labeling navigation items to be more intuitive, image upload size limitations, as well as hiding non-essential admin notices from regular users.
  * Version:           1.0.0
  * Author:            Sam
  * Author URI:        https://www.covertnine.com
  * License:           GPL-2.0+
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       cortex-base
+ * Text Domain:       c9-admin
  * Domain Path:       /languages
  */
 
@@ -68,7 +68,7 @@ register_deactivation_hook(__FILE__, 'deactivate_c9_admin');
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path(__FILE__) . 'includes/class-cortex-base.php';
+require plugin_dir_path(__FILE__) . 'includes/class-c9-admin-main.php';
 
 /**
  * Begins execution of the plugin.
@@ -82,7 +82,7 @@ require plugin_dir_path(__FILE__) . 'includes/class-cortex-base.php';
 function run_c9_admin()
 {
 
-	$plugin = new C9_Admin();
+	$plugin = new C9_Admin_Main();
 	$plugin->run();
 }
 run_c9_admin();

@@ -8,8 +8,8 @@
  * @link       http://covertnine.com
  * @since      1.0.0
  *
- * @package    Cortex_Base
- * @subpackage Cortex_Base/public/partials
+ * @package    C9_Admin
+ * @subpackage C9_Admin/public/partials
  */
 ?>
 

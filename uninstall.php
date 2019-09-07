@@ -22,7 +22,7 @@
  * @link       http://covertnine.com
  * @since      1.0.0
  *
- * @package    Cortex_Base
+ * @package    C9_Admin
  */
 
 // If uninstall not called from WordPress, then exit.

@@ -6,8 +6,8 @@
  * @link       http://covertnine.com
  * @since      1.0.0
  *
- * @package    Cortex_Base
- * @subpackage Cortex_Base/includes
+ * @package    C9_Admin
+ * @subpackage C9_Admin/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Cortex_Base
- * @subpackage Cortex_Base/includes
+ * @package    C9_Admin
+ * @subpackage C9_Admin/includes
  * @author     Sam <sam@covertnine.com>
  */
-class Cortex_Base_Loader {
+class C9_Admin_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

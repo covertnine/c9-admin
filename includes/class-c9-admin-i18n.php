@@ -9,8 +9,8 @@
  * @link       http://covertnine.com
  * @since      1.0.0
  *
- * @package    Cortex_Base
- * @subpackage Cortex_Base/includes
+ * @package    C9_Admin
+ * @subpackage C9_Admin/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Cortex_Base
- * @subpackage Cortex_Base/includes
+ * @package    C9_Admin
+ * @subpackage C9_Admin/includes
  * @author     Sam <sam@covertnine.com>
  */
-class Cortex_Base_i18n {
+class C9_Admin_i18n {
 
 
 	/**
@@ -35,7 +35,7 @@ class Cortex_Base_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'cortex-base',
+			'c9-admin',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

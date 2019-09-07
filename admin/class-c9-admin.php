@@ -6,8 +6,8 @@
  * @link       http://covertnine.com
  * @since      1.0.0
  *
- * @package    Cortex_Base
- * @subpackage Cortex_Base/admin
+ * @package    C9_Admin
+ * @subpackage C9_Admin/admin
  */
 
 /**
@@ -16,8 +16,8 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    Cortex_Base
- * @subpackage Cortex_Base/admin
+ * @package    C9_Admin
+ * @subpackage C9_Admin/admin
  * @author     Sam <sam@covertnine.com>
  */
 class C9_Admin
@@ -67,10 +67,10 @@ class C9_Admin
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Cortex_Base_Loader as all of the hooks are defined
+		 * defined in C9_Admin_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Cortex_Base_Loader will then create the relationship
+		 * The C9_Admin_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
@@ -90,22 +90,22 @@ class C9_Admin
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Cortex_Base_Loader as all of the hooks are defined
+		 * defined in C9_Admin_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Cortex_Base_Loader will then create the relationship
+		 * The C9_Admin_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
 		wp_enqueue_script('hoverintent', plugin_dir_url(__FILE__) . 'js/jquery.hoverIntent.min.js', array('jquery'), $this->version, false);
 
-		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/cortex-base-admin.js', array('hoverintent'), $this->version, false);
+		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/c9-admin.js', array('hoverintent'), $this->version, false);
 	}
 
 	/**
 	 *
-	 * admin/class-cortex-base-admin.php - Don't add this
+	 * admin/class-c9-admin.php - Don't add this
 	 *
 	 **/
 
@@ -160,12 +160,12 @@ class C9_Admin
 
 	public function display_plugin_setup_page()
 	{
-		include_once('partials/cortex-base-admin-display.php');
+		include_once('partials/c9-admin-display.php');
 	}
 
 	/**
 	 *
-	 * admin/class-cortex-base-admin.php
+	 * admin/class-c9-admin.php
 	 *
 	 **/
 	public function options_update()
@@ -175,7 +175,7 @@ class C9_Admin
 
 	/**
 	 *
-	 * admin/class-cortex-base-admin.php
+	 * admin/class-c9-admin.php
 	 *
 	 **/
 	public function validate($input)

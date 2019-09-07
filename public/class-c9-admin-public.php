@@ -6,8 +6,8 @@
  * @link       http://covertnine.com
  * @since      1.0.0
  *
- * @package    Cortex_Base
- * @subpackage Cortex_Base/public
+ * @package    C9_Admin
+ * @subpackage C9_Admin/public
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    Cortex_Base
- * @subpackage Cortex_Base/public
+ * @package    C9_Admin
+ * @subpackage C9_Admin/public
  * @author     Sam <sam@covertnine.com>
  */
-class Cortex_Base_Public {
+class C9_Admin_Public {
 
 	/**
 	 * The ID of this plugin.
@@ -65,15 +65,15 @@ class Cortex_Base_Public {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Cortex_Base_Loader as all of the hooks are defined
+		 * defined in C9_Admin_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Cortex_Base_Loader will then create the relationship
+		 * The C9_Admin_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/cortex-base-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/c9-admin-public.css', array(), $this->version, 'all' );
 
 	}
 
@@ -88,15 +88,15 @@ class Cortex_Base_Public {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Cortex_Base_Loader as all of the hooks are defined
+		 * defined in C9_Admin_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Cortex_Base_Loader will then create the relationship
+		 * The C9_Admin_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/cortex-base-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/c9-admin-public.js', array( 'jquery' ), $this->version, false );
 
 	}
 
