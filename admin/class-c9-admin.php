@@ -20,7 +20,7 @@
  * @subpackage Cortex_Base/admin
  * @author     Sam <sam@covertnine.com>
  */
-class Cortex_Base_Admin
+class C9_Admin
 {
 
 	/**
@@ -75,7 +75,7 @@ class Cortex_Base_Admin
 		 * class.
 		 */
 
-		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/cortex-base-admin.css', array(), $this->version, 'all');
+		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/c9-admin.css', array(), $this->version, 'all');
 	}
 
 	/**
@@ -98,7 +98,9 @@ class Cortex_Base_Admin
 		 * class.
 		 */
 
-		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/cortex-base-admin.js', array('jquery'), $this->version, false);
+		wp_enqueue_script('hoverintent', plugin_dir_url(__FILE__) . 'js/jquery.hoverIntent.min.js', array('jquery'), $this->version, false);
+
+		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/cortex-base-admin.js', array('hoverintent'), $this->version, false);
 	}
 
 	/**
@@ -309,20 +311,22 @@ class Cortex_Base_Admin
 }
 
 // CUSTOMIZE ADMIN MENU ORDER
-   function custom_menu_order($menu_ord) {
-       if (!$menu_ord) return true;
-       return array(
-        'index.php', // this represents the dashboard link
+function custom_menu_order($menu_ord)
+{
+	if (!$menu_ord) return true;
+	return array(
+		'index.php', // this represents the dashboard link
 		'edit.php?post_type=page', //the pages tab
 		'edit.php', //the posts tab
 		'nav-menus.php',
 		'upload.php', // the media manager
-    );
-   }
-   add_filter('custom_menu_order', 'custom_menu_order');
-   add_filter('menu_order', 'custom_menu_order');
+	);
+}
+add_filter('custom_menu_order', 'custom_menu_order');
+add_filter('menu_order', 'custom_menu_order');
 
-   function customize_post_admin_menu_labels() {
+function customize_post_admin_menu_labels()
+{
 	global $menu;
 	global $submenu;
 	// print_r($menu);
@@ -337,20 +341,19 @@ class Cortex_Base_Admin
 	$submenu['edit.php'][16][0] = 'Blog Tags';
 	$submenu['upload.php'][10][0] = 'Upload Files';
 	$submenu['upload.php'][5][0] = 'All Files';
-	
-	add_menu_page( 'Navigation Links', 'Navigation Links', 'manage_categories', 'nav-menus.php', '', 'dashicons-menu', 1 );
-	
+
+	add_menu_page('Navigation Links', 'Navigation Links', 'manage_categories', 'nav-menus.php', '', 'dashicons-menu', 1);
+
 	echo '';
-	
 }
-add_action( 'admin_menu', 'customize_post_admin_menu_labels', 1000 );
+add_action('admin_menu', 'customize_post_admin_menu_labels', 1000);
 
 // edit editor permissions so they can add menu links + manage user accounts
 // get the the role object
-$role_object = get_role( 'editor' );
+$role_object = get_role('editor');
 
 // add $cap capability to this role object
-$role_object->add_cap( 'edit_theme_options');
+$role_object->add_cap('edit_theme_options');
 $role_object->add_cap('list_users');
 $role_object->add_cap('create_users');
 $role_object->add_cap('add_users');

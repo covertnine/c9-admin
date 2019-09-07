@@ -69,8 +69,8 @@ class Cortex_Base
 	 */
 	public function __construct()
 	{
-		if (defined('CORTEX_BASE_VERSION')) {
-			$this->version = CORTEX_BASE_VERSION;
+		if (defined('C9_Admin_VERSION')) {
+			$this->version = C9_Admin_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}

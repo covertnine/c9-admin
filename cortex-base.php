@@ -6,7 +6,7 @@
  *
  * @link              https://www.covertnine.com
  * @since             1.0.0
- * @package           Cortex_Base
+ * @package           C9_Admin
  *
  * @wordpress-plugin
  * Plugin Name:       C9 Admin
@@ -39,30 +39,30 @@ if (!defined('ORPHAN_ATTACHMENT_REDIRECT_CODE')) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define('CORTEX_BASE_VERSION', '1.0.0');
+define('C9_ADMIN_VERSION', '1.0.0');
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-cortex-base-activator.php
+ * This action is documented in includes/class-c9-admin-activator.php
  */
-function activate_cortex_base()
+function activate_c9_admin()
 {
-	require_once plugin_dir_path(__FILE__) . 'includes/class-cortex-base-activator.php';
-	Cortex_Base_Activator::activate();
+	require_once plugin_dir_path(__FILE__) . 'includes/class-c9-admin-activator.php';
+	C9_Admin_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-cortex-base-deactivator.php
+ * This action is documented in includes/class-c9-admin-deactivator.php
  */
-function deactivate_cortex_base()
+function deactivate_c9_admin()
 {
-	require_once plugin_dir_path(__FILE__) . 'includes/class-cortex-base-deactivator.php';
-	Cortex_Base_Deactivator::deactivate();
+	require_once plugin_dir_path(__FILE__) . 'includes/class-c9-admin-deactivator.php';
+	C9_Admin_Deactivator::deactivate();
 }
 
-register_activation_hook(__FILE__, 'activate_cortex_base');
-register_deactivation_hook(__FILE__, 'deactivate_cortex_base');
+register_activation_hook(__FILE__, 'activate_c9_admin');
+register_deactivation_hook(__FILE__, 'deactivate_c9_admin');
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -79,10 +79,10 @@ require plugin_dir_path(__FILE__) . 'includes/class-cortex-base.php';
  *
  * @since    1.0.0
  */
-function run_cortex_base()
+function run_c9_admin()
 {
 
-	$plugin = new Cortex_Base();
+	$plugin = new C9_Admin();
 	$plugin->run();
 }
-run_cortex_base();
+run_c9_admin();

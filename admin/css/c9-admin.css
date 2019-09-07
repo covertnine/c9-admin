@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css?family=Muli:400,700,900&display=swap');
 
 body {
-    background-color: #ffffff;
+    background-color: #f4f4f4;
     font-family: 'Muli',
         'helvetica neue',
         helvetica,
@@ -38,15 +38,15 @@ body {
     line-height: 3.3;
 }
 
-#adminmenu {
+/* #adminmenu {
     margin-top: 56px;
-}
+} */
 
 #adminmenu,
 #adminmenu .wp-submenu,
 #adminmenuback,
 #adminmenuwrap {
-    background-color: #f9f9f9;
+    background-color: #f4f4f4;
     font-family: 'Muli', 'helvetica neue', helvetica,
         sans-serif;
 }
@@ -55,14 +55,14 @@ body {
 #adminmenu .wp-has-current-submenu a.wp-has-current-submenu:focus,
 #adminmenu a.wp-has-current-submenu:focus+.wp-submenu,
 #adminmenu .opensub a.wp-has-current-submenu:focus+.wp-submenu {
-    background-color: #f9f9f9 !important;
+    background-color: #f4f4f4 !important;
     color: #23282d !important;
 }
 
 body:not(.folded) #adminmenu .opensub.wp-has-current-submenu:focus+.wp-submenu li a,
 body:not(.folded) #adminmenu .opensub.wp-has-current-submenu:focus+.wp-submenu li a:focus #adminmenu .opensub.wp-has-current-submenu:focus+.wp-submenu li a,
 #adminmenu .opensub.wp-has-current-submenu:focus+.wp-submenu li a:focus {
-    text-align: center !important;
+    /* text-align: center !important; */
     color: #23282d !important;
 }
 
@@ -100,7 +100,7 @@ div.wp-menu-image:before {
 /* nav text */
 #adminmenu div.wp-menu-name,
 .wp-submenu li a {
-    text-align: center;
+    /* text-align: center; */
 }
 
 /* nav links */
@@ -110,7 +110,7 @@ div.wp-menu-image:before {
 #adminmenu .wp-submenu li.current a:focus,
 #adminmenu .wp-submenu li.current a:hover,
 #adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a {
-    text-align: center;
+    /* text-align: center; */
     color: #23282D;
 }
 
@@ -121,7 +121,7 @@ div.wp-menu-image:before {
 #adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a,
 #adminmenu li:not(.opensub) .wp-submenu a {
     color: #23282D !important;
-    text-align: center !important;
+    /* text-align: center !important; */
 }
 
 /* submenu links are light cause they're on a dark bg*/
@@ -153,7 +153,7 @@ div.wp-menu-image:before {
 #adminmenu .wp-has-current-submenu ul>li>a,
 .folded #adminmenu li.menu-top .wp-submenu>li>a {
     padding: 5px 12px 5px 45px;
-    text-align: center;
+    /* text-align: center; */
 }
 
 #adminmenu .wp-submenu-head,
@@ -172,6 +172,19 @@ div.wp-menu-image:before {
     padding-bottom: 10px;
 }
 
+.block-editor-page #adminmenu .wp-menu-open .wp-submenu {
+    display: block;
+    position: absolute;
+    left: 100%;
+    top: -54px;
+    z-index: -1;
+}
+
+/* #adminmenu.covertnine-menu-in  .wp-menu-open .wp-submenu {
+    position: relative !important;
+    z-index: 1 !important;
+} */
+
 /* move over wp content for larger padded admin side menu*/
 #wpcontent,
 #wpfooter {
@@ -183,6 +196,10 @@ div.wp-menu-image:before {
 #adminmenuback,
 #adminmenuwrap {
     width: 200px;
+}
+
+#adminmenuwrap {
+    border-right: 1px solid #e5e5e5;
 }
 
 #adminmenu .opensub .wp-submenu {
