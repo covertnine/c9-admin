@@ -53,6 +53,26 @@ class C9_Admin
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+
+		add_action('admin_enqueue_scripts', array($this, 'enqueue_styles'));
+		add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'));
+
+		// Add menu item
+		add_action('admin_menu', array($this, 'add_plugin_admin_menu'));
+
+		// Add Settings link to the plugin
+		$plugin_basename = plugin_basename(plugin_dir_path(__DIR__) . $this->plugin_name . '.php');
+		add_filter('plugin_action_links_' . $plugin_basename, array($this, 'add_action_links'));
+
+		// Core Functionality
+		add_action('admin_head', array($this, 'show_updated_only_to_admins'));
+		add_action('admin_menu', array($this, 'remove_admin_menu_items'));
+		add_action('template_redirect', array($this, 'attachment_redirect'));
+		add_action('admin_init', array($this, 'options_update'));
+
+		add_filter('show_admin_bar', array($this, 'toggle_admin'));
+		add_filter('edit_post_link', array($this, 'toggle_edit_link'));
+		add_filter('wp_handle_upload_prefilter', array($this, 'custom_upload_filter'));
 	}
 
 	/**

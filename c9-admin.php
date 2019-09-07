@@ -41,34 +41,12 @@ if (!defined('ORPHAN_ATTACHMENT_REDIRECT_CODE')) {
  */
 define('C9_ADMIN_VERSION', '1.0.0');
 
-/**
- * The code that runs during plugin activation.
- * This action is documented in includes/class-c9-admin-activator.php
- */
-function activate_c9_admin()
-{
-	require_once plugin_dir_path(__FILE__) . 'includes/class-c9-admin-activator.php';
-	C9_Admin_Activator::activate();
-}
-
-/**
- * The code that runs during plugin deactivation.
- * This action is documented in includes/class-c9-admin-deactivator.php
- */
-function deactivate_c9_admin()
-{
-	require_once plugin_dir_path(__FILE__) . 'includes/class-c9-admin-deactivator.php';
-	C9_Admin_Deactivator::deactivate();
-}
-
-register_activation_hook(__FILE__, 'activate_c9_admin');
-register_deactivation_hook(__FILE__, 'deactivate_c9_admin');
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path(__FILE__) . 'includes/class-c9-admin-main.php';
+require plugin_dir_path(__FILE__) . 'admin/class-c9-admin.php';
 
 /**
  * Begins execution of the plugin.
@@ -82,7 +60,6 @@ require plugin_dir_path(__FILE__) . 'includes/class-c9-admin-main.php';
 function run_c9_admin()
 {
 
-	$plugin = new C9_Admin_Main();
-	$plugin->run();
+	$plugin = new C9_Admin('C9_Admin', C9_ADMIN_VERSION);
 }
 run_c9_admin();
