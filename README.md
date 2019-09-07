@@ -8,18 +8,17 @@ From `c9-admin.php` the admin class in `admin/class-c9-admin.php` is instantiate
 ```
 function run_c9_admin()
 {
-	$plugin = new C9_Admin('C9_Admin', C9_ADMIN_VERSION);
+    $plugin = new C9_Admin('C9_Admin', C9_ADMIN_VERSION);
 }
 ```
 
-Whenever a PHP class is instantiated, the `_construct` method is automatically called. So, basically, everything is handled from there (all the Wordpress actions and filters)
+Whenever a PHP class is instantiated, the `__construct` method is automatically called. So, basically, everything is handled from there (all the Wordpress actions and filters)
 
 ```
 /* -- admin/class-c9-admin.php -- */
 
 public function __construct($plugin_name, $version)
 {
-
     $this->plugin_name = $plugin_name;
     $this->version = $version;
 
@@ -40,7 +39,7 @@ public function enqueue_styles()
 }
 ```
 
-So, that's how you add your hooks to this plugin.
+So, if you want to add your own hook, add it to the `__construct` method, copying the syntax, and add your function _inside_ the class definition.
 
 ## Use
 Find all current options in Settings > C9 Admin
