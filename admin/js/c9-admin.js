@@ -32,6 +32,7 @@
     $("body.block-editor-page").addClass("folded");
 
     $('.folded #adminmenuwrap').hoverIntent({
+      timeout: 400,
       over: showNav,
       out: hideNav,
     })

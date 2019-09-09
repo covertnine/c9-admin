@@ -17,7 +17,7 @@ body {
 }
 
 #wpadminbar {
-    background-color: #000;
+    background-color: #191E23;
     font-family: 'Muli',
         'helvetica neue',
         helvetica,
@@ -56,12 +56,16 @@ body {
     position: relative;
 }
 
-#adminmenu .wp-submenu li:before {
-    content: "\f343";
+#adminmenu .wp-menu-open .wp-submenu li:before {
+    content: "";
+    height: 100%;
+    width: 5px;
+    border-left: 1px solid #00b9eb;
     font-family: "font awesome";
     position: absolute;
-    top: 5px;
+    top: -50%;
     left: 15px;
+    border-bottom: 1px solid #00b9eb;
 }
 
 #adminmenu li.wp-menu-separator {
@@ -69,7 +73,6 @@ body {
 }
 
 #adminmenu .wp-has-current-submenu .wp-submenu,
-#adminmenu .wp-has-current-submenu a.wp-has-current-submenu:focus,
 #adminmenu a.wp-has-current-submenu:focus+.wp-submenu,
 #adminmenu .opensub a.wp-has-current-submenu:focus+.wp-submenu {
     background-color: #f4f4f4 !important;
@@ -142,12 +145,13 @@ div.wp-menu-image:before {
 }
 
 /* submenu links are light cause they're on a dark bg*/
+/* creating problems on click */
 #adminmenu .opensub .wp-submenu a {
-    color: #ffffff;
+color: #ffffff;
 }
 
 #adminmenu a {
-    color: #333333;
+    color: #191E23;
     letter-spacing: 0.04rem;
 }
 
@@ -197,15 +201,15 @@ div.wp-menu-image:before {
 .block-editor-page #adminmenu li:not(.opensub) .wp-submenu a:hover {
     color: #00b9eb !important;
 }
-.block-editor-page #adminmenu .wp-menu-open .wp-submenu {
+.block-editor-page #adminmenu .wp-submenu {
     position: absolute;
     left: 100%;
     top: 0;
-    z-index: -1;
     display: none;
     background-color: #191E23 !important;
     color: white !important;
 }
+
 
 .block-editor-page #adminmenu .wp-menu-open:hover .wp-submenu {
     display: block;
@@ -236,7 +240,9 @@ div.wp-menu-image:before {
     left: 200px;
     background-color: #191E23;
 }
-
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu.wp-menu-open {
+    z-index: 15;
+}
 #adminmenu a.menu-top:focus+.wp-submenu,
 .js #adminmenu .opensub .wp-submenu,
 .js #adminmenu .sub-open,
