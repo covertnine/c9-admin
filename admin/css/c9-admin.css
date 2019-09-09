@@ -51,6 +51,23 @@ body {
         sans-serif;
 }
 
+#adminmenu .wp-submenu li {
+    padding-left: 15px;
+    position: relative;
+}
+
+#adminmenu .wp-submenu li:before {
+    content: "\f343";
+    font-family: "font awesome";
+    position: absolute;
+    top: 5px;
+    left: 15px;
+}
+
+#adminmenu li.wp-menu-separator {
+    display: none;
+}
+
 #adminmenu .wp-has-current-submenu .wp-submenu,
 #adminmenu .wp-has-current-submenu a.wp-has-current-submenu:focus,
 #adminmenu a.wp-has-current-submenu:focus+.wp-submenu,
