@@ -17,7 +17,7 @@
  }
  
  #wpadminbar {
-     background-color: #000;
+     background-color: #191E23;
      font-family: 'Muli',
          'helvetica neue',
          helvetica,
@@ -51,8 +51,28 @@
          sans-serif;
  }
  
+ #adminmenu .wp-submenu li {
+     padding-left: 15px;
+     position: relative;
+ }
+ 
+ body:not(.block-editor-page) #adminmenu .wp-menu-open .wp-submenu li:before {
+     content: "";
+     height: 100%;
+     width: 5px;
+     border-left: 1px solid #00b9eb;
+     font-family: "font awesome";
+     position: absolute;
+     top: -50%;
+     left: 15px;
+     border-bottom: 1px solid #00b9eb;
+ }
+ 
+ #adminmenu li.wp-menu-separator {
+     display: none;
+ }
+ 
  #adminmenu .wp-has-current-submenu .wp-submenu,
- #adminmenu .wp-has-current-submenu a.wp-has-current-submenu:focus,
  #adminmenu a.wp-has-current-submenu:focus+.wp-submenu,
  #adminmenu .opensub a.wp-has-current-submenu:focus+.wp-submenu {
      background-color: #f4f4f4 !important;
@@ -97,6 +117,12 @@
      margin-left: -15px;
  }
  
+ /* nav text */
+ #adminmenu div.wp-menu-name,
+ .wp-submenu li a {
+     /* text-align: center; */
+ }
+ 
  /* nav links */
  #adminmenu .opensub .wp-submenu li.current a,
  #adminmenu .wp-submenu li.current,
@@ -119,12 +145,13 @@
  }
  
  /* submenu links are light cause they're on a dark bg*/
+ /* creating problems on click */
  #adminmenu .opensub .wp-submenu a {
-     color: #ffffff;
+ color: #ffffff;
  }
  
  #adminmenu a {
-     color: #333333;
+     color: #191E23;
      letter-spacing: 0.04rem;
  }
  
@@ -142,6 +169,12 @@
  
  #adminmenu li>a .wp-menu-name {
      font-size: 14px;
+ }
+ 
+ #adminmenu .wp-has-current-submenu ul>li>a,
+ .folded #adminmenu li.menu-top .wp-submenu>li>a {
+     /* padding: 5px 12px 5px 45px; */
+     /* text-align: center; */
  }
  
  #adminmenu .wp-submenu-head,
@@ -172,15 +205,20 @@
      position: absolute;
      left: 100%;
      top: 0;
-     z-index: -1;
      display: none;
      background-color: #191E23 !important;
-     color: white !important;
+ }
+ .block-editor-page #adminmenu .wp-submenu {
+     color: #191E23 !important;
  }
  
  .block-editor-page #adminmenu .wp-menu-open:hover .wp-submenu {
      display: block;
  }
+ /* #adminmenu.covertnine-menu-in  .wp-menu-open .wp-submenu {
+     position: relative !important;
+     z-index: 1 !important;
+ } */
  
  /* move over wp content for larger padded admin side menu*/
  #wpcontent,
@@ -203,7 +241,9 @@
      left: 200px;
      background-color: #191E23;
  }
- 
+ #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu.wp-menu-open {
+     z-index: 15;
+ }
  #adminmenu a.menu-top:focus+.wp-submenu,
  .js #adminmenu .opensub .wp-submenu,
  .js #adminmenu .sub-open,
