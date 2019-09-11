@@ -38,10 +38,6 @@
      line-height: 3.3;
  }
  
- /* #adminmenu {
-     margin-top: 56px;
- } */
- 
  #adminmenu,
  #adminmenu .wp-submenu,
  #adminmenuback,
@@ -115,12 +111,6 @@
  
  .folded #adminmenu div.wp-menu-image {
      margin-left: -15px;
- }
- 
- /* nav text */
- #adminmenu div.wp-menu-name,
- .wp-submenu li a {
-     /* text-align: center; */
  }
  
  /* nav links */
@@ -215,11 +205,6 @@
  .block-editor-page #adminmenu .wp-menu-open:hover .wp-submenu {
      display: block;
  }
- /* #adminmenu.covertnine-menu-in  .wp-menu-open .wp-submenu {
-     position: relative !important;
-     z-index: 1 !important;
- } */
- 
  /* move over wp content for larger padded admin side menu*/
  #wpcontent,
  #wpfooter {

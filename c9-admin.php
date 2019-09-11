@@ -15,7 +15,7 @@
  * Author URI:        https://www.covertnine.com
  * License:           GPL-2.0+
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:   ∏    c9-admin
+ * Text Domain:       c9-admin
  * Domain Path:       /languages
  */
 
@@ -56,6 +56,6 @@ require plugin_dir_path( __FILE__ ) . 'admin/class-c9-admin.php';
  * @since 1.0.0
  */
 function run_c9_admin() {
-   $plugin = new C9_Admin( 'C9_Admin', C9_ADMIN_VERSION );
+	new C9_Admin( 'C9_Admin', C9_ADMIN_VERSION );
 }
 run_c9_admin();
