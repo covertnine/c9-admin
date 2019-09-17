@@ -78,7 +78,7 @@
 		<h3><?php esc_attr_e( 'Custom Admin Styles', 'C9_Admin' ); ?></h3>
 		<fieldset>
 			<legend class="screen-reader-text"><span><?php _e( 'Custom Skin Admin', 'C9_Admin' ); ?></span></legend>
-			<label for="<?php echo $this->plugin_name; ?>-custom-skin">
+			<label for="<?php echo $this->plugin_name; ?>-custom_skin">
 				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-custom_skin" name="<?php echo $this->plugin_name; ?>[custom_skin]" value="1" <?php checked( $custom_skin, 1 ); ?> />
 				<span><?php esc_attr_e( 'Add Custom Skin to Admin', 'C9_Admin' ); ?></span>
 			</label>

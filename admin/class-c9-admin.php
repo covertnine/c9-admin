@@ -31,8 +31,10 @@ class C9_Admin {
 		$this->plugin_name = $plugin_name;
 		$this->version     = $version;
 
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		if ( get_option( $this->plugin_name )['custom_skin'] ) {
+			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		}
 
 		// Add menu item
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
@@ -65,9 +67,7 @@ class C9_Admin {
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
-		if ( get_option( $this->plugin_name )['custom_skin'] ) {
-			wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/c9-admin.css', array(), $this->version, 'all' );
-		}
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/c9-admin.css', array(), $this->version, 'all' );
 	}
 
 	/**
