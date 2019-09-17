@@ -66,7 +66,9 @@ class C9_Admin {
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/c9-admin.css', array(), $this->version, 'all' );
+		if ( get_option( $this->plugin_name )['custom_skin'] ) {
+			wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/c9-admin.css', array(), $this->version, 'all' );
+		}
 	}
 
 	/**
@@ -138,6 +140,7 @@ class C9_Admin {
 		$valid['max_px']                   = intval( $input['max_px'] );
 		$valid['min_px']                   = intval( $input['min_px'] );
 		$valid['max_size']                 = intval( $input['max_size'] );
+		$valid['custom_skin']              = ( isset( $input['custom_skin'] ) && ! empty( $input['custom_skin'] ) ) ? 1 : 0;
 
 		return $valid;
 	}
@@ -166,10 +169,10 @@ class C9_Admin {
 		global $menu;
 		end( $menu );
 		while ( prev( $menu ) ) {
-			$item = explode( ' ', $menu[ key( $menu ) ][0] );
-			if ( in_array( null != $item[0] ? $item[0] : '', $remove_menu_items ) ) {
-				unset( $menu[ key( $menu ) ] );
-			}
+				$item = explode( ' ', $menu[ key( $menu ) ][0] );
+				if ( in_array( null != $item[0] ? $item[0] : '', $remove_menu_items ) ) {
+					unset( $menu[ key( $menu ) ] );
+					}
 		}
 
 		remove_menu_page( 'wr2x_settings-menu' );
@@ -235,21 +238,21 @@ class C9_Admin {
 		global $post;
 		if ( is_attachment() && isset( $post->post_parent ) && is_numeric( $post->post_parent ) && ( $post->post_parent != 0 ) ) {
 
-			$parent_post_in_trash = get_post_status( $post->post_parent ) === 'trash' ? true : false;
+				$parent_post_in_trash = get_post_status( $post->post_parent ) === 'trash' ? true : false;
 
-			if ( $parent_post_in_trash ) {
-				wp_die( 'Page not found.', '404 - Page not found', 404 ); // Prevent endless redirection loop in old WP releases and redirecting to trashed posts if an attachment page is visited when parent post is in trash
-			}
+				if ( $parent_post_in_trash ) {
+					wp_die( 'Page not found.', '404 - Page not found', 404 ); // Prevent endless redirection loop in old WP releases and redirecting to trashed posts if an attachment page is visited when parent post is in trash
+					}
 
-			wp_safe_redirect( get_permalink( $post->post_parent ), ATTACHMENT_REDIRECT_CODE ); // Redirect to post/page from where attachment was uploaded
-			exit;
+				wp_safe_redirect( get_permalink( $post->post_parent ), ATTACHMENT_REDIRECT_CODE ); // Redirect to post/page from where attachment was uploaded
+				exit;
 		} elseif ( is_attachment() && isset( $post->post_parent ) && is_numeric( $post->post_parent ) && ( $post->post_parent < 1 ) ) {
 
-			wp_safe_redirect( get_bloginfo( 'wpurl' ), ORPHAN_ATTACHMENT_REDIRECT_CODE ); // Redirect to home for attachments not associated to any post/page
-			exit;
+				wp_safe_redirect( get_bloginfo( 'wpurl' ), ORPHAN_ATTACHMENT_REDIRECT_CODE ); // Redirect to home for attachments not associated to any post/page
+				exit;
 		}
 	} else {
-	return;
+			return;
 	}
 	}
 

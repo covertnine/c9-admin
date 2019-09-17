@@ -31,6 +31,7 @@
 		$max_px                   = $options['max_px'];
 		$max_size                 = $options['max_size'];
 		$min_px                   = $options['min_px'];
+		$custom_skin              = $options['custom_skin'];
 		?>
 
 		<?php
@@ -65,7 +66,6 @@
 			</label>
 		</fieldset>
 
-		<!-- add post,page or product slug class to body class -->
 		<fieldset>
 			<legend class="screen-reader-text"><span><?php _e( 'Make notification visible to admins only', 'C9_Admin' ); ?></span></legend>
 			<label for="<?php echo $this->plugin_name; ?>-admin_only_notifications">
@@ -73,6 +73,17 @@
 				<span><?php esc_attr_e( 'Make notification visible to admins only', 'C9_Admin' ); ?></span>
 			</label>
 		</fieldset>
+		<hr>
+		<!-- add post,page or product slug class to body class -->
+		<h3><?php esc_attr_e( 'Custom Admin Styles', 'C9_Admin' ); ?></h3>
+		<fieldset>
+			<legend class="screen-reader-text"><span><?php _e( 'Custom Skin Admin', 'C9_Admin' ); ?></span></legend>
+			<label for="<?php echo $this->plugin_name; ?>-custom-skin">
+				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-custom_skin" name="<?php echo $this->plugin_name; ?>[custom_skin]" value="1" <?php checked( $custom_skin, 1 ); ?> />
+				<span><?php esc_attr_e( 'Add Custom Skin to Admin', 'C9_Admin' ); ?></span>
+			</label>
+		</fieldset>
+		<br>
 		<hr>
 		<h3><?php esc_attr_e( 'Image Size Limit', 'C9_Admin' ); ?></h3>
 		<fieldset>
