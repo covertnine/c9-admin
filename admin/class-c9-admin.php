@@ -7,7 +7,6 @@
  *
  * @package    C9_Admin
  * @subpackage C9_Admin/admin
- * @author     Sam <sam@covertnine.com>
  */
 class C9_Admin {
 
