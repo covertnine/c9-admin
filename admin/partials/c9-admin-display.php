@@ -31,6 +31,8 @@
 	$max_px                   = $options['max_px'];
 	$max_size                 = $options['max_size'];
 	$min_px                   = $options['min_px'];
+	$custom_skin              = $options['custom_skin'];
+
 	?>
 
 	<?php
@@ -74,6 +76,16 @@
 			</label>
 		</fieldset>
 		<hr>
+		<h3><?php esc_attr_e( 'Custom Admin Styles', 'C9_Admin' ); ?></h3>
+		<fieldset>
+			<legend class="screen-reader-text"><span><?php _e( 'Custom Skin Admin', 'C9_Admin' ); ?></span></legend>
+			<label for="<?php echo $this->plugin_name; ?>-custom_skin">
+				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-custom_skin" name="<?php echo $this->plugin_name; ?>[custom_skin]" value="1" <?php checked( $custom_skin, 1 ); ?> />
+				<span><?php esc_attr_e( 'Disable Custom Skin for Admin', 'C9_Admin' ); ?></span>
+			</label>
+		</fieldset>
+		<br>
+		<hr>
 		<h3><?php esc_attr_e( 'Image Size Limit', 'C9_Admin' ); ?></h3>
 		<fieldset>
 			<legend class="screen-reader-text"><span><?php _e( 'Limit Image Size', 'C9_Admin' ); ?></span></legend>
@@ -87,31 +99,43 @@
 				</legend>
 				<label for="<?php echo $this->plugin_name; ?>-max_px">
 					<div><?php esc_attr_e( 'Max Side Length', 'C9_Admin' ); ?></div>
-					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-max_px" name="<?php echo $this->plugin_name; ?>[max_px]" value="<?php
-		if ( ! empty( $max_px ) ) {
-			echo $max_px;
-		}
-		?>" />
+					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-max_px" name="<?php echo $this->plugin_name; ?>[max_px]" value=
+					<?php
+					echo '"';
+					if ( ! empty( $max_px ) ) {
+						echo $max_px;
+					}
+					echo '"';
+					?>
+					/>
 					<span>px</span>
 				</label>
 				<br>
 				<label for="<?php echo $this->plugin_name; ?>-min_px">
 					<div><?php esc_attr_e( 'Min Side Length', 'C9_Admin' ); ?></div>
-					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-min_pix" name="<?php echo $this->plugin_name; ?>[min_px]" value="<?php
-		if ( ! empty( $min_px ) ) {
-			echo $min_px;
-		}
-		?>" />
+					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-min_pix" name="<?php echo $this->plugin_name; ?>[min_px]" value=
+					<?php
+					echo '"';
+					if ( ! empty( $min_px ) ) {
+						echo $min_px;
+					}
+					echo '"';
+					?>
+					/>
 					<span>px</span>
 				</label>
 				<br>
 				<label for="<?php echo $this->plugin_name; ?>-max_size">
 					<div><?php esc_attr_e( 'Max File Size', 'C9_Admin' ); ?></div>
-					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-max_size" name="<?php echo $this->plugin_name; ?>[max_size]" value="<?php
-		if ( ! empty( $max_size ) ) {
-			echo $max_size;
-		}
-		?>" />
+					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-max_size" name="<?php echo $this->plugin_name; ?>[max_size]" value=
+					<?php
+					echo '"';
+					if ( ! empty( $max_size ) ) {
+						echo $max_size;
+					}
+					echo '"';
+					?>
+					/>
 					<span>mb</span>
 				</label>
 			</fieldset>
