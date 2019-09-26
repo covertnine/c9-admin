@@ -1,45 +1,9 @@
-# C9 Admin
-Plugin does the basic WordPress things, with options.
+# C9 Admin Plugin
+COVERT NINE's admin plugin. It includes some enhancements to the WordPress backend including a collapsed navigation on post and page editing screens for allowing for more space in the editor, a limit to image sizes to prompt users who are uploading high resolution images to a web site that they may want to scale down, and several other enhancements to WordPress.
 
-## Developer Guide (and a crash course on using PHP classes)
-
-From `c9-admin.php` the admin class in `admin/class-c9-admin.php` is instantiated:
-
-```
-function run_c9_admin()
-{
-    $plugin = new C9_Admin('C9_Admin', C9_ADMIN_VERSION);
-}
-```
-
-Whenever a PHP class is instantiated, the `__construct` method is automatically called. So, basically, everything is handled from there (all the Wordpress actions and filters)
-
-```
-/* -- admin/class-c9-admin.php -- */
-
-public function __construct($plugin_name, $version)
-{
-    $this->plugin_name = $plugin_name;
-    $this->version = $version;
-
-    add_action('admin_enqueue_scripts', array($this, 'enqueue_styles'));
-    add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'));
-    
-    ....
-
-}
-```
-
-`$this` refers to the instantiated C9_Admin object itself, so `enqueue_styles` is the class method referenced later within the class.
-
-```
-public function enqueue_styles()
-{
-    ...
-}
-```
-
-So, if you want to add your own hook, add it to the `__construct` method, copying the syntax, and add your function _inside_ the class definition.
-
-## Use
-Find all current options in Settings > C9 Admin
+## C9 Admin Options
+- Disable admin bar on frontend
+- Disable media attachment pages
+- Hide developer-specific menu items such as plugins or updates
+- Hide admin notices and updates from displaying to non-admin users
+- Limit size of image uploads by size, length, and file size

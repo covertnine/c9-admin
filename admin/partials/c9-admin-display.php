@@ -20,6 +20,7 @@
     <hr>
     <form method="post" name="base_options" action="options.php">
 
+<<<<<<< HEAD
     <?php
     $options = get_option($this->plugin_name);
     // Cleanup
@@ -32,6 +33,21 @@
     $max_size                 = $options['max_size'];
     $min_px                   = $options['min_px'];
     ?>
+=======
+		<?php
+		$options = get_option( $this->plugin_name );
+		// Cleanup
+		$admin_only_notifications = $options['admin_only_notifications'];
+		$disable_admin            = $options['disable_admin'];
+		$disable_attachment_pages = $options['disable_attachment_pages'];
+		$hide_developer_items     = $options['hide_developer_items'];
+		$limit_image_size         = $options['limit_image_size'];
+		$max_px                   = $options['max_px'];
+		$max_size                 = $options['max_size'];
+		$min_px                   = $options['min_px'];
+		$custom_skin              = $options['custom_skin'];
+		?>
+>>>>>>> d65ca14424ddd87ee9d05c92635cbacb9d554236
 
     <?php
     settings_fields($this->plugin_name);
@@ -65,6 +81,7 @@
             </label>
         </fieldset>
 
+<<<<<<< HEAD
         <!-- add post,page or product slug class to body class -->
         <fieldset>
             <legend class="screen-reader-text"><span><?php _e('Make notification visible to admins only', 'C9_Admin'); ?></span></legend>
@@ -122,6 +139,75 @@
                 </label>
             </fieldset>
         </fieldset>
+=======
+		<fieldset>
+			<legend class="screen-reader-text"><span><?php _e( 'Make notification visible to admins only', 'C9_Admin' ); ?></span></legend>
+			<label for="<?php echo $this->plugin_name; ?>-admin_only_notifications">
+				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-admin_only_notifications" name="<?php echo $this->plugin_name; ?>[admin_only_notifications]" value="1" <?php checked( $admin_only_notifications, 1 ); ?> />
+				<span><?php esc_attr_e( 'Make notification visible to admins only', 'C9_Admin' ); ?></span>
+			</label>
+		</fieldset>
+		<hr>
+		<!-- add post,page or product slug class to body class -->
+		<h3><?php esc_attr_e( 'Custom Admin Styles', 'C9_Admin' ); ?></h3>
+		<fieldset>
+			<legend class="screen-reader-text"><span><?php _e( 'Custom Skin Admin', 'C9_Admin' ); ?></span></legend>
+			<label for="<?php echo $this->plugin_name; ?>-custom_skin">
+				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-custom_skin" name="<?php echo $this->plugin_name; ?>[custom_skin]" value="1" <?php checked( $custom_skin, 1 ); ?> />
+				<span><?php esc_attr_e( 'Add Custom Skin to Admin', 'C9_Admin' ); ?></span>
+			</label>
+		</fieldset>
+		<br>
+		<hr>
+		<h3><?php esc_attr_e( 'Image Size Limit', 'C9_Admin' ); ?></h3>
+		<fieldset>
+			<legend class="screen-reader-text"><span><?php _e( 'Limit Image Size', 'C9_Admin' ); ?></span></legend>
+			<label for="<?php echo $this->plugin_name; ?>-limit_image_size">
+				<div><?php esc_attr_e( 'Limit Image Size', 'C9_Admin' ); ?></div>
+				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-limit_image_size" name="<?php echo $this->plugin_name; ?>[limit_image_size]" value="1" <?php checked( $limit_image_size, 1 ); ?> />
+			</label>
+			<fieldset>
+				<legend class="screen-reader-text">
+					<div><?php _e( 'Define your local Minimums and Maximums', 'C9_Admin' ); ?></div>
+				</legend>
+				<label for="<?php echo $this->plugin_name; ?>-max_px">
+					<div><?php esc_attr_e( 'Max Side Length', 'C9_Admin' ); ?></div>
+					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-max_px" name="<?php echo $this->plugin_name; ?>[max_px]" value="
+					<?php
+					if ( ! empty( $max_px ) ) {
+						echo $max_px;
+					}
+					?>
+					" />
+					<span>px</span>
+				</label>
+				<br>
+				<label for="<?php echo $this->plugin_name; ?>-min_px">
+					<div><?php esc_attr_e( 'Min Side Length', 'C9_Admin' ); ?></div>
+					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-min_pix" name="<?php echo $this->plugin_name; ?>[min_px]" value="
+					<?php
+					if ( ! empty( $min_px ) ) {
+						echo $min_px;
+					}
+					?>
+					" />
+					<span>px</span>
+				</label>
+				<br>
+				<label for="<?php echo $this->plugin_name; ?>-max_size">
+					<div><?php esc_attr_e( 'Min File Size', 'C9_Admin' ); ?></div>
+					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-max_size" name="<?php echo $this->plugin_name; ?>[max_size]" value="
+					<?php
+					if ( ! empty( $max_size ) ) {
+						echo $max_size;
+					}
+					?>
+					" />
+					<span>mb</span>
+				</label>
+			</fieldset>
+		</fieldset>
+>>>>>>> d65ca14424ddd87ee9d05c92635cbacb9d554236
 
     <?php submit_button('Save all changes', 'primary', 'submit', true); ?>
 
