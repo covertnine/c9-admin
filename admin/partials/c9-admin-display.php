@@ -87,37 +87,31 @@
 				</legend>
 				<label for="<?php echo $this->plugin_name; ?>-max_px">
 					<div><?php esc_attr_e( 'Max Side Length', 'C9_Admin' ); ?></div>
-					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-max_px" name="<?php echo $this->plugin_name; ?>[max_px]" value="
-		<?php
+					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-max_px" name="<?php echo $this->plugin_name; ?>[max_px]" value="<?php
 		if ( ! empty( $max_px ) ) {
 			echo $max_px;
 		}
-		?>
-					" />
+		?>" />
 					<span>px</span>
 				</label>
 				<br>
 				<label for="<?php echo $this->plugin_name; ?>-min_px">
 					<div><?php esc_attr_e( 'Min Side Length', 'C9_Admin' ); ?></div>
-					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-min_pix" name="<?php echo $this->plugin_name; ?>[min_px]" value="
-		<?php
+					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-min_pix" name="<?php echo $this->plugin_name; ?>[min_px]" value="<?php
 		if ( ! empty( $min_px ) ) {
 			echo $min_px;
 		}
-		?>
-					" />
+		?>" />
 					<span>px</span>
 				</label>
 				<br>
 				<label for="<?php echo $this->plugin_name; ?>-max_size">
 					<div><?php esc_attr_e( 'Max File Size', 'C9_Admin' ); ?></div>
-					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-max_size" name="<?php echo $this->plugin_name; ?>[max_size]" value="
-		<?php
+					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-max_size" name="<?php echo $this->plugin_name; ?>[max_size]" value="<?php
 		if ( ! empty( $max_size ) ) {
 			echo $max_size;
 		}
-		?>
-					" />
+		?>" />
 					<span>mb</span>
 				</label>
 			</fieldset>
