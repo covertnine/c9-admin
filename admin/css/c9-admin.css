@@ -29,6 +29,10 @@ body {
     line-height: 1;
 }
 
+.editor-post-publish-panel {
+    font-size: 13px;
+}
+
 #wpadminbar a,
 #wpadminbar * {
     letter-spacing: 0.04rem;
@@ -257,7 +261,8 @@ div.wp-menu-image:before {
 .wp-core-ui .button-group.button-large .button,
 .wp-core-ui .button.button-large,
 .wp-core-ui button,
-.components-button.components-menu-item__button {
+.components-button.components-menu-item__button,
+.components-button.is-button.is-default {
     font-family: 'Muli',
         'helvetica neue',
         helvetica,
