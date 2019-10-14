@@ -297,3 +297,8 @@ div.wp-menu-image:before {
 .components-menu-item__button .components-menu-item__info-wrapper .components-menu-item__info {
     font-size: 10px;
 }
+
+/* inspector buttons height */
+.components-panel__body.plugin-c9-panel .components-button.is-large {
+    height: auto;
+}
