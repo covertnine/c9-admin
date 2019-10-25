@@ -59,6 +59,35 @@ class C9_Admin {
 		add_action( 'admin_menu', array( $this, 'customize_post_admin_menu_labels' ), 1000 );
 
 		$this->edit_roles();
+		add_filter( 'manage_posts_columns', array( $this, 'add_post_admin_thumbnail_column' ), 2 );
+		add_filter( 'manage_pages_columns', array( $this, 'add_post_admin_thumbnail_column' ), 2 );
+
+		add_action( 'manage_posts_custom_column', array( $this, 'show_post_thumbnail_column' ), 5, 2 );
+		add_action( 'manage_pages_custom_column', array( $this, 'show_post_thumbnail_column' ), 5, 2 );
+
+	}
+
+	/**
+	 * * Add featured image column
+	 */
+	public function add_post_admin_thumbnail_column( $columns ) {
+		$columns['c9_thumb'] = __( 'Image' );
+		return $columns;
+	}
+
+	/**
+	 * Grab thumbnail image and put it in there
+	 */
+	function show_post_thumbnail_column( $c9_columns, $c9_id ) {
+		switch ( $c9_columns ) {
+			case 'c9_thumb':
+			if ( function_exists( 'the_post_thumbnail' ) ) {
+					echo the_post_thumbnail( 'c9-tiny-thumb' );
+			} else {
+					echo 'hmm... your theme doesn\'t support featured image...';
+			}
+				break;
+		}
 	}
 
 	/**
