@@ -78,11 +78,11 @@ class C9_Admin {
 	/**
 	 * Grab thumbnail image and put it in there
 	 */
-	function show_post_thumbnail_column( $c9_columns, $c9_id ) {
-		switch ( $c9_columns ) {
+	public function show_post_thumbnail_column( $columns, $c9_id ) {
+		switch ( $columns ) {
 			case 'c9_thumb':
 			if ( function_exists( 'the_post_thumbnail' ) ) {
-					echo the_post_thumbnail( 'c9-tiny-thumb' );
+					echo "<div class='c9_col_img' style='max-height:60px;width:120px;overflow:hidden;'>" . get_the_post_thumbnail( $c9_id, array( 100, 100 ) ) . '</div>';
 			} else {
 					echo 'hmm... your theme doesn\'t support featured image...';
 			}
