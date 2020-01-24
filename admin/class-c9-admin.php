@@ -184,10 +184,23 @@ class C9_Admin
 		$valid['admin_only_notifications'] = (isset($input['admin_only_notifications']) && !empty($input['admin_only_notifications'])) ? 1 : 0;
 		$valid['suppress_update_notice'] = (isset($input['suppress_update_notice']) && !empty($input['suppress_update_notice'])) ? 1 : 0;
 		$valid['limit_image_size']         = (isset($input['limit_image_size']) && !empty($input['limit_image_size'])) ? 1 : 0;
+		$valid['define_custom_labels']         = (isset($input['define_custom_labels']) && !empty($input['define_custom_labels'])) ? 1 : 0;
 		$valid['max_px']                   = intval($input['max_px']);
 		$valid['min_px']                   = intval($input['min_px']);
 		$valid['max_size']                 = intval($input['max_size']);
 		$valid['custom_skin']              = (isset($input['custom_skin']) && !empty($input['custom_skin'])) ? 1 : 0;
+		$valid['hide_plugin_menu_item']              = (isset($input['hide_plugin_menu_item']) && !empty($input['hide_plugin_menu_item'])) ? 1 : 0;
+		$valid['hide_update_menu_item']              = (isset($input['hide_update_menu_item']) && !empty($input['hide_update_menu_item'])) ? 1 : 0;
+
+		$valid['custom_media_label']                   = strval($input['custom_media_label']);
+		$valid['custom_posts_label']                   = strval($input['custom_posts_label']);
+		$valid['custom_pages_label']                   = strval($input['custom_pages_label']);
+		$valid['custom_menu_label']                   = strval($input['custom_menu_label']);
+		$valid['custom_post_categories_label']                   = strval($input['custom_post_categories_label']);
+		$valid['custom_post_tags_label']                   = strval($input['custom_post_tags_label']);
+		$valid['custom_upload_files_label']                   = strval($input['custom_upload_files_label']);
+		$valid['custom_all_files_label']                   = strval($input['custom_all_files_label']);
+
 
 		return $valid;
 	}
@@ -224,8 +237,24 @@ class C9_Admin
 	 */
 	public function remove_admin_menu_items()
 	{
+		$remove_menu_items = array();
+
 		if (get_option($this->plugin_name)['hide_developer_items']) {
-			$remove_menu_items = array(__('Events'), __('Comments'));
+			$remove_menu_items[] = __('Events');
+			$remove_menu_items[] = __('Comments');
+			remove_menu_page('wr2x_settings-menu');
+			remove_menu_page('meowapps-main-menu');
+		}
+
+		if (get_option($this->plugin_name)['hide_plugin_menu_item']) {
+			$remove_menu_items[] = __('Plugins');
+		}
+		if (get_option($this->plugin_name)['hide_update_menu_item']) {
+			// xdebug_break();
+			remove_submenu_page('index.php', 'update-core.php');
+		}
+
+		if (!empty($remove_menu_items)) {
 			global $menu;
 			end($menu);
 			while (prev($menu)) {
@@ -234,9 +263,6 @@ class C9_Admin
 					unset($menu[key($menu)]);
 				}
 			}
-
-			remove_menu_page('wr2x_settings-menu');
-			remove_menu_page('meowapps-main-menu');
 		}
 	}
 
@@ -355,29 +381,34 @@ class C9_Admin
 		);
 	}
 
+	function get_label($option_name, $default)
+	{
+		return !ctype_space(get_option($this->plugin_name)[$option_name]) && get_option($this->plugin_name)[$option_name] ? get_option($this->plugin_name)[$option_name] : $default;
+	}
+
 	/**
 	 * Rename nav link names on WordPress backend.
 	 */
 	function customize_post_admin_menu_labels()
 	{
-		global $menu;
-		global $submenu;
-		// print_r($menu);
-		// print_r($submenu["edit.php"]);
-		// print_r($submenu);
-		$menu[20][0]                  = 'Landing Pages';
-		$menu[10][0]                  = 'Media &amp; Files';
-		$menu[5][0]                   = 'Blog Posts';
-		$submenu['edit.php'][5][0]    = 'List Blog Posts';
-		$submenu['edit.php'][10][0]   = 'Add New Blog Post';
-		$submenu['edit.php'][15][0]   = 'Blog Categories';
-		$submenu['edit.php'][16][0]   = 'Blog Tags';
-		$submenu['upload.php'][10][0] = 'Upload Files';
-		$submenu['upload.php'][5][0]  = 'All Files';
+		if (get_option($this->plugin_name)['define_custom_labels']) {
+			global $menu;
+			global $submenu;
+			// print_r($menu);
+			// print_r($submenu["edit.php"]);
+			// print_r($submenu);
+			$menu[20][0]                  = $this->get_label('custom_pages_label', 'Landing Pages');
+			$menu[10][0]                  = $this->get_label('custom_media_label', 'Media &amp; Files');
+			$menu[5][0]                   = $this->get_label('custom_posts_label', 'Blog Post') . "s";
+			$submenu['edit.php'][5][0]    = 'List ' . $this->get_label('custom_posts_label', 'Blog Post') . "s";
+			$submenu['edit.php'][10][0]   = 'Add New ' . $this->get_label('custom_posts_label', 'Blog Post');
+			$submenu['edit.php'][15][0]   = $this->get_label('custom_post_categories_label', 'Blog Categories');
+			$submenu['edit.php'][16][0]   = $this->get_label('custom_post_tags_label', 'Blog Tags');
+			$submenu['upload.php'][10][0] = $this->get_label('custom_upload_files_label', 'Upload Files');
+			$submenu['upload.php'][5][0]  = $this->get_label('custom_all_files_label', 'All Files');
 
-		add_menu_page('Navigation Links', 'Navigation Links', 'manage_categories', 'nav-menus.php', '', 'dashicons-menu', 1);
-
-		echo '';
+			add_menu_page('Navigation Links', 'Navigation Links', 'manage_categories', 'nav-menus.php', '', 'dashicons-menu', 1);
+		}
 	}
 
 	/**
