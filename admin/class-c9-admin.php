@@ -49,9 +49,11 @@ class C9_Admin
 		// Core Functionality
 		add_action('admin_head', array($this, 'show_updated_only_to_admins'));
 
-		add_filter('pre_site_transient_update_core', array($this, 'suppress_update_notice'));
-		add_filter('pre_site_transient_update_plugins', array($this, 'suppress_update_notice'));
-		add_filter('pre_site_transient_update_themes', array($this, 'suppress_update_notice'));
+		if (get_option($this->plugin_name)['suppress_update_notice']) {
+			add_filter('pre_site_transient_update_core', array($this, 'suppress_update_notice'));
+			add_filter('pre_site_transient_update_plugins', array($this, 'suppress_update_notice'));
+			add_filter('pre_site_transient_update_themes', array($this, 'suppress_update_notice'));
+		}
 
 		add_action('admin_menu', array($this, 'remove_admin_menu_items'));
 		add_action('template_redirect', array($this, 'attachment_redirect'));
