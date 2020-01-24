@@ -10,8 +10,8 @@
  * Plugin Name:       C9 Admin
  * Plugin URI:        https://github.com/covertnine/c9-admin
  * Description:       This plugin makes a few enhancements to the WordPress admin interface including collapsing and re-labeling navigation items to be more intuitive, image upload size limitations, as well as hiding non-essential admin notices from regular users.
- * Version:           1.0.0
- * Author:            CovertNine
+ * Version:           1.0.1
+ * Author:            COVERT NINE
  * Author URI:        https://www.covertnine.com
  * License:           GPL-2.0+
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.txt
@@ -34,10 +34,8 @@ if ( ! defined( 'ORPHAN_ATTACHMENT_REDIRECT_CODE' ) ) {
 
 /**
  * Currently plugin version.
- * Start at version 1.0.0 and use SemVer - https://semver.org
- * Rename this for your plugin and update it as you release new versions.
  */
-define( 'C9_ADMIN_VERSION', '1.0.0' );
+define( 'C9_ADMIN_VERSION', '1.0.1' );
 
 
 /**
