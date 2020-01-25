@@ -186,8 +186,8 @@
 					<div><?php esc_attr_e('Menu Label', 'C9_Admin'); ?></div>
 					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-custom_menu_label" name="<?php echo $this->plugin_name; ?>[custom_menu_label]" value=<?php
 																																												echo '"';
-																																												if (!empty($custom_media_label)) {
-																																													echo $custom_media_label;
+																																												if (!empty($custom_menu_label)) {
+																																													echo $custom_menu_label;
 																																												}
 																																												echo '"';
 																																												?> />
@@ -200,8 +200,8 @@
 					<div><?php esc_attr_e('Pages Label', 'C9_Admin'); ?></div>
 					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-custom_pages_label" name="<?php echo $this->plugin_name; ?>[custom_pages_label]" value=<?php
 																																													echo '"';
-																																													if (!empty($custom_media_label)) {
-																																														echo $custom_media_label;
+																																													if (!empty($custom_pages_label)) {
+																																														echo $custom_pages_label;
 																																													}
 																																													echo '"';
 																																													?> />
