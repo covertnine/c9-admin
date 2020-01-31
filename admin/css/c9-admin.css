@@ -165,12 +165,6 @@ div.wp-menu-image:before {
     font-size: 14px;
 }
 
-#adminmenu .wp-has-current-submenu ul>li>a,
-.folded #adminmenu li.menu-top .wp-submenu>li>a {
-    /* padding: 5px 12px 5px 45px; */
-    /* text-align: center; */
-}
-
 #adminmenu .wp-submenu-head,
 #adminmenu a.menu-top {
     padding: 10px 15px;
@@ -262,7 +256,8 @@ div.wp-menu-image:before {
 .wp-core-ui .button.button-large,
 .wp-core-ui button,
 .components-button.components-menu-item__button,
-.components-button.is-button.is-default {
+.components-button.is-button.is-default,
+.meta-box-sortables h2 span {
     font-family: 'Muli',
         'helvetica neue',
         helvetica,
@@ -271,6 +266,12 @@ div.wp-menu-image:before {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 10px;
+    color: #191e23;
+}
+
+.wp-core-ui .button.button-primary,
+.wp-core-ui button.button-primary {
+    color: #fff;
 }
 
 .edit-post-header .components-button.editor-post-preview,
@@ -301,4 +302,25 @@ div.wp-menu-image:before {
 /* inspector buttons height */
 .components-panel__body.plugin-c9-panel .components-button.is-large {
     height: auto;
+}
+
+/* side bar adjustments */
+.components-panel,
+.editor-post-publish-panel {
+    font-size: 14px;
+}
+
+.editor-post-publish-panel p,
+.components-panel__body p {
+    line-height: 1.3;
+}
+
+.edit-post-sidebar label {
+    margin-bottom: 0px;
+}
+
+/* tooltip pop over adjustments */
+/* URL tooltips in editor */
+.components-popover__content {
+    font-size: 14px;
 }
