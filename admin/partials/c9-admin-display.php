@@ -34,6 +34,18 @@
 		$max_size                 = $options['max_size'];
 		$min_px                   = $options['min_px'];
 		$custom_skin              = $options['custom_skin'];
+		$hide_plugin_menu_item              = $options['hide_plugin_menu_item'];
+		$hide_update_menu_item              = $options['hide_update_menu_item'];
+
+		$define_custom_labels         = $options['define_custom_labels'];
+		$custom_media_label                  = $options['custom_media_label'];
+		$custom_posts_label                   = $options['custom_posts_label'];
+		$custom_pages_label                  = $options['custom_pages_label'];
+		$custom_menu_label                  = $options['custom_menu_label'];
+		$custom_post_categories_label                  = $options['custom_post_categories_label'];
+		$custom_post_tags_label                  = $options['custom_post_tags_label'];
+		$custom_upload_files_label                  = $options['custom_upload_files_label'];
+		$custom_all_files_label                  = $options['custom_all_files_label'];
 
 		?>
 
@@ -85,6 +97,20 @@
 				<span><?php esc_attr_e('Suppress Update Notifications', 'C9_Admin'); ?></span>
 			</label>
 		</fieldset>
+		<fieldset>
+			<legend class="screen-reader-text"><span><?php _e('Make notification visible to admins only', 'C9_Admin'); ?></span></legend>
+			<label for="<?php echo $this->plugin_name; ?>-hide_update_menu_item">
+				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_update_menu_item" name="<?php echo $this->plugin_name; ?>[hide_update_menu_item]" value="1" <?php checked($hide_update_menu_item, 1); ?> />
+				<span><?php esc_attr_e('Hide Updates Menu Item', 'C9_Admin'); ?></span>
+			</label>
+		</fieldset>
+		<fieldset>
+			<legend class="screen-reader-text"><span><?php _e('Make notification visible to admins only', 'C9_Admin'); ?></span></legend>
+			<label for="<?php echo $this->plugin_name; ?>-hide_plugin_menu_item">
+				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_plugin_menu_item" name="<?php echo $this->plugin_name; ?>[hide_plugin_menu_item]" value="1" <?php checked($hide_plugin_menu_item, 1); ?> />
+				<span><?php esc_attr_e('Hide Plugin Menu Item', 'C9_Admin'); ?></span>
+			</label>
+		</fieldset>
 		<hr>
 		<h3><?php esc_attr_e('Custom Admin Styles', 'C9_Admin'); ?></h3>
 		<fieldset>
@@ -121,7 +147,7 @@
 				<br>
 				<label for="<?php echo $this->plugin_name; ?>-min_px">
 					<div><?php esc_attr_e('Min Side Length', 'C9_Admin'); ?></div>
-					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-min_pix" name="<?php echo $this->plugin_name; ?>[min_px]" value=<?php
+					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-min_px" name="<?php echo $this->plugin_name; ?>[min_px]" value=<?php
 																																							echo '"';
 																																							if (!empty($min_px)) {
 																																								echo $min_px;
@@ -141,6 +167,113 @@
 																																								echo '"';
 																																								?> />
 					<span>mb</span>
+				</label>
+			</fieldset>
+		</fieldset>
+		<hr>
+		<h3><?php esc_attr_e('Custom Menu Labels', 'C9_Admin'); ?></h3>
+		<fieldset>
+			<legend class="screen-reader-text"><span><?php _e('Custom Menu Labels', 'C9_Admin'); ?></span></legend>
+			<label for="<?php echo $this->plugin_name; ?>-define_custom_labels">
+				<div><?php esc_attr_e('Define Custom Menu Labels', 'C9_Admin'); ?></div>
+				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-define_custom_labels" name="<?php echo $this->plugin_name; ?>[define_custom_labels]" value="1" <?php checked($define_custom_labels, 1); ?> />
+			</label>
+			<fieldset>
+				<legend class="screen-reader-text">
+					<div><?php _e('Menu Label', 'C9_Admin'); ?></div>
+				</legend>
+				<label for="<?php echo $this->plugin_name; ?>-custom_menu_label">
+					<div><?php esc_attr_e('Menu Label', 'C9_Admin'); ?></div>
+					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-custom_menu_label" name="<?php echo $this->plugin_name; ?>[custom_menu_label]" value=<?php
+																																												echo '"';
+																																												if (!empty($custom_menu_label)) {
+																																													echo $custom_menu_label;
+																																												}
+																																												echo '"';
+																																												?> />
+				</label>
+				<br>
+				<legend class="screen-reader-text">
+					<div><?php _e('Pages Label', 'C9_Admin'); ?></div>
+				</legend>
+				<label for="<?php echo $this->plugin_name; ?>-custom_pages_label">
+					<div><?php esc_attr_e('Pages Label', 'C9_Admin'); ?></div>
+					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-custom_pages_label" name="<?php echo $this->plugin_name; ?>[custom_pages_label]" value=<?php
+																																													echo '"';
+																																													if (!empty($custom_pages_label)) {
+																																														echo $custom_pages_label;
+																																													}
+																																													echo '"';
+																																													?> />
+				</label>
+				<br>
+				<legend class="screen-reader-text">
+					<div><?php _e('Media Label', 'C9_Admin'); ?></div>
+				</legend>
+				<label for="<?php echo $this->plugin_name; ?>-custom_media_label">
+					<div><?php esc_attr_e('Media Label', 'C9_Admin'); ?></div>
+					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-custom_media_label" name="<?php echo $this->plugin_name; ?>[custom_media_label]" value=<?php
+																																													echo '"';
+																																													if (!empty($custom_media_label)) {
+																																														echo $custom_media_label;
+																																													}
+																																													echo '"';
+																																													?> />
+				</label>
+				<br>
+				<label for="<?php echo $this->plugin_name; ?>-custom_posts_label">
+					<div><?php esc_attr_e('Posts Label', 'C9_Admin'); ?></div>
+					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-custom_posts_label" name="<?php echo $this->plugin_name; ?>[custom_posts_label]" value=<?php
+																																													echo '"';
+																																													if (!empty($custom_posts_label)) {
+																																														echo $custom_posts_label;
+																																													}
+																																													echo '"';
+																																													?> />
+				</label>
+				<br>
+				<label for="<?php echo $this->plugin_name; ?>-custom_post_categories_label">
+					<div><?php esc_attr_e('Post Categories Label', 'C9_Admin'); ?></div>
+					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-custom_post_categories_label" name="<?php echo $this->plugin_name; ?>[custom_post_categories_label]" value=<?php
+																																																		echo '"';
+																																																		if (!empty($custom_post_categories_label)) {
+																																																			echo $custom_post_categories_label;
+																																																		}
+																																																		echo '"';
+																																																		?> />
+				</label>
+				<br>
+				<label for="<?php echo $this->plugin_name; ?>-custom_post_tags_label">
+					<div><?php esc_attr_e('Posts Tags Label', 'C9_Admin'); ?></div>
+					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-custom_post_tags_label" name="<?php echo $this->plugin_name; ?>[custom_post_tags_label]" value=<?php
+																																															echo '"';
+																																															if (!empty($custom_post_tags_label)) {
+																																																echo $custom_post_tags_label;
+																																															}
+																																															echo '"';
+																																															?> />
+				</label>
+				<br>
+				<label for="<?php echo $this->plugin_name; ?>-custom_upload_files_label">
+					<div><?php esc_attr_e('Upload Files Label', 'C9_Admin'); ?></div>
+					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-custom_upload_files_label" name="<?php echo $this->plugin_name; ?>[custom_upload_files_label]" value=<?php
+																																																echo '"';
+																																																if (!empty($custom_upload_files_label)) {
+																																																	echo $custom_upload_files_label;
+																																																}
+																																																echo '"';
+																																																?> />
+				</label>
+				<br>
+				<label for="<?php echo $this->plugin_name; ?>-custom_all_files_label">
+					<div><?php esc_attr_e('All Files Label', 'C9_Admin'); ?></div>
+					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-custom_all_files_label" name="<?php echo $this->plugin_name; ?>[custom_all_files_label]" value=<?php
+																																															echo '"';
+																																															if (!empty($custom_all_files_label)) {
+																																																echo $custom_all_files_label;
+																																															}
+																																															echo '"';
+																																															?> />
 				</label>
 			</fieldset>
 		</fieldset>
