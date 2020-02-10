@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The admin-specific functionality of the plugin.
  *
@@ -11,339 +12,422 @@
 class C9_Admin
 {
 
-    /**
-     * The version of this plugin.
-     *
-     * @since  1.0.0
-     * @access private
-     * @var    string    $version    The current version of this plugin.
-     */
-    private $version;
 
-    /**
-     * Initialize the class and set its properties.
-     *
-     * @since 1.0.0
-     * @param string $plugin_name The name of this plugin.
-     * @param string $version     The version of this plugin.
-     */
-    public function __construct( $plugin_name, $version )
-    {
+	/**
+	 * The version of this plugin.
+	 *
+	 * @since  1.0.0
+	 * @access private
+	 * @var    string    $version    The current version of this plugin.
+	 */
+	private $version;
 
-        $this->plugin_name = $plugin_name;
-        $this->version     = $version;
+	/**
+	 * Initialize the class and set its properties.
+	 *
+	 * @since 1.0.0
+	 * @param string $plugin_name The name of this plugin.
+	 * @param string $version     The version of this plugin.
+	 */
+	public function __construct($plugin_name, $version)
+	{
 
-        add_action('admin_enqueue_scripts', array( $this, 'enqueue_styles' ));
-        add_action('admin_enqueue_scripts', array( $this, 'enqueue_scripts' ));
+		$this->plugin_name = $plugin_name;
+		$this->version     = $version;
 
-        // Add menu item
-        add_action('admin_menu', array( $this, 'add_plugin_admin_menu' ));
+		if (!get_option($this->plugin_name)['custom_skin']) {
+			add_action('admin_enqueue_scripts', array($this, 'enqueue_styles'));
+			add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'));
+		}
+		// Add menu item
+		add_action('admin_menu', array($this, 'add_plugin_admin_menu'));
 
-        // Add Settings link to the plugin
-        $plugin_basename = plugin_basename(plugin_dir_path(__DIR__) . $this->plugin_name . '.php');
-        add_filter('plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ));
+		// Add Settings link to the plugin
+		$plugin_basename = plugin_basename(plugin_dir_path(__DIR__) . $this->plugin_name . '.php');
+		add_filter('plugin_action_links_' . $plugin_basename, array($this, 'add_action_links'));
 
-        // Core Functionality
-        add_action('admin_head', array( $this, 'show_updated_only_to_admins' ));
-        add_action('admin_menu', array( $this, 'remove_admin_menu_items' ));
-        add_action('template_redirect', array( $this, 'attachment_redirect' ));
-        add_action('admin_init', array( $this, 'options_update' ));
+		// Core Functionality
+		add_action('admin_head', array($this, 'show_updated_only_to_admins'));
 
-        add_filter('show_admin_bar', array( $this, 'toggle_admin' ));
-        add_filter('edit_post_link', array( $this, 'toggle_edit_link' ));
-        add_filter('wp_handle_upload_prefilter', array( $this, 'custom_upload_filter' ));
+		if (get_option($this->plugin_name)['suppress_update_notice']) {
+			add_filter('pre_site_transient_update_core', array($this, 'suppress_update_notice'));
+			add_filter('pre_site_transient_update_plugins', array($this, 'suppress_update_notice'));
+			add_filter('pre_site_transient_update_themes', array($this, 'suppress_update_notice'));
+		}
 
-        add_filter('custom_menu_order', array( $this, 'custom_menu_order' ));
-        add_filter('menu_order', array( $this, 'custom_menu_order' ));
+		add_action('admin_menu', array($this, 'remove_admin_menu_items'));
+		add_action('template_redirect', array($this, 'attachment_redirect'));
+		add_action('admin_init', array($this, 'options_update'));
 
-        add_action('admin_menu', array( $this, 'customize_post_admin_menu_labels' ), 1000);
+		add_filter('show_admin_bar', array($this, 'toggle_admin'));
+		add_filter('edit_post_link', array($this, 'toggle_edit_link'));
+		add_filter('wp_handle_upload_prefilter', array($this, 'custom_upload_filter'));
 
-        $this->edit_roles();
-    }
+		add_filter('custom_menu_order', array($this, 'custom_menu_order'));
+		add_filter('menu_order', array($this, 'custom_menu_order'));
 
-    /**
-     * Register the stylesheets for the admin area.
-     *
-     * @since 1.0.0
-     */
-    public function enqueue_styles()
-    {
-        wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/c9-admin.css', array(), $this->version, 'all');
-    }
+		add_action('admin_menu', array($this, 'customize_post_admin_menu_labels'), 1000);
 
-    /**
-     * Register the JavaScript for the admin area.
-     *
-     * @since 1.0.0
-     */
-    public function enqueue_scripts()
-    {
+		$this->edit_roles();
+		add_filter('manage_posts_columns', array($this, 'add_post_admin_thumbnail_column'), 2);
+		add_filter('manage_pages_columns', array($this, 'add_post_admin_thumbnail_column'), 2);
 
-        wp_enqueue_script('hoverintent', plugin_dir_url(__FILE__) . 'js/jquery.hoverIntent.min.js', array( 'jquery' ), $this->version, false);
+		add_action('manage_posts_custom_column', array($this, 'show_post_thumbnail_column'), 5, 2);
+		add_action('manage_pages_custom_column', array($this, 'show_post_thumbnail_column'), 5, 2);
+	}
 
-        wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/c9-admin.js', array( 'hoverintent' ), $this->version, false);
-    }
+	/**
+	 * * Add featured image column
+	 */
+	public function add_post_admin_thumbnail_column($columns)
+	{
+		$columns['c9_thumb'] = __('Image');
+		return $columns;
+	}
 
-    /**
-     * Add a settings page for this plugin to the Settings menu.
-     */
-    public function add_plugin_admin_menu()
-    {
-        add_options_page(
-            'C9 Admin Options',
-            'C9 Admin',
-            'manage_options',
-            $this->plugin_name,
-            array( $this, 'display_plugin_setup_page' )
-        );
-    }
+	/**
+	 * Grab thumbnail image and put it in there
+	 */
+	public function show_post_thumbnail_column($columns, $c9_id)
+	{
+		switch ($columns) {
+			case 'c9_thumb':
+				if (function_exists('the_post_thumbnail')) {
+					echo "<div class='c9_col_img' style='max-height:60px;width:120px;overflow:hidden;'>" . get_the_post_thumbnail($c9_id, array(100, 100)) . '</div>';
+				} else {
+					echo 'hmm... your theme doesn\'t support featured image...';
+				}
+				break;
+		}
+	}
 
-    /**
-     * Add settings action link to the plugins page.
-     *
-     * @since 1.0.0
-     */
-    public function add_action_links( $links )
-    {
-        $settings_link = array(
-        '<a href="' . admin_url('options-general.php?page=' . $this->plugin_name) . '">' . __('Settings', 'C9_Admin') . '</a>',
-        );
-        return array_merge($settings_link, $links);
-    }
+	/**
+	 * Register the stylesheets for the admin area.
+	 *
+	 * @since 1.0.0
+	 */
+	public function enqueue_styles()
+	{
+		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/c9-admin.css', array(), $this->version, 'all');
+	}
 
-    /**
-     * Render the settings page for this plugin.
-     *
-     * @since 1.0.0
-     */
-    public function display_plugin_setup_page()
-    {
-        include_once 'partials/c9-admin-display.php';
-    }
+	/**
+	 * Register the JavaScript for the admin area.
+	 *
+	 * @since 1.0.0
+	 */
+	public function enqueue_scripts()
+	{
 
-    /**
-     * Update options
-     **/
-    public function options_update()
-    {
-        register_setting($this->plugin_name, $this->plugin_name, array( $this, 'validate' ));
-    }
+		wp_enqueue_script('hoverintent', plugin_dir_url(__FILE__) . 'js/jquery.hoverIntent.min.js', array('jquery'), $this->version, false);
 
-    /**
-     * Validate Option Input
-     **/
-    public function validate( $input )
-    {
-        // All checkboxes inputs
-        $valid = array();
+		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/c9-admin.js', array('hoverintent'), $this->version, false);
+	}
 
-        // Cleanup
-        $valid['disable_admin']            = ( isset($input['disable_admin']) && ! empty($input['disable_admin']) ) ? 1 : 0;
-        $valid['disable_attachment_pages'] = ( isset($input['disable_attachment_pages']) && ! empty($input['disable_attachment_pages']) ) ? 1 : 0;
-        $valid['hide_developer_items']     = ( isset($input['hide_developer_items']) && ! empty($input['hide_developer_items']) ) ? 1 : 0;
-        $valid['admin_only_notifications'] = ( isset($input['admin_only_notifications']) && ! empty($input['admin_only_notifications']) ) ? 1 : 0;
-        $valid['limit_image_size']         = ( isset($input['limit_image_size']) && ! empty($input['limit_image_size']) ) ? 1 : 0;
-        $valid['max_px']                   = intval($input['max_px']);
-        $valid['min_px']                   = intval($input['min_px']);
-        $valid['max_size']                 = intval($input['max_size']);
+	/**
+	 * Add a settings page for this plugin to the Settings menu.
+	 */
+	public function add_plugin_admin_menu()
+	{
+		add_options_page(
+			'C9 Admin Options',
+			'C9 Admin',
+			'manage_options',
+			$this->plugin_name,
+			array($this, 'display_plugin_setup_page')
+		);
+	}
 
-        return $valid;
-    }
+	/**
+	 * Add settings action link to the plugins page.
+	 *
+	 * @since 1.0.0
+	 */
+	public function add_action_links($links)
+	{
+		$settings_link = array(
+			'<a href="' . admin_url('options-general.php?page=' . $this->plugin_name) . '">' . __('Settings', 'C9_Admin') . '</a>',
+		);
+		return array_merge($settings_link, $links);
+	}
 
-    /**
-     * Only show updates to logged-in admins.
-     **/
-    public function show_updated_only_to_admins()
-    {
-        if (get_option($this->plugin_name)['admin_only_notifications'] ) {
-            if (! current_user_can('update_core') ) {
-                remove_action('admin_notices', 'update_nag', 3);
-                remove_action('network_admin_notices', 'update_nag', 3);
-            }
-            if (! current_user_can('manage_options') ) { // non-admin users
-                echo '<style>#setting-error-tgmpa>.updated settings-error notice is-dismissible, .update-nag, .updated, .error { display: none; }</style>';
-            }
-        }
-    }
+	/**
+	 * Render the settings page for this plugin.
+	 *
+	 * @since 1.0.0
+	 */
+	public function display_plugin_setup_page()
+	{
+		include_once 'partials/c9-admin-display.php';
+	}
 
-    /**
-     * Remove Advanced Admin menu items.
-     */
-    public function remove_admin_menu_items()
-    {
-        if (get_option($this->plugin_name)['hide_developer_items'] ) {
-            $remove_menu_items = array( __('Events'), __('Comments') );
-            global $menu;
-            end($menu);
-            while ( prev($menu) ) {
-                  $item = explode(' ', $menu[ key($menu) ][0]);
-                if (in_array(null != $item[0] ? $item[0] : '', $remove_menu_items) ) {
-                    unset($menu[ key($menu) ]);
-                }
-            }
+	/**
+	 * Update options
+	 **/
+	public function options_update()
+	{
+		register_setting($this->plugin_name, $this->plugin_name, array($this, 'validate'));
+	}
 
-            remove_menu_page('wr2x_settings-menu');
-            remove_menu_page('meowapps-main-menu');
-        }
-    }
+	/**
+	 * Validate Option Input
+	 **/
+	public function validate($input)
+	{
+		// All checkboxes inputs
+		$valid = array();
 
-    /**
-     * Test image dimensions on upload; return error message if user-defined limit is exceeded.
-     *
-     * @param array $file Image file being uploaded.
-     */
-    public function custom_upload_filter( $file )
-    {
-        if (get_option($this->plugin_name)['limit_image_size'] ) {
+		// Cleanup
+		$valid['disable_admin']            = (isset($input['disable_admin']) && !empty($input['disable_admin'])) ? 1 : 0;
+		$valid['disable_attachment_pages'] = (isset($input['disable_attachment_pages']) && !empty($input['disable_attachment_pages'])) ? 1 : 0;
+		$valid['hide_developer_items']     = (isset($input['hide_developer_items']) && !empty($input['hide_developer_items'])) ? 1 : 0;
+		$valid['admin_only_notifications'] = (isset($input['admin_only_notifications']) && !empty($input['admin_only_notifications'])) ? 1 : 0;
+		$valid['suppress_update_notice'] = (isset($input['suppress_update_notice']) && !empty($input['suppress_update_notice'])) ? 1 : 0;
+		$valid['limit_image_size']         = (isset($input['limit_image_size']) && !empty($input['limit_image_size'])) ? 1 : 0;
+		$valid['define_custom_labels']         = (isset($input['define_custom_labels']) && !empty($input['define_custom_labels'])) ? 1 : 0;
+		$valid['max_px']                   = intval($input['max_px']);
+		$valid['min_px']                   = intval($input['min_px']);
+		$valid['max_size']                 = intval($input['max_size']);
+		$valid['custom_skin']              = (isset($input['custom_skin']) && !empty($input['custom_skin'])) ? 1 : 0;
+		$valid['hide_plugin_menu_item']              = (isset($input['hide_plugin_menu_item']) && !empty($input['hide_plugin_menu_item'])) ? 1 : 0;
+		$valid['hide_update_menu_item']              = (isset($input['hide_update_menu_item']) && !empty($input['hide_update_menu_item'])) ? 1 : 0;
 
-            $max_px   = get_option($this->plugin_name)['max_px'];
-            $min_px   = get_option($this->plugin_name)['min_px'];
-            $max_size = get_option($this->plugin_name)['max_size'];
+		$valid['custom_media_label']                   = strval($input['custom_media_label']);
+		$valid['custom_posts_label']                   = strval($input['custom_posts_label']);
+		$valid['custom_pages_label']                   = strval($input['custom_pages_label']);
+		$valid['custom_menu_label']                   = strval($input['custom_menu_label']);
+		$valid['custom_post_categories_label']                   = strval($input['custom_post_categories_label']);
+		$valid['custom_post_tags_label']                   = strval($input['custom_post_tags_label']);
+		$valid['custom_upload_files_label']                   = strval($input['custom_upload_files_label']);
+		$valid['custom_all_files_label']                   = strval($input['custom_all_files_label']);
 
-            if (! in_array($file['type'], [ 'image/jpeg', 'image/gif', 'image/png', 'image/bmp', 'image/tiff', 'image/x-icon' ]) ) {
-                return $file;
-            }
-            $image = getimagesize($file['tmp_name']);
-            if ($file['size'] >= $max_size * 1048576 ) {
-                $file['error'] = "This image is larger than the {$max_size}mb maximum. Please resize your image so you do not break the internet with your very large image. Or change in settings";
-                return $file;
-            }
-            $minimum      = array(
-            'width'  => $min_px,
-            'height' => $min_px,
-            );
-            $maximum      = array(
-            'width'  => $max_px,
-            'height' => $max_px,
-            );
-            $image_width  = $image[0];
-            $image_height = $image[1];
 
-            $too_small = "Image dimensions are too small. Minimum size is {$minimum['width']} by {$minimum['height']} pixels. Uploaded image is $image_width by $image_height pixels. Please resize your image. Or change in settings";
-            $too_large = "Image dimensions are too large. Maximum size is {$maximum['width']} by {$maximum['height']} pixels. Uploaded image is $image_width by $image_height pixels. Please resize your image. Or change in settings";
+		return $valid;
+	}
 
-            if ($image_width < $minimum['width'] || $image_height < $minimum['height'] ) {
-                // add in the field 'error' of the $file array the message
-                $file['error'] = $too_small;
-                return $file;
-            } elseif ($image_width > $maximum['width'] || $image_height > $maximum['height'] ) {
-                // add in the field 'error' of the $file array the message
-                $file['error'] = $too_large;
-                return $file;
-            } else {
-                return $file;
-            }
-        } else {
-            return $file;
-        }
-    }
+	/**
+	 * Supress Notification Updates
+	 */
+	public function suppress_update_notice()
+	{
+		if (get_option($this->plugin_name)['suppress_update_notice']) {
+			global $wp_version;
+			return (object) array('last_checked' => time(), 'version_checked' => $wp_version,);
+		}
+	}
 
-    /**
-     * Get rid of attachment pages
-     */
-    public function attachment_redirect()
-    {
-        if (get_option($this->plugin_name)['disable_attachment_pages'] ) {
-            global $post;
-            if (is_attachment() && isset($post->post_parent) && is_numeric($post->post_parent) && ( $post->post_parent != 0 ) ) {
+	/**
+	 * Only show updates to logged-in admins.
+	 **/
+	public function show_updated_only_to_admins()
+	{
+		if (get_option($this->plugin_name)['admin_only_notifications']) {
+			if (!current_user_can('update_core')) {
+				remove_action('admin_notices', 'update_nag', 3);
+				remove_action('network_admin_notices', 'update_nag', 3);
+			}
+			if (!current_user_can('manage_options')) { // non-admin users
+				echo '<style>#setting-error-tgmpa>.updated settings-error notice is-dismissible, .update-nag, .updated, .error { display: none; }</style>';
+			}
+		}
+	}
 
-                  $parent_post_in_trash = get_post_status($post->post_parent) === 'trash' ? true : false;
+	/**
+	 * Remove Advanced Admin menu items.
+	 */
+	public function remove_admin_menu_items()
+	{
+		$remove_menu_items = array();
 
-                if ($parent_post_in_trash ) {
-                    wp_die('Page not found.', '404 - Page not found', 404); // Prevent endless redirection loop in old WP releases and redirecting to trashed posts if an attachment page is visited when parent post is in trash
-                }
+		if (get_option($this->plugin_name)['hide_developer_items']) {
+			$remove_menu_items[] = __('Events');
+			$remove_menu_items[] = __('Comments');
+			remove_menu_page('wr2x_settings-menu');
+			remove_menu_page('meowapps-main-menu');
+		}
 
-                wp_safe_redirect(get_permalink($post->post_parent), ATTACHMENT_REDIRECT_CODE); // Redirect to post/page from where attachment was uploaded
-                exit;
-            } elseif (is_attachment() && isset($post->post_parent) && is_numeric($post->post_parent) && ( $post->post_parent < 1 ) ) {
+		if (get_option($this->plugin_name)['hide_plugin_menu_item']) {
+			$remove_menu_items[] = __('Plugins');
+		}
+		if (get_option($this->plugin_name)['hide_update_menu_item']) {
+			// xdebug_break();
+			remove_submenu_page('index.php', 'update-core.php');
+		}
 
-                wp_safe_redirect(get_bloginfo('wpurl'), ORPHAN_ATTACHMENT_REDIRECT_CODE); // Redirect to home for attachments not associated to any post/page
-                exit;
-            }
-        } else {
-            return;
-        }
-    }
+		if (!empty($remove_menu_items)) {
+			global $menu;
+			end($menu);
+			while (prev($menu)) {
+				$item = explode(' ', $menu[key($menu)][0]);
+				if (in_array(null != $item[0] ? $item[0] : '', $remove_menu_items)) {
+					unset($menu[key($menu)]);
+				}
+			}
+		}
+	}
 
-    /**
-     * Turn admin off on frontend
-     */
-    public function toggle_admin()
-    {
-        if (get_option($this->plugin_name)['disable_admin'] || ! is_user_logged_in() ) {
-            return false;
-        } else {
-            return true;
-        }
-    }
+	/**
+	 * Test image dimensions on upload; return error message if user-defined limit is exceeded.
+	 *
+	 * @param array $file Image file being uploaded.
+	 */
+	public function custom_upload_filter($file)
+	{
+		if (get_option($this->plugin_name)['limit_image_size']) {
 
-    /**
-     * Toggle edit link
-     */
-    public function toggle_edit_link()
-    {
-        return '';
-    }
+			$max_px   = get_option($this->plugin_name)['max_px'];
+			$min_px   = get_option($this->plugin_name)['min_px'];
+			$max_size = get_option($this->plugin_name)['max_size'];
 
-    /**
-     * CUSTOMIZE ADMIN MENU ORDER
-     */
-    public function custom_menu_order( $menu_ord )
-    {
-        if (! $menu_ord ) {
-            return true;
-        }
-        return array(
-        'index.php', // this represents the dashboard link
-        'edit.php?post_type=page', // the pages tab
-        'edit.php', // the posts tab
-        'nav-menus.php',
-        'upload.php', // the media manager
-        );
-    }
+			if (!in_array($file['type'], ['image/jpeg', 'image/gif', 'image/png', 'image/bmp', 'image/tiff', 'image/x-icon'])) {
+				return $file;
+			}
+			$image = getimagesize($file['tmp_name']);
+			if ($file['size'] >= $max_size * 1048576) {
+				$file['error'] = "This image is larger than the {$max_size}mb maximum. Please resize your image so you do not break the internet with your very large image. Or change in settings";
+				return $file;
+			}
+			$minimum      = array(
+				'width'  => $min_px,
+				'height' => $min_px,
+			);
+			$maximum      = array(
+				'width'  => $max_px,
+				'height' => $max_px,
+			);
+			$image_width  = $image[0];
+			$image_height = $image[1];
 
-    /**
-     * Rename nav link names on WordPress backend.
-     */
-    function customize_post_admin_menu_labels()
-    {
-        global $menu;
-        global $submenu;
-        // print_r($menu);
-        // print_r($submenu["edit.php"]);
-        // print_r($submenu);
-        $menu[20][0]                  = 'Landing Pages';
-        $menu[10][0]                  = 'Media &amp; Files';
-        $menu[5][0]                   = 'Blog Posts';
-        $submenu['edit.php'][5][0]    = 'List Blog Posts';
-        $submenu['edit.php'][10][0]   = 'Add New Blog Post';
-        $submenu['edit.php'][15][0]   = 'Blog Categories';
-        $submenu['edit.php'][16][0]   = 'Blog Tags';
-        $submenu['upload.php'][10][0] = 'Upload Files';
-        $submenu['upload.php'][5][0]  = 'All Files';
+			$too_small = "Image dimensions are too small. Minimum size is {$minimum['width']} by {$minimum['height']} pixels. Uploaded image is $image_width by $image_height pixels. Please resize your image. Or change in settings";
+			$too_large = "Image dimensions are too large. Maximum size is {$maximum['width']} by {$maximum['height']} pixels. Uploaded image is $image_width by $image_height pixels. Please resize your image. Or change in settings";
 
-        add_menu_page('Navigation Links', 'Navigation Links', 'manage_categories', 'nav-menus.php', '', 'dashicons-menu', 1);
+			if ($image_width < $minimum['width'] || $image_height < $minimum['height']) {
+				// add in the field 'error' of the $file array the message
+				$file['error'] = $too_small;
+				return $file;
+			} elseif ($image_width > $maximum['width'] || $image_height > $maximum['height']) {
+				// add in the field 'error' of the $file array the message
+				$file['error'] = $too_large;
+				return $file;
+			} else {
+				return $file;
+			}
+		} else {
+			return $file;
+		}
+	}
 
-        echo '';
-    }
+	/**
+	 * Get rid of attachment pages
+	 */
+	public function attachment_redirect()
+	{
+		if (get_option($this->plugin_name)['disable_attachment_pages']) {
+			global $post;
+			if (is_attachment() && isset($post->post_parent) && is_numeric($post->post_parent) && ($post->post_parent != 0)) {
 
-    /**
-     * Edit editor permissions so they can add menu links + manage user accounts.
-     *
-     * @return void
-     */
-    public function edit_roles()
-    {
-        // get the the role object
-        $role_object = get_role('editor');
+				$parent_post_in_trash = get_post_status($post->post_parent) === 'trash' ? true : false;
 
-        // add $cap capability to this role object
-        $role_object->add_cap('edit_theme_options');
-        $role_object->add_cap('list_users');
-        $role_object->add_cap('create_users');
-        $role_object->add_cap('add_users');
-        $role_object->add_cap('promote_users');
-        $role_object->add_cap('moderate_comments');
-        $role_object->add_cap('upload_files');
-    }
+				if ($parent_post_in_trash) {
+					wp_die('Page not found.', '404 - Page not found', 404); // Prevent endless redirection loop in old WP releases and redirecting to trashed posts if an attachment page is visited when parent post is in trash
+				}
+
+				wp_safe_redirect(get_permalink($post->post_parent), ATTACHMENT_REDIRECT_CODE); // Redirect to post/page from where attachment was uploaded
+				exit;
+			} elseif (is_attachment() && isset($post->post_parent) && is_numeric($post->post_parent) && ($post->post_parent < 1)) {
+
+				wp_safe_redirect(get_bloginfo('wpurl'), ORPHAN_ATTACHMENT_REDIRECT_CODE); // Redirect to home for attachments not associated to any post/page
+				exit;
+			}
+		} else {
+			return;
+		}
+	}
+
+	/**
+	 * Turn admin off on frontend
+	 */
+	public function toggle_admin()
+	{
+		if (get_option($this->plugin_name)['disable_admin'] || !is_user_logged_in()) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	/**
+	 * Toggle edit link
+	 */
+	public function toggle_edit_link()
+	{
+		return '';
+	}
+
+	/**
+	 * CUSTOMIZE ADMIN MENU ORDER
+	 */
+	public function custom_menu_order($menu_ord)
+	{
+		if (!$menu_ord) {
+			return true;
+		}
+		return array(
+			'index.php', // this represents the dashboard link
+			'edit.php?post_type=page', // the pages tab
+			'edit.php', // the posts tab
+			'nav-menus.php',
+			'upload.php', // the media manager
+		);
+	}
+
+	function get_label($option_name, $default)
+	{
+		return !ctype_space(get_option($this->plugin_name)[$option_name]) && get_option($this->plugin_name)[$option_name] ? get_option($this->plugin_name)[$option_name] : $default;
+	}
+
+	/**
+	 * Rename nav link names on WordPress backend.
+	 */
+	function customize_post_admin_menu_labels()
+	{
+		if (get_option($this->plugin_name)['define_custom_labels']) {
+			global $menu;
+			global $submenu;
+			// print_r($menu);
+			// print_r($submenu["edit.php"]);
+			// print_r($submenu);
+			$menu[20][0]                  = $this->get_label('custom_pages_label', 'Landing Pages');
+			$menu[10][0]                  = $this->get_label('custom_media_label', 'Media &amp; Files');
+			$menu[5][0]                   = $this->get_label('custom_posts_label', 'Blog Post') . "s";
+			$submenu['edit.php'][5][0]    = 'List ' . $this->get_label('custom_posts_label', 'Blog Post') . "s";
+			$submenu['edit.php'][10][0]   = 'Add New ' . $this->get_label('custom_posts_label', 'Blog Post');
+			$submenu['edit.php'][15][0]   = $this->get_label('custom_post_categories_label', 'Blog Categories');
+			$submenu['edit.php'][16][0]   = $this->get_label('custom_post_tags_label', 'Blog Tags');
+			$submenu['upload.php'][10][0] = $this->get_label('custom_upload_files_label', 'Upload Files');
+			$submenu['upload.php'][5][0]  = $this->get_label('custom_all_files_label', 'All Files');
+
+			add_menu_page('Navigation Links', 'Navigation Links', 'manage_categories', 'nav-menus.php', '', 'dashicons-menu', 1);
+		}
+	}
+
+	/**
+	 * Edit editor permissions so they can add menu links + manage user accounts.
+	 *
+	 * @return void
+	 */
+	public function edit_roles()
+	{
+		// get the the role object
+		$role_object = get_role('editor');
+
+		// add $cap capability to this role object
+		$role_object->add_cap('edit_theme_options');
+		$role_object->add_cap('list_users');
+		$role_object->add_cap('create_users');
+		$role_object->add_cap('add_users');
+		$role_object->add_cap('promote_users');
+		$role_object->add_cap('moderate_comments');
+		$role_object->add_cap('upload_files');
+	}
 }

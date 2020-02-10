@@ -7,3 +7,14 @@ COVERT NINE's admin plugin. It includes some enhancements to the WordPress backe
 - Hide developer-specific menu items such as plugins or updates
 - Hide admin notices and updates from displaying to non-admin users
 - Limit size of image uploads by size, length, and file size
+- Hide Plugins update page in admin
+- Hide update notifications to admins
+- Override admin menu labels
+
+# Changelog
+
+## 1.0.2
+- Sidebar font styling changes for consistency
+
+## 1.0.1
+- Initial version number, added ability to hide plugin, theme, and WP updates from all users
