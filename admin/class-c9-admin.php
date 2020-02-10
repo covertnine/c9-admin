@@ -407,7 +407,9 @@ class C9_Admin
 			$submenu['upload.php'][10][0] = $this->get_label('custom_upload_files_label', 'Upload Files');
 			$submenu['upload.php'][5][0]  = $this->get_label('custom_all_files_label', 'All Files');
 
-			add_menu_page('Navigation Links', 'Navigation Links', 'manage_categories', 'nav-menus.php', '', 'dashicons-menu', 1);
+			$nav_links_label = $this->get_label('custom_menu_label', 'Navigation Links');
+
+			add_menu_page($nav_links_label, $nav_links_label, 'manage_categories', 'nav-menus.php', '', 'dashicons-menu', 1);
 		}
 	}
 
