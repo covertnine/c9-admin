@@ -12,6 +12,8 @@ COVERT NINE's admin plugin. It includes some enhancements to the WordPress backe
 - Override admin menu labels
 
 # Changelog
+## 1.0.3
+- Edits to some backend styling
 
 ## 1.0.2
 - Sidebar font styling changes for consistency

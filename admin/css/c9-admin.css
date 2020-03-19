@@ -257,7 +257,8 @@ div.wp-menu-image:before {
 .wp-core-ui button,
 .components-button.components-menu-item__button,
 .components-button.is-button.is-default,
-.meta-box-sortables h2 span {
+.meta-box-sortables h2 span,
+.post-publish-panel__postpublish-buttons .components-button {
     font-family: 'Muli',
         'helvetica neue',
         helvetica,
