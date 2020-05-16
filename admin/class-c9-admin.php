@@ -56,6 +56,8 @@ class C9_Admin
 		}
 
 		add_action('admin_menu', array($this, 'remove_admin_menu_items'));
+		add_action('admin_init', array($this, 'remove_custom_admin_menu_items'));
+
 		add_action('template_redirect', array($this, 'attachment_redirect'));
 		add_action('admin_init', array($this, 'options_update'));
 
@@ -240,10 +242,19 @@ class C9_Admin
 		$remove_menu_items = array();
 
 		if (get_option($this->plugin_name)['hide_developer_items']) {
-			$remove_menu_items[] = __('Events');
+//			$remove_menu_items[] = __('Events');
 			$remove_menu_items[] = __('Comments');
 			remove_menu_page('wr2x_settings-menu');
 			remove_menu_page('meowapps-main-menu');
+			remove_menu_page('edit.php?post_type=acf-field-group');
+			remove_menu_page('wsal-auditlog');
+			remove_menu_page('pmxi-admin-import');
+			remove_menu_page('maxmegamenu');
+
+			$remove_menu_items[] = __('Audit Log');
+			$remove_menu_items[] = __('Search &amp; Filter');
+			$remove_menu_items[] = __('Mega Menu');
+			$remove_menu_items[] = __('Max Mega Menu');
 		}
 
 		if (get_option($this->plugin_name)['hide_plugin_menu_item']) {
@@ -265,6 +276,25 @@ class C9_Admin
 			}
 		}
 	}
+
+	/**
+	 * Remove Custom Admin menu items.
+	 */
+	public function remove_custom_admin_menu_items()
+	{
+		if (get_option($this->plugin_name)['hide_developer_items']) {
+			remove_menu_page('wsal-auditlog');
+			remove_menu_page('pmxi-admin-home');
+			remove_menu_page('maxmegamenu');
+			remove_menu_page('searchandfilter-settings');
+			remove_menu_page('tools.php');
+			//remove_menu_page('themes.php');
+			remove_submenu_page('themes.php', 'themes.php');
+			remove_submenu_page('themes.php', 'tgmpa-install-plugins');
+			remove_submenu_page('themes.php', 'theme-editor.php');
+		}
+
+	}	
 
 	/**
 	 * Test image dimensions on upload; return error message if user-defined limit is exceeded.
