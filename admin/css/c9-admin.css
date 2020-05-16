@@ -52,8 +52,14 @@ body {
 }
 
 #adminmenu .wp-submenu li {
-    padding-left: 15px;
+    padding-left: 10px;
     position: relative;
+}
+
+#adminmenu .wp-not-current-submenu li>a,
+.folded #adminmenu .wp-has-current-submenu li>a {
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 body:not(.block-editor-page) #adminmenu .wp-menu-open .wp-submenu li:before {

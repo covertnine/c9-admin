@@ -183,6 +183,9 @@ class C9_Admin
 		$valid['disable_admin']            = (isset($input['disable_admin']) && !empty($input['disable_admin'])) ? 1 : 0;
 		$valid['disable_attachment_pages'] = (isset($input['disable_attachment_pages']) && !empty($input['disable_attachment_pages'])) ? 1 : 0;
 		$valid['hide_developer_items']     = (isset($input['hide_developer_items']) && !empty($input['hide_developer_items'])) ? 1 : 0;
+		$valid['hide_seo_settings']     = (isset($input['hide_seo_settings']) && !empty($input['hide_seo_settings'])) ? 1 : 0;
+		$valid['hide_matomo_settings']     = (isset($input['hide_matomo_settings']) && !empty($input['hide_matomo_settings'])) ? 1 : 0;
+		$valid['hide_user_settings']     = (isset($input['hide_user_settings']) && !empty($input['hide_user_settings'])) ? 1 : 0;
 		$valid['admin_only_notifications'] = (isset($input['admin_only_notifications']) && !empty($input['admin_only_notifications'])) ? 1 : 0;
 		$valid['suppress_update_notice'] = (isset($input['suppress_update_notice']) && !empty($input['suppress_update_notice'])) ? 1 : 0;
 		$valid['limit_image_size']         = (isset($input['limit_image_size']) && !empty($input['limit_image_size'])) ? 1 : 0;

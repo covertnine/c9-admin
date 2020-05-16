@@ -28,6 +28,9 @@
 		$disable_admin            = $options['disable_admin'];
 		$disable_attachment_pages = $options['disable_attachment_pages'];
 		$hide_developer_items     = $options['hide_developer_items'];
+		$hide_seo_settings     	  = $options['hide_seo_settings'];
+		$hide_matomo_settings     = $options['hide_matomo_settings'];
+		$hide_user_settings       = $options['hide_user_settings'];
 		$limit_image_size         = $options['limit_image_size'];
 		$max_px                   = $options['max_px'];
 		$max_size                 = $options['max_size'];
