@@ -31,6 +31,7 @@
 		$hide_seo_settings     	  = $options['hide_seo_settings'];
 		$hide_matomo_settings     = $options['hide_matomo_settings'];
 		$hide_user_settings       = $options['hide_user_settings'];
+		$hide_default_posts		  = $options['hide_default_posts'];
 		$limit_image_size         = $options['limit_image_size'];
 		$max_px                   = $options['max_px'];
 		$max_size                 = $options['max_size'];
@@ -75,6 +76,15 @@
 		</fieldset>
 
 		<!-- remove injected CSS from gallery -->
+
+		<fieldset>
+			<legend class="screen-reader-text"><span><?php _e('Hide default Posts', 'C9_Admin'); ?></span></legend>
+			<label for="<?php echo $this->plugin_name; ?>-hide_default_posts">
+				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_default_posts" name="<?php echo $this->plugin_name; ?>[hide_default_posts]" value="1" <?php checked($hide_default_posts, 1); ?> />
+				<span><?php esc_attr_e('Hide default Posts', 'C9_Admin'); ?></span>
+			</label>
+		</fieldset>
+
 		<fieldset>
 			<legend class="screen-reader-text"><span><?php _e('Hide developer-specific menu items', 'C9_Admin'); ?></span></legend>
 			<label for="<?php echo $this->plugin_name; ?>-hide_developer_items">

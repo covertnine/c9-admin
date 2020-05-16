@@ -186,6 +186,8 @@ class C9_Admin
 		$valid['hide_seo_settings']     = (isset($input['hide_seo_settings']) && !empty($input['hide_seo_settings'])) ? 1 : 0;
 		$valid['hide_matomo_settings']     = (isset($input['hide_matomo_settings']) && !empty($input['hide_matomo_settings'])) ? 1 : 0;
 		$valid['hide_user_settings']     = (isset($input['hide_user_settings']) && !empty($input['hide_user_settings'])) ? 1 : 0;
+		//hide_default_posts
+		$valid['hide_default_posts']     = (isset($input['hide_default_posts']) && !empty($input['hide_default_posts'])) ? 1 : 0;
 		$valid['admin_only_notifications'] = (isset($input['admin_only_notifications']) && !empty($input['admin_only_notifications'])) ? 1 : 0;
 		$valid['suppress_update_notice'] = (isset($input['suppress_update_notice']) && !empty($input['suppress_update_notice'])) ? 1 : 0;
 		$valid['limit_image_size']         = (isset($input['limit_image_size']) && !empty($input['limit_image_size'])) ? 1 : 0;
@@ -263,6 +265,7 @@ class C9_Admin
 		if (get_option($this->plugin_name)['hide_plugin_menu_item']) {
 			$remove_menu_items[] = __('Plugins');
 		}
+
 		if (get_option($this->plugin_name)['hide_update_menu_item']) {
 			// xdebug_break();
 			remove_submenu_page('index.php', 'update-core.php');
@@ -291,11 +294,33 @@ class C9_Admin
 			remove_menu_page('maxmegamenu');
 			remove_menu_page('searchandfilter-settings');
 			remove_menu_page('tools.php');
+			remove_menu_page('GOTMLS-settings');
 			//remove_menu_page('themes.php');
 			remove_submenu_page('themes.php', 'themes.php');
 			remove_submenu_page('themes.php', 'tgmpa-install-plugins');
 			remove_submenu_page('themes.php', 'theme-editor.php');
 		}
+
+		// hide seo settings
+		if (get_option($this->plugin_name)['hide_seo_settings']) {
+			remove_menu_page('theseoframework-settings');
+		}
+
+		// hide Matomo settings
+		if (get_option($this->plugin_name)['hide_matomo_settings']) {
+			remove_menu_page('matomo');
+			remove_submenu_page('index.php', 'index.php?page=wp-piwik_stats');
+		}
+
+		// hide User settings
+		if (get_option($this->plugin_name)['hide_user_settings']) {
+			remove_menu_page('users.php');
+		}				
+
+		//hide default posts
+		if (get_option($this->plugin_name)['hide_default_posts']) {
+			remove_menu_page('edit.php');
+		}		
 
 	}	
 
@@ -407,9 +432,9 @@ class C9_Admin
 		}
 		return array(
 			'index.php', // this represents the dashboard link
+			'nav-menus.php',
 			'edit.php?post_type=page', // the pages tab
 			'edit.php', // the posts tab
-			'nav-menus.php',
 			'upload.php', // the media manager
 		);
 	}
