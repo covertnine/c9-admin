@@ -14,7 +14,6 @@
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
-<!-- This file should primarily consist of HTML with a little bit of PHP. -->
 <div class="wrap">
 
 	<h2><?php echo esc_html(get_admin_page_title()); ?></h2>
@@ -56,7 +55,7 @@
 
 		<!-- remove some meta and generators from the <head> -->
 		<fieldset>
-			<legend class="screen-reader-text"><span>Disable admin bar on frontend</span></legend>
+			<legend class="screen-reader-text"><span><?php _e('Disable admin bar on frontend', 'C9_Admin'); ?></span></legend>
 			<label for="<?php echo $this->plugin_name; ?>-disable_admin">
 				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-disable_admin" name="<?php echo $this->plugin_name; ?>[disable_admin]" value="1" <?php checked($disable_admin, 1); ?> />
 				<span><?php esc_attr_e('Disable admin bar on frontend', 'C9_Admin'); ?></span>
@@ -65,7 +64,7 @@
 
 		<!-- remove injected CSS from comments widgets -->
 		<fieldset>
-			<legend class="screen-reader-text"><span>Disable media attachment pages</span></legend>
+			<legend class="screen-reader-text"><span><?php _e('Disable media attachment pages', 'C9_Admin'); ?></span></legend>
 			<label for="<?php echo $this->plugin_name; ?>-disable_attachment_pages">
 				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-disable_attachment_pages" name="<?php echo $this->plugin_name; ?>[disable_attachment_pages]" value="1" <?php checked($disable_attachment_pages, 1); ?> />
 				<span><?php esc_attr_e('Disable media attachment pages', 'C9_Admin'); ?></span>
@@ -74,10 +73,34 @@
 
 		<!-- remove injected CSS from gallery -->
 		<fieldset>
-			<legend class="screen-reader-text"><span>Hide developer-specific menu items</span></legend>
+			<legend class="screen-reader-text"><span><?php _e('Hide developer-specific menu items', 'C9_Admin'); ?></span></legend>
 			<label for="<?php echo $this->plugin_name; ?>-hide_developer_items">
 				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_developer_items" name="<?php echo $this->plugin_name; ?>[hide_developer_items]" value="1" <?php checked($hide_developer_items, 1); ?> />
 				<span><?php esc_attr_e('Hide developer-specific menu items', 'C9_Admin'); ?></span>
+			</label>
+		</fieldset>
+
+		<fieldset>
+			<legend class="screen-reader-text"><span><?php _e('Hide SEO settings', 'C9_Admin'); ?></span></legend>
+			<label for="<?php echo $this->plugin_name; ?>-hide_seo_settings">
+				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_seo_settings" name="<?php echo $this->plugin_name; ?>[hide_seo_settings]" value="1" <?php checked($hide_seo_settings, 1); ?> />
+				<span><?php esc_attr_e('Hide SEO settings', 'C9_Admin'); ?></span>
+			</label>
+		</fieldset>
+
+		<fieldset>
+			<legend class="screen-reader-text"><span><?php _e('Hide Matomo Analytics', 'C9_Admin'); ?></span></legend>
+			<label for="<?php echo $this->plugin_name; ?>-hide_matomo_settings">
+				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_matomo_settings" name="<?php echo $this->plugin_name; ?>[hide_matomo_settings]" value="1" <?php checked($hide_matomo_settings, 1); ?> />
+				<span><?php esc_attr_e('Hide Matomo Analytics settings', 'C9_Admin'); ?></span>
+			</label>
+		</fieldset>
+
+		<fieldset>
+			<legend class="screen-reader-text"><span><?php _e('Hide User settings', 'C9_Admin'); ?></span></legend>
+			<label for="<?php echo $this->plugin_name; ?>-hide_user_settings">
+				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_user_settings" name="<?php echo $this->plugin_name; ?>[hide_user_settings]" value="1" <?php checked($hide_user_settings, 1); ?> />
+				<span><?php esc_attr_e('Hide User settings', 'C9_Admin'); ?></span>
 			</label>
 		</fieldset>
 
@@ -91,21 +114,21 @@
 		</fieldset>
 		<!-- add post,page or product slug class to body class -->
 		<fieldset>
-			<legend class="screen-reader-text"><span><?php _e('Make notification visible to admins only', 'C9_Admin'); ?></span></legend>
+			<legend class="screen-reader-text"><span><?php _e('Suppress Update Notifications', 'C9_Admin'); ?></span></legend>
 			<label for="<?php echo $this->plugin_name; ?>-suppress_update_notice">
 				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-suppress_update_notice" name="<?php echo $this->plugin_name; ?>[suppress_update_notice]" value="1" <?php checked($suppress_update_notice, 1); ?> />
 				<span><?php esc_attr_e('Suppress Update Notifications', 'C9_Admin'); ?></span>
 			</label>
 		</fieldset>
 		<fieldset>
-			<legend class="screen-reader-text"><span><?php _e('Make notification visible to admins only', 'C9_Admin'); ?></span></legend>
+			<legend class="screen-reader-text"><span><?php _e('Hide Updates Menu Item', 'C9_Admin'); ?></span></legend>
 			<label for="<?php echo $this->plugin_name; ?>-hide_update_menu_item">
 				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_update_menu_item" name="<?php echo $this->plugin_name; ?>[hide_update_menu_item]" value="1" <?php checked($hide_update_menu_item, 1); ?> />
 				<span><?php esc_attr_e('Hide Updates Menu Item', 'C9_Admin'); ?></span>
 			</label>
 		</fieldset>
 		<fieldset>
-			<legend class="screen-reader-text"><span><?php _e('Make notification visible to admins only', 'C9_Admin'); ?></span></legend>
+			<legend class="screen-reader-text"><span><?php _e('Hide Plugin Menu Item', 'C9_Admin'); ?></span></legend>
 			<label for="<?php echo $this->plugin_name; ?>-hide_plugin_menu_item">
 				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_plugin_menu_item" name="<?php echo $this->plugin_name; ?>[hide_plugin_menu_item]" value="1" <?php checked($hide_plugin_menu_item, 1); ?> />
 				<span><?php esc_attr_e('Hide Plugin Menu Item', 'C9_Admin'); ?></span>
