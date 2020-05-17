@@ -465,6 +465,7 @@ class C9_Admin
 			$submenu['edit.php'][16][0]   = $this->get_label('custom_post_tags_label', 'Blog Tags');
 			$submenu['upload.php'][10][0] = $this->get_label('custom_upload_files_label', 'Upload Files');
 			$submenu['upload.php'][5][0]  = $this->get_label('custom_all_files_label', 'All Files');
+			$menu[100][0]  				  = $this->get_label('custom_analytics_label', 'Matomo Analytics')
 			$menu[101][0]  				  = $this->get_label('custom_analytics_label', 'Matomo Analytics');
 			$nav_links_label = $this->get_label('custom_menu_label', 'Navigation Links');
 
