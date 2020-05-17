@@ -207,6 +207,7 @@ class C9_Admin
 		$valid['custom_post_tags_label']                   = strval($input['custom_post_tags_label']);
 		$valid['custom_upload_files_label']                   = strval($input['custom_upload_files_label']);
 		$valid['custom_all_files_label']                   = strval($input['custom_all_files_label']);
+		$valid['custom_analytics_label']                   = strval($input['custom_analytics_label']);
 
 
 		return $valid;
@@ -464,7 +465,7 @@ class C9_Admin
 			$submenu['edit.php'][16][0]   = $this->get_label('custom_post_tags_label', 'Blog Tags');
 			$submenu['upload.php'][10][0] = $this->get_label('custom_upload_files_label', 'Upload Files');
 			$submenu['upload.php'][5][0]  = $this->get_label('custom_all_files_label', 'All Files');
-
+			$menu[101][0]  				  = $this->get_label('custom_analytics_label', 'Matomo Analytics');
 			$nav_links_label = $this->get_label('custom_menu_label', 'Navigation Links');
 
 			add_menu_page($nav_links_label, $nav_links_label, 'manage_categories', 'nav-menus.php', '', 'dashicons-menu', 1);

@@ -49,7 +49,7 @@
 		$custom_post_tags_label                  = $options['custom_post_tags_label'];
 		$custom_upload_files_label                  = $options['custom_upload_files_label'];
 		$custom_all_files_label                  = $options['custom_all_files_label'];
-
+		$custom_analytics_label                  = $options['custom_analytics_label'];
 		?>
 
 		<?php
@@ -81,7 +81,7 @@
 			<legend class="screen-reader-text"><span><?php _e('Hide default Posts', 'C9_Admin'); ?></span></legend>
 			<label for="<?php echo $this->plugin_name; ?>-hide_default_posts">
 				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_default_posts" name="<?php echo $this->plugin_name; ?>[hide_default_posts]" value="1" <?php checked($hide_default_posts, 1); ?> />
-				<span><?php esc_attr_e('Hide default Posts', 'C9_Admin'); ?></span>
+				<span><?php esc_attr_e('Hide default posts', 'C9_Admin'); ?></span>
 			</label>
 		</fieldset>
 
@@ -105,15 +105,15 @@
 			<legend class="screen-reader-text"><span><?php _e('Hide Matomo Analytics', 'C9_Admin'); ?></span></legend>
 			<label for="<?php echo $this->plugin_name; ?>-hide_matomo_settings">
 				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_matomo_settings" name="<?php echo $this->plugin_name; ?>[hide_matomo_settings]" value="1" <?php checked($hide_matomo_settings, 1); ?> />
-				<span><?php esc_attr_e('Hide Matomo Analytics settings', 'C9_Admin'); ?></span>
+				<span><?php esc_attr_e('Hide Matomo analytics settings', 'C9_Admin'); ?></span>
 			</label>
 		</fieldset>
 
 		<fieldset>
-			<legend class="screen-reader-text"><span><?php _e('Hide User settings', 'C9_Admin'); ?></span></legend>
+			<legend class="screen-reader-text"><span><?php _e('Hide user settings', 'C9_Admin'); ?></span></legend>
 			<label for="<?php echo $this->plugin_name; ?>-hide_user_settings">
 				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_user_settings" name="<?php echo $this->plugin_name; ?>[hide_user_settings]" value="1" <?php checked($hide_user_settings, 1); ?> />
-				<span><?php esc_attr_e('Hide User settings', 'C9_Admin'); ?></span>
+				<span><?php esc_attr_e('Hide user settings', 'C9_Admin'); ?></span>
 			</label>
 		</fieldset>
 
@@ -127,24 +127,24 @@
 		</fieldset>
 		<!-- add post,page or product slug class to body class -->
 		<fieldset>
-			<legend class="screen-reader-text"><span><?php _e('Suppress Update Notifications', 'C9_Admin'); ?></span></legend>
+			<legend class="screen-reader-text"><span><?php _e('Suppress update notifications', 'C9_Admin'); ?></span></legend>
 			<label for="<?php echo $this->plugin_name; ?>-suppress_update_notice">
 				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-suppress_update_notice" name="<?php echo $this->plugin_name; ?>[suppress_update_notice]" value="1" <?php checked($suppress_update_notice, 1); ?> />
-				<span><?php esc_attr_e('Suppress Update Notifications', 'C9_Admin'); ?></span>
+				<span><?php esc_attr_e('Suppress update notifications', 'C9_Admin'); ?></span>
 			</label>
 		</fieldset>
 		<fieldset>
-			<legend class="screen-reader-text"><span><?php _e('Hide Updates Menu Item', 'C9_Admin'); ?></span></legend>
+			<legend class="screen-reader-text"><span><?php _e('Hide Updates menu item', 'C9_Admin'); ?></span></legend>
 			<label for="<?php echo $this->plugin_name; ?>-hide_update_menu_item">
 				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_update_menu_item" name="<?php echo $this->plugin_name; ?>[hide_update_menu_item]" value="1" <?php checked($hide_update_menu_item, 1); ?> />
-				<span><?php esc_attr_e('Hide Updates Menu Item', 'C9_Admin'); ?></span>
+				<span><?php esc_attr_e('Hide updates menu item', 'C9_Admin'); ?></span>
 			</label>
 		</fieldset>
 		<fieldset>
 			<legend class="screen-reader-text"><span><?php _e('Hide Plugin Menu Item', 'C9_Admin'); ?></span></legend>
 			<label for="<?php echo $this->plugin_name; ?>-hide_plugin_menu_item">
 				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_plugin_menu_item" name="<?php echo $this->plugin_name; ?>[hide_plugin_menu_item]" value="1" <?php checked($hide_plugin_menu_item, 1); ?> />
-				<span><?php esc_attr_e('Hide Plugin Menu Item', 'C9_Admin'); ?></span>
+				<span><?php esc_attr_e('Hide plugin menu item', 'C9_Admin'); ?></span>
 			</label>
 		</fieldset>
 		<hr>
@@ -153,7 +153,7 @@
 			<legend class="screen-reader-text"><span><?php _e('Custom Skin Admin', 'C9_Admin'); ?></span></legend>
 			<label for="<?php echo $this->plugin_name; ?>-custom_skin">
 				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-custom_skin" name="<?php echo $this->plugin_name; ?>[custom_skin]" value="1" <?php checked($custom_skin, 1); ?> />
-				<span><?php esc_attr_e('Disable Custom Skin for Admin', 'C9_Admin'); ?></span>
+				<span><?php esc_attr_e('Disable custom skin for admin', 'C9_Admin'); ?></span>
 			</label>
 		</fieldset>
 		<br>
@@ -162,8 +162,8 @@
 		<fieldset>
 			<legend class="screen-reader-text"><span><?php _e('Limit Image Size', 'C9_Admin'); ?></span></legend>
 			<label for="<?php echo $this->plugin_name; ?>-limit_image_size">
-				<div><?php esc_attr_e('Limit Image Size', 'C9_Admin'); ?></div>
 				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-limit_image_size" name="<?php echo $this->plugin_name; ?>[limit_image_size]" value="1" <?php checked($limit_image_size, 1); ?> />
+				<?php esc_attr_e('Limit image size', 'C9_Admin'); ?>			
 			</label>
 			<fieldset>
 				<legend class="screen-reader-text">
@@ -211,8 +211,8 @@
 		<fieldset>
 			<legend class="screen-reader-text"><span><?php _e('Custom Menu Labels', 'C9_Admin'); ?></span></legend>
 			<label for="<?php echo $this->plugin_name; ?>-define_custom_labels">
-				<div><?php esc_attr_e('Define Custom Menu Labels', 'C9_Admin'); ?></div>
 				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-define_custom_labels" name="<?php echo $this->plugin_name; ?>[define_custom_labels]" value="1" <?php checked($define_custom_labels, 1); ?> />
+				<?php esc_attr_e('Define custom labels', 'C9_Admin'); ?>
 			</label>
 			<fieldset>
 				<legend class="screen-reader-text">
@@ -311,6 +311,17 @@
 																																															echo '"';
 																																															?> />
 				</label>
+							<br>
+				<label for="<?php echo $this->plugin_name; ?>-custom_analytics_label">
+					<div><?php esc_attr_e('Matomo Analytics Label', 'C9_Admin'); ?></div>
+					<input type="text" class="small" id="<?php echo $this->plugin_name; ?>-custom_analytics_label" name="<?php echo $this->plugin_name; ?>[custom_analytics_label]" value=<?php
+																																															echo '"';
+																																															if (!empty($custom_analytics_label)) {
+																																																echo $custom_analytics_label;
+																																															}
+																																															echo '"';
+																																															?> />
+				</label>	
 			</fieldset>
 		</fieldset>
 
