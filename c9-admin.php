@@ -57,3 +57,24 @@ function run_c9_admin() {
 	new C9_Admin( 'C9_Admin', C9_ADMIN_VERSION );
 }
 run_c9_admin();
+
+/**
+ * Adds dashboard widgets 
+ *
+ * Since everything within the plugin is registered via hooks,
+ * then kicking off the plugin from this point in the file does
+ * not affect the page life cycle.
+ *
+ * @since 1.0.5
+ */
+add_action('wp_dashboard_setup', 'c9_dashboard_widgets');
+  
+function c9_dashboard_widgets() {
+	global $wp_meta_boxes;
+	
+	wp_add_dashboard_widget('c9_help_widget', 'Theme Support', 'c9_dashboard_help');
+}
+ 
+function c9_dashboard_help() {
+	echo '<p>Welcome to Togo! Need help? Get paid support <a href="https://www.covertnine.com/get-support">here</a>. For community support, head over to: <a href="https://www.covertnine.com/community/" target="_blank">Community Support</a></p>.';
+}
