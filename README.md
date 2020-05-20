@@ -12,6 +12,9 @@ COVERT NINE's admin plugin. It includes some enhancements to the WordPress backe
 - Override admin menu labels
 
 # Changelog
+## 1.0.5
+- Removed Custom Label for Matomo analytics until we can get it working consistently.
+
 ## 1.0.4
 - Added more visibility settings for admin menu in the WordPress Admin for more developer specific menu items and sections including Users, SEO, Matomo, Advanced Custom Fields, default Posts, Theme Editor, Themes.php, Security Audit Log, Anti-Malware Scanner, Search & Filter, WP All Import, and Max Mega Menu.
 - Custom label setting for Matomo Analytics
