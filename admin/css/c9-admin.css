@@ -331,7 +331,3 @@ div.wp-menu-image:before {
 .components-popover__content {
     font-size: 11px;
 }
-
-/* admin menu logo prep*/
-#adminmenu {padding-top: 90px;}
-.folded #adminmenu {padding-top: 40px;}
