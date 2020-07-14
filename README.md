@@ -15,9 +15,12 @@ COVERT NINE's admin plugin. It includes some enhancements to the WordPress backe
 
 # Changelog
 
-## 1.0.5
+## 1.0.6
 
 -   Maintenance update with bug fix to dashicons.
+
+## 1.0.5
+
 -   Removed Custom Label for Matomo analytics until we can get it working consistently.
 
 ## 1.0.4
