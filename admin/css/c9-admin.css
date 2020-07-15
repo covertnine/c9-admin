@@ -290,7 +290,7 @@ div.wp-menu-image:before {
 body .dashicons,
 body .dashicons-before:before,
 body .dashicons :before {
-	font: normal 20px/30px dashicons;
+	font-family: dashicons;
 }
 
 .edit-post-header .components-button.editor-post-preview,
