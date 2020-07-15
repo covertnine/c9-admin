@@ -15,6 +15,10 @@ COVERT NINE's admin plugin. It includes some enhancements to the WordPress backe
 
 # Changelog
 
+## 1.0.7
+
+-   Bug fix to Gutenberg skin for icon labels
+
 ## 1.0.6
 
 -   Maintenance update with bug fix to dashicons.
