@@ -293,6 +293,10 @@ body .dashicons :before {
 	font-family: dashicons;
 }
 
+body .components-button {
+	white-space: nowrap;
+}
+
 .edit-post-header .components-button.editor-post-preview,
 .edit-post-header .components-button.editor-post-publish-button,
 .edit-post-header .components-button.editor-post-publish-panel__toggle,
