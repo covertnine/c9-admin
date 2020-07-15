@@ -293,7 +293,7 @@ body .dashicons :before {
 	font-family: dashicons;
 }
 
-body .components-button {
+.components-popover .components-toolbar .components-button {
 	white-space: nowrap;
 }
 
