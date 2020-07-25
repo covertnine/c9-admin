@@ -11,9 +11,17 @@ COVERT NINE's admin plugin. It includes some enhancements to the WordPress backe
 -   Limit size of image uploads by size, length, and file size
 -   Hide Plugins update page in admin
 -   Hide update notifications to admins
+-   Hide Comments admin section
 -   Override admin menu labels
+-   Add dashboard widget with helpful links
+-   Adds SVG image upload support
+-   Adds column for featured images in posts
 
 # Changelog
+
+## 1.1
+
+- Added hide comment item setting. Added first version of dashboard widget
 
 ## 1.0.7
 
