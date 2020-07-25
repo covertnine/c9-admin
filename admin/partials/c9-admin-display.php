@@ -39,6 +39,7 @@ $min_px = $options['min_px'];
 $custom_skin = $options['custom_skin'];
 $hide_plugin_menu_item = $options['hide_plugin_menu_item'];
 $hide_update_menu_item = $options['hide_update_menu_item'];
+$hide_comment_menu_item = $options['hide_comment_menu_item'];
 
 $define_custom_labels = $options['define_custom_labels'];
 $custom_media_label = $options['custom_media_label'];
@@ -59,119 +60,126 @@ do_settings_sections($this->plugin_name);
 
 <!-- remove some meta and generators from the <head> -->
 <fieldset>
-<legend class="screen-reader-text"><span><?php _e('Disable admin bar on frontend', 'C9_Admin'); ?></span></legend>
+<legend class="screen-reader-text"><span><?php _e('Disable admin bar on frontend', 'c9-admin'); ?></span></legend>
 <label for="<?php echo $this->plugin_name; ?>-disable_admin">
 <input type="checkbox" id="<?php echo $this->plugin_name; ?>-disable_admin" name="<?php echo $this->plugin_name; ?>[disable_admin]" value="1" <?php checked($disable_admin, 1); ?> />
-<span><?php esc_attr_e('Disable admin bar on frontend', 'C9_Admin'); ?></span>
+<span><?php esc_attr_e('Disable admin bar on frontend', 'c9-admin'); ?></span>
 </label>
 </fieldset>
 
 <!-- remove injected CSS from comments widgets -->
 <fieldset>
-<legend class="screen-reader-text"><span><?php _e('Disable media attachment pages', 'C9_Admin'); ?></span></legend>
+<legend class="screen-reader-text"><span><?php _e('Disable media attachment pages', 'c9-admin'); ?></span></legend>
 <label for="<?php echo $this->plugin_name; ?>-disable_attachment_pages">
 <input type="checkbox" id="<?php echo $this->plugin_name; ?>-disable_attachment_pages" name="<?php echo $this->plugin_name; ?>[disable_attachment_pages]" value="1" <?php checked($disable_attachment_pages, 1); ?> />
-<span><?php esc_attr_e('Disable media attachment pages', 'C9_Admin'); ?></span>
+<span><?php esc_attr_e('Disable media attachment pages', 'c9-admin'); ?></span>
 </label>
 </fieldset>
 
 <!-- remove injected CSS from gallery -->
 
 <fieldset>
-<legend class="screen-reader-text"><span><?php _e('Hide default Posts', 'C9_Admin'); ?></span></legend>
+<legend class="screen-reader-text"><span><?php _e('Hide default Posts', 'c9-admin'); ?></span></legend>
 <label for="<?php echo $this->plugin_name; ?>-hide_default_posts">
 <input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_default_posts" name="<?php echo $this->plugin_name; ?>[hide_default_posts]" value="1" <?php checked($hide_default_posts, 1); ?> />
-<span><?php esc_attr_e('Hide default posts', 'C9_Admin'); ?></span>
+<span><?php esc_attr_e('Hide default posts', 'c9-admin'); ?></span>
 </label>
 </fieldset>
 
 <fieldset>
-<legend class="screen-reader-text"><span><?php _e('Hide developer-specific menu items', 'C9_Admin'); ?></span></legend>
+<legend class="screen-reader-text"><span><?php _e('Hide developer-specific menu items', 'c9-admin'); ?></span></legend>
 <label for="<?php echo $this->plugin_name; ?>-hide_developer_items">
 <input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_developer_items" name="<?php echo $this->plugin_name; ?>[hide_developer_items]" value="1" <?php checked($hide_developer_items, 1); ?> />
-<span><?php esc_attr_e('Hide developer-specific menu items', 'C9_Admin'); ?></span>
+<span><?php esc_attr_e('Hide developer-specific menu items', 'c9-admin'); ?></span>
 </label>
 </fieldset>
 
 <fieldset>
-<legend class="screen-reader-text"><span><?php _e('Hide SEO settings', 'C9_Admin'); ?></span></legend>
+<legend class="screen-reader-text"><span><?php _e('Hide SEO settings', 'c9-admin'); ?></span></legend>
 <label for="<?php echo $this->plugin_name; ?>-hide_seo_settings">
 <input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_seo_settings" name="<?php echo $this->plugin_name; ?>[hide_seo_settings]" value="1" <?php checked($hide_seo_settings, 1); ?> />
-<span><?php esc_attr_e('Hide SEO settings', 'C9_Admin'); ?></span>
+<span><?php esc_attr_e('Hide SEO settings', 'c9-admin'); ?></span>
 </label>
 </fieldset>
 
 <fieldset>
-<legend class="screen-reader-text"><span><?php _e('Hide Matomo Analytics', 'C9_Admin'); ?></span></legend>
+<legend class="screen-reader-text"><span><?php _e('Hide Matomo Analytics', 'c9-admin'); ?></span></legend>
 <label for="<?php echo $this->plugin_name; ?>-hide_matomo_settings">
 <input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_matomo_settings" name="<?php echo $this->plugin_name; ?>[hide_matomo_settings]" value="1" <?php checked($hide_matomo_settings, 1); ?> />
-<span><?php esc_attr_e('Hide Matomo analytics settings', 'C9_Admin'); ?></span>
+<span><?php esc_attr_e('Hide Matomo analytics settings', 'c9-admin'); ?></span>
 </label>
 </fieldset>
 
 <fieldset>
-<legend class="screen-reader-text"><span><?php _e('Hide user settings', 'C9_Admin'); ?></span></legend>
+<legend class="screen-reader-text"><span><?php _e('Hide user settings', 'c9-admin'); ?></span></legend>
 <label for="<?php echo $this->plugin_name; ?>-hide_user_settings">
 <input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_user_settings" name="<?php echo $this->plugin_name; ?>[hide_user_settings]" value="1" <?php checked($hide_user_settings, 1); ?> />
-<span><?php esc_attr_e('Hide user settings', 'C9_Admin'); ?></span>
+<span><?php esc_attr_e('Hide user settings', 'c9-admin'); ?></span>
 </label>
 </fieldset>
 
 <!-- add post,page or product slug class to body class -->
 <fieldset>
-<legend class="screen-reader-text"><span><?php _e('Make notification visible to admins only', 'C9_Admin'); ?></span></legend>
+<legend class="screen-reader-text"><span><?php _e('Make notification visible to admins only', 'c9-admin'); ?></span></legend>
 <label for="<?php echo $this->plugin_name; ?>-admin_only_notifications">
 <input type="checkbox" id="<?php echo $this->plugin_name; ?>-admin_only_notifications" name="<?php echo $this->plugin_name; ?>[admin_only_notifications]" value="1" <?php checked($admin_only_notifications, 1); ?> />
-<span><?php esc_attr_e('Make notification visible to admins only', 'C9_Admin'); ?></span>
+<span><?php esc_attr_e('Make notification visible to admins only', 'c9-admin'); ?></span>
 </label>
 </fieldset>
 <!-- add post,page or product slug class to body class -->
 <fieldset>
-<legend class="screen-reader-text"><span><?php _e('Suppress update notifications', 'C9_Admin'); ?></span></legend>
+<legend class="screen-reader-text"><span><?php _e('Suppress update notifications', 'c9-admin'); ?></span></legend>
 <label for="<?php echo $this->plugin_name; ?>-suppress_update_notice">
 <input type="checkbox" id="<?php echo $this->plugin_name; ?>-suppress_update_notice" name="<?php echo $this->plugin_name; ?>[suppress_update_notice]" value="1" <?php checked($suppress_update_notice, 1); ?> />
-<span><?php esc_attr_e('Suppress update notifications', 'C9_Admin'); ?></span>
+<span><?php esc_attr_e('Suppress update notifications', 'c9-admin'); ?></span>
 </label>
 </fieldset>
 <fieldset>
-<legend class="screen-reader-text"><span><?php _e('Hide Updates menu item', 'C9_Admin'); ?></span></legend>
+<legend class="screen-reader-text"><span><?php _e('Hide Updates menu item', 'c9-admin'); ?></span></legend>
 <label for="<?php echo $this->plugin_name; ?>-hide_update_menu_item">
 <input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_update_menu_item" name="<?php echo $this->plugin_name; ?>[hide_update_menu_item]" value="1" <?php checked($hide_update_menu_item, 1); ?> />
-<span><?php esc_attr_e('Hide updates menu item', 'C9_Admin'); ?></span>
+<span><?php esc_attr_e('Hide Updates menu item', 'c9-admin'); ?></span>
 </label>
 </fieldset>
 <fieldset>
-<legend class="screen-reader-text"><span><?php _e('Hide Plugin Menu Item', 'C9_Admin'); ?></span></legend>
+<legend class="screen-reader-text"><span><?php _e('Hide Comments menu item', 'c9-admin'); ?></span></legend>
+<label for="<?php echo $this->plugin_name; ?>-hide_comment_menu_item">
+<input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_comment_menu_item" name="<?php echo $this->plugin_name; ?>[hide_comment_menu_item]" value="1" <?php checked($hide_comment_menu_item, 1); ?> />
+<span><?php esc_attr_e('Hide Comments menu item', 'c9-admin'); ?></span>
+</label>
+</fieldset>
+<fieldset>
+<legend class="screen-reader-text"><span><?php _e('Hide Plugin Menu Item', 'c9-admin'); ?></span></legend>
 <label for="<?php echo $this->plugin_name; ?>-hide_plugin_menu_item">
 <input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_plugin_menu_item" name="<?php echo $this->plugin_name; ?>[hide_plugin_menu_item]" value="1" <?php checked($hide_plugin_menu_item, 1); ?> />
-<span><?php esc_attr_e('Hide plugin menu item', 'C9_Admin'); ?></span>
+<span><?php esc_attr_e('Hide Plugins menu item', 'c9-admin'); ?></span>
 </label>
 </fieldset>
 <hr>
-<h3><?php esc_attr_e('Custom Admin Styles', 'C9_Admin'); ?></h3>
+<h3><?php esc_attr_e('Custom Admin Styles', 'c9-admin'); ?></h3>
 <fieldset>
-<legend class="screen-reader-text"><span><?php _e('Custom Skin Admin', 'C9_Admin'); ?></span></legend>
+<legend class="screen-reader-text"><span><?php _e('Custom Skin Admin', 'c9-admin'); ?></span></legend>
 <label for="<?php echo $this->plugin_name; ?>-custom_skin">
 <input type="checkbox" id="<?php echo $this->plugin_name; ?>-custom_skin" name="<?php echo $this->plugin_name; ?>[custom_skin]" value="1" <?php checked($custom_skin, 1); ?> />
-<span><?php esc_attr_e('Disable custom skin for admin', 'C9_Admin'); ?></span>
+<span><?php esc_attr_e('Disable custom skin for admin', 'c9-admin'); ?></span>
 </label>
 </fieldset>
 
 
 <hr>
-<h3><?php esc_attr_e('Image Size Limit', 'C9_Admin'); ?></h3>
+<h3><?php esc_attr_e('Image Size Limit', 'c9-admin'); ?></h3>
 <fieldset>
-<legend class="screen-reader-text"><span><?php _e('Limit Image Size', 'C9_Admin'); ?></span></legend>
+<legend class="screen-reader-text"><span><?php _e('Limit Image Size', 'c9-admin'); ?></span></legend>
 <label for="<?php echo $this->plugin_name; ?>-limit_image_size">
 <input type="checkbox" id="<?php echo $this->plugin_name; ?>-limit_image_size" name="<?php echo $this->plugin_name; ?>[limit_image_size]" value="1" <?php checked($limit_image_size, 1); ?> />
-<?php esc_attr_e('Limit image size', 'C9_Admin'); ?>
+<?php esc_attr_e('Limit image size', 'c9-admin'); ?>
 </label>
 <fieldset>
 <legend class="screen-reader-text">
-<div><?php _e('Define your local Minimums and Maximums', 'C9_Admin'); ?></div>
+<div><?php _e('Define your local Minimums and Maximums', 'c9-admin'); ?></div>
 </legend>
 <label for="<?php echo $this->plugin_name; ?>-max_px">
-<div><?php esc_attr_e('Max Side Length', 'C9_Admin'); ?></div>
+<div><?php esc_attr_e('Max Side Length', 'c9-admin'); ?></div>
 <input type="text" class="small" id="<?php echo $this->plugin_name; ?>-max_px" name="<?php echo $this->plugin_name; ?>[max_px]" value=<?php
 echo '"';
 if (!empty($max_px)) {
@@ -184,7 +192,7 @@ echo '"';
 
 
 <label for="<?php echo $this->plugin_name; ?>-min_px">
-<div><?php esc_attr_e('Min Side Length', 'C9_Admin'); ?></div>
+<div><?php esc_attr_e('Min Side Length', 'c9-admin'); ?></div>
 <input type="text" class="small" id="<?php echo $this->plugin_name; ?>-min_px" name="<?php echo $this->plugin_name; ?>[min_px]" value=<?php
 echo '"';
 if (!empty($min_px)) {
@@ -197,7 +205,7 @@ echo '"';
 
 
 <label for="<?php echo $this->plugin_name; ?>-max_size">
-<div><?php esc_attr_e('Max File Size', 'C9_Admin'); ?></div>
+<div><?php esc_attr_e('Max File Size', 'c9-admin'); ?></div>
 <input type="text" class="small" id="<?php echo $this->plugin_name; ?>-max_size" name="<?php echo $this->plugin_name; ?>[max_size]" value=<?php
 echo '"';
 if (!empty($max_size)) {
@@ -210,19 +218,19 @@ echo '"';
 </fieldset>
 </fieldset>
 <hr>
-<h3><?php esc_attr_e('Custom Menu Labels', 'C9_Admin'); ?></h3>
+<h3><?php esc_attr_e('Custom Menu Labels', 'c9-admin'); ?></h3>
 <fieldset>
-<legend class="screen-reader-text"><span><?php _e('Custom Menu Labels', 'C9_Admin'); ?></span></legend>
+<legend class="screen-reader-text"><span><?php _e('Custom Menu Labels', 'c9-admin'); ?></span></legend>
 <label for="<?php echo $this->plugin_name; ?>-define_custom_labels">
 <input type="checkbox" id="<?php echo $this->plugin_name; ?>-define_custom_labels" name="<?php echo $this->plugin_name; ?>[define_custom_labels]" value="1" <?php checked($define_custom_labels, 1); ?> />
-<?php esc_attr_e('Define custom labels', 'C9_Admin'); ?>
+<?php esc_attr_e('Define custom labels', 'c9-admin'); ?>
 </label>
 <fieldset>
 <legend class="screen-reader-text">
-<div><?php _e('Menu Label', 'C9_Admin'); ?></div>
+<div><?php _e('Menu Label', 'c9-admin'); ?></div>
 </legend>
 <label for="<?php echo $this->plugin_name; ?>-custom_menu_label">
-<div><?php esc_attr_e('Menu Label', 'C9_Admin'); ?></div>
+<div><?php esc_attr_e('Menu Label', 'c9-admin'); ?></div>
 <input type="text" class="small" id="<?php echo $this->plugin_name; ?>-custom_menu_label" name="<?php echo $this->plugin_name; ?>[custom_menu_label]" value=<?php
 echo '"';
 if (!empty($custom_menu_label)) {
@@ -234,10 +242,10 @@ echo '"';
 
 
 <legend class="screen-reader-text">
-<div><?php _e('Pages Label', 'C9_Admin'); ?></div>
+<div><?php _e('Pages Label', 'c9-admin'); ?></div>
 </legend>
 <label for="<?php echo $this->plugin_name; ?>-custom_pages_label">
-<div><?php esc_attr_e('Pages Label', 'C9_Admin'); ?></div>
+<div><?php esc_attr_e('Pages Label', 'c9-admin'); ?></div>
 <input type="text" class="small" id="<?php echo $this->plugin_name; ?>-custom_pages_label" name="<?php echo $this->plugin_name; ?>[custom_pages_label]" value=<?php
 echo '"';
 if (!empty($custom_pages_label)) {
@@ -249,10 +257,10 @@ echo '"';
 
 
 <legend class="screen-reader-text">
-<div><?php _e('Media Label', 'C9_Admin'); ?></div>
+<div><?php _e('Media Label', 'c9-admin'); ?></div>
 </legend>
 <label for="<?php echo $this->plugin_name; ?>-custom_media_label">
-<div><?php esc_attr_e('Media Label', 'C9_Admin'); ?></div>
+<div><?php esc_attr_e('Media Label', 'c9-admin'); ?></div>
 <input type="text" class="small" id="<?php echo $this->plugin_name; ?>-custom_media_label" name="<?php echo $this->plugin_name; ?>[custom_media_label]" value=<?php
 echo '"';
 if (!empty($custom_media_label)) {
@@ -264,7 +272,7 @@ echo '"';
 
 
 <label for="<?php echo $this->plugin_name; ?>-custom_posts_label">
-<div><?php esc_attr_e('Posts Label', 'C9_Admin'); ?></div>
+<div><?php esc_attr_e('Posts Label', 'c9-admin'); ?></div>
 <input type="text" class="small" id="<?php echo $this->plugin_name; ?>-custom_posts_label" name="<?php echo $this->plugin_name; ?>[custom_posts_label]" value=<?php
 echo '"';
 if (!empty($custom_posts_label)) {
@@ -276,7 +284,7 @@ echo '"';
 
 
 <label for="<?php echo $this->plugin_name; ?>-custom_post_categories_label">
-<div><?php esc_attr_e('Post Categories Label', 'C9_Admin'); ?></div>
+<div><?php esc_attr_e('Post Categories Label', 'c9-admin'); ?></div>
 <input type="text" class="small" id="<?php echo $this->plugin_name; ?>-custom_post_categories_label" name="<?php echo $this->plugin_name; ?>[custom_post_categories_label]" value=<?php
 echo '"';
 if (!empty($custom_post_categories_label)) {
@@ -288,7 +296,7 @@ echo '"';
 
 
 <label for="<?php echo $this->plugin_name; ?>-custom_post_tags_label">
-<div><?php esc_attr_e('Posts Tags Label', 'C9_Admin'); ?></div>
+<div><?php esc_attr_e('Posts Tags Label', 'c9-admin'); ?></div>
 <input type="text" class="small" id="<?php echo $this->plugin_name; ?>-custom_post_tags_label" name="<?php echo $this->plugin_name; ?>[custom_post_tags_label]" value=<?php
 echo '"';
 if (!empty($custom_post_tags_label)) {
@@ -300,7 +308,7 @@ echo '"';
 
 
 <label for="<?php echo $this->plugin_name; ?>-custom_upload_files_label">
-<div><?php esc_attr_e('Upload Files Label', 'C9_Admin'); ?></div>
+<div><?php esc_attr_e('Upload Files Label', 'c9-admin'); ?></div>
 <input type="text" class="small" id="<?php echo $this->plugin_name; ?>-custom_upload_files_label" name="<?php echo $this->plugin_name; ?>[custom_upload_files_label]" value=<?php
 echo '"';
 if (!empty($custom_upload_files_label)) {
@@ -312,7 +320,7 @@ echo '"';
 
 
 <label for="<?php echo $this->plugin_name; ?>-custom_all_files_label">
-<div><?php esc_attr_e('All Files Label', 'C9_Admin'); ?></div>
+<div><?php esc_attr_e('All Files Label', 'c9-admin'); ?></div>
 <input type="text" class="small" id="<?php echo $this->plugin_name; ?>-custom_all_files_label" name="<?php echo $this->plugin_name; ?>[custom_all_files_label]" value=<?php
 echo '"';
 if (!empty($custom_all_files_label)) {
