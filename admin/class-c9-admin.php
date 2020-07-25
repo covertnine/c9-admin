@@ -453,7 +453,6 @@ class C9_Admin
     {
 
         return !ctype_space(get_option($this->plugin_name)[$option_name]) && get_option($this->plugin_name)[$option_name] ? get_option($this->plugin_name)[$option_name] : $default;
-
     }
 
     /**
@@ -519,8 +518,22 @@ class C9_Admin
         remove_meta_box('dashboard_primary', 'dashboard', 'side'); // WordPress.com blog
         remove_meta_box('dashboard_secondary', 'dashboard', 'side'); // other WordPress news
         remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
-        remove_meta_box('dashboard_right_now', 'dashboard', 'normal');
+        //remove_meta_box('dashboard_right_now', 'dashboard', 'normal');
         remove_meta_box('dashboard_activity', 'dashboard', 'normal');
+        //remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
+
+        global $wp_meta_boxes;
+
+        //move right now to side
+        $dashboard_right_now = $wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now'];
+        unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now'] );
+        $wp_meta_boxes['dashboard']['side']['core']['dashboard_right_now'] = $dashboard_right_now;
+
+        //move site health to side
+        $dashboard_site_health = $wp_meta_boxes['dashboard']['normal']['core']['dashboard_site_health'];
+        unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_site_health'] );
+        $wp_meta_boxes['dashboard']['side']['core']['dashboard_site_health'] = $dashboard_site_health;
+
     }
 
     /**
@@ -533,9 +546,27 @@ class C9_Admin
 
         wp_add_dashboard_widget(
             'c9-admin-dashboard', // Widget slug.
-            __('C9 Website Admin Dashboard', 'c9-admin'), // Title.
+            esc_html__('C9 Website Admin Dashboard', 'c9-admin'), // Title.
             array($this, 'c9_admin_dashboard_render') // Display function.
         );
+
+        // Globalize the metaboxes array, this holds all the widgets for wp-admin.
+        global $wp_meta_boxes;
+
+        // Get the regular dashboard widgets array 
+        // (which already has our new widget but appended at the end).
+        $default_dashboard = $wp_meta_boxes['dashboard']['normal']['core'];
+
+        // Backup and delete our new dashboard widget from the end of the array.
+        $c9_widget_backup = array('c9-admin-dashboard' => $default_dashboard['c9-admin-dashboard']);
+        unset($default_dashboard['c9-admin-dashboard']);
+
+        // Merge the two arrays together so our widget is at the beginning.
+        $sorted_dashboard = array_merge($c9_widget_backup, $default_dashboard);
+
+        // Save the sorted array back into the original metaboxes. 
+        $wp_meta_boxes['dashboard']['normal']['core'] = $sorted_dashboard;
+
     }
 
     /**
@@ -548,7 +579,7 @@ class C9_Admin
 
         echo '
         <div class="c9-admin-dashboard-widget">
-        <h3>' . __('Make changes to site content', 'c9-admin') . '</h3>
+        <h3>' . __('Add or Edit Content', 'c9-admin') . '</h3>
         <ul>
         <li><a href="' . admin_url('post-new.php?post_type=post') . '" class="btn-c9-admin btn-c9admin-addpost">' . $this->get_label('custom_posts_label', 'Add Post') . '</a></li>
         <li><a href="' . admin_url('post-new.php?post_type=page') . '" class="btn-c9-admin btn-c9admin-addpage">' . $this->get_label('custom_pages_label', 'Add Page') . '</a></li>
