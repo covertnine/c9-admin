@@ -10,7 +10,7 @@
  * Plugin Name:       C9 Admin
  * Plugin URI:        https://github.com/covertnine/c9-admin
  * Description:       Essential WordPress admin features for managing client sites including customization of admin screens, labels, plugin/theme update screen visibility and more.
- * Version:           1.0.7
+ * Version:           1.1
  * Author:            COVERT NINE
  * Author URI:        https://www.covertnine.com
  * License:           GPL-2.0+
@@ -58,6 +58,24 @@ if ( ! function_exists( 'c9_mime_types' ) ) {
 	}
 }
 add_filter( 'upload_mimes', 'c9_mime_types' );
+
+if ( ! function_exists( 'c9_remove_dashboard_widgets') ) {
+	function c9_remove_dashboard_widgets() {
+		//first parameter -> slig/id of the widget
+		//second parameter -> where the meta box is displayed, it can be page, post, dashboard etc.
+		//third parameter -> position of the meta box. If you have used wp_add_dashboard_widget to create the widget or deleting default widget then provide the value "normal".
+		remove_meta_box('dashboard_incoming_links', 'dashboard', "normal");
+		// remove_meta_box('dashboard_plugins', 'dashboard', 'normal');
+		// remove_meta_box('dashboard_primary', 'dashboard', 'normal');
+		// remove_meta_box('dashboard_secondary', 'dashboard', 'normal');
+		remove_meta_box('dashboard_quick_press', 'dashboard', 'normal');
+		// remove_meta_box('dashboard_recent_drafts', 'dashboard', 'normal');
+		// remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
+		remove_meta_box('dashboard_right_now', 'dashboard', 'normal');
+		remove_meta_box('dashboard_activity', 'dashboard', 'normal');
+	}
+}
+add_action('wp_dashboard_setup', 'c9_remove_dashboard_widgets');
 
 /**
  * Begins execution of the plugin.
