@@ -433,11 +433,11 @@ body .dashicons :before {
 }
 
 .btn-c9admin-settings:before {
-    content: '\f105';
+    content: '\f308';
 }
 
 .btn-c9admin-reusable:before {
-    content: '\f105';
+    content: '\f478';
 }
 
 .btn-c9admin-media:before {
