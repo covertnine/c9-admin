@@ -526,14 +526,13 @@ class C9_Admin
 
         //move right now to side
         $dashboard_right_now = $wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now'];
-        unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now'] );
+        unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
         $wp_meta_boxes['dashboard']['side']['core']['dashboard_right_now'] = $dashboard_right_now;
 
         //move site health to side
         $dashboard_site_health = $wp_meta_boxes['dashboard']['normal']['core']['dashboard_site_health'];
-        unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_site_health'] );
+        unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_site_health']);
         $wp_meta_boxes['dashboard']['side']['core']['dashboard_site_health'] = $dashboard_site_health;
-
     }
 
     /**
@@ -566,7 +565,6 @@ class C9_Admin
 
         // Save the sorted array back into the original metaboxes. 
         $wp_meta_boxes['dashboard']['normal']['core'] = $sorted_dashboard;
-
     }
 
     /**
@@ -581,8 +579,8 @@ class C9_Admin
         <div class="c9-admin-dashboard-widget">
         <h3>' . __('Add or Edit Content', 'c9-admin') . '</h3>
         <ul>
-        <li><a href="' . admin_url('post-new.php?post_type=post') . '" class="btn-c9-admin btn-c9admin-addpost">' . $this->get_label('custom_posts_label', 'Add Post') . '</a></li>
-        <li><a href="' . admin_url('post-new.php?post_type=page') . '" class="btn-c9-admin btn-c9admin-addpage">' . $this->get_label('custom_pages_label', 'Add Page') . '</a></li>
+        <li><a href="' . admin_url('post-new.php?post_type=post') . '" class="btn-c9-admin btn-c9admin-addpost">Add ' . $this->get_label('custom_posts_label', 'Post') . '</a></li>
+        <li><a href="' . admin_url('post-new.php?post_type=page') . '" class="btn-c9-admin btn-c9admin-addpage">Add ' . $this->get_label('custom_pages_label', 'Page') . '</a></li>
         <li><a href="' . admin_url('customize.php?autofocus[panel]=nav_menus') . '" class="btn-c9-admin btn-c9admin-navigation">Navigation Links</a></li>
         <li><a href="' . admin_url('customize.php?autofocus[panel]=widgets') . '" class="btn-c9-admin btn-c9admin-footer">Footer Content</a></li>
         </ul>
