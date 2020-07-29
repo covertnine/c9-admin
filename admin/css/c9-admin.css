@@ -4,6 +4,7 @@
  */
 
 @import url("https://fonts.googleapis.com/css?family=Muli:400,700,900&display=swap");
+
 body {
     /* background-color: #f4f4f4; */
     font-family: "Muli", "helvetica neue", helvetica, sans-serif;
@@ -96,14 +97,12 @@ body:not(.folded) #adminmenu .opensub.wp-has-current-submenu:focus+.wp-submenu l
     background-color: #23282d;
 }
 
-
 /* hide admin menu triangles to right of active item */
 
 ul#adminmenu a.wp-has-current-submenu:after,
 ul#adminmenu>li.current>a.current:after {
     display: none;
 }
-
 
 /* nav icons */
 
@@ -119,7 +118,6 @@ div.wp-menu-image:before {
 .folded #adminmenu div.wp-menu-image {
     margin-left: -15px;
 }
-
 
 /* nav links */
 
@@ -143,9 +141,7 @@ div.wp-menu-image:before {
     /* text-align: center !important; */
 }
 
-
 /* submenu links are light cause they're on a dark bg*/
-
 
 /* creating problems on click */
 
@@ -216,7 +212,6 @@ div.wp-menu-image:before {
     display: block;
 }
 
-
 /* move over wp content for larger padded admin side menu*/
 
 #wpcontent,
@@ -251,7 +246,6 @@ div.wp-menu-image:before {
     top: 0px;
 }
 
-
 /*hide submenu triangle*/
 
 #adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover:after,
@@ -259,13 +253,11 @@ div.wp-menu-image:before {
     display: none;
 }
 
-
 /*hide WP footer message*/
 
 #wpfooter #footer-left {
     display: none;
 }
-
 
 /* wp buttons */
 
@@ -277,7 +269,7 @@ div.wp-menu-image:before {
 .meta-box-sortables h2 span,
 .post-publish-panel__postpublish-buttons .components-button {
     font-family: "Muli", "helvetica neue", helvetica, sans-serif;
-    letter-spacing: .2px;
+    letter-spacing: 0.2px;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 10px;
@@ -288,7 +280,6 @@ div.wp-menu-image:before {
 .wp-core-ui button.button-primary {
     color: #fff;
 }
-
 
 /* default dashicons */
 
@@ -315,7 +306,6 @@ body .dashicons :before {
     text-transform: uppercase;
 }
 
-
 /* 3 dots menu from Gutenberg edit screen */
 
 .components-menu-item__button .components-menu-item__info-wrapper {
@@ -326,13 +316,11 @@ body .dashicons :before {
     font-size: 10px;
 }
 
-
 /* inspector buttons height */
 
 .components-panel__body.plugin-c9-panel .components-button.is-large {
     height: auto;
 }
-
 
 /* side bar adjustments */
 
@@ -350,9 +338,7 @@ body .dashicons :before {
     margin-bottom: 0px;
 }
 
-
 /* tooltip pop over adjustments */
-
 
 /* URL tooltips in editor */
 
@@ -360,9 +346,7 @@ body .dashicons :before {
     font-size: 11px;
 }
 
-
 /* admin dashboard widget */
-
 #dashboard-widgets .inside .c9-admin-dashboard-widget h3 {
     font-weight: bold;
 }
@@ -384,10 +368,10 @@ body .dashicons :before {
 
 .c9-admin-dashboard-widget ul li .btn-c9-admin {
     border: 1px solid rgba(79, 89, 105, 0.2);
-    font: bold 10px/10px 'muli', sans-serif;
+    font: bold 10px/10px "muli", sans-serif;
     text-transform: uppercase;
     border-radius: 4px;
-    padding: 24px 12px 18px 12px;
+    padding: 24px 6px 18px 6px;
     letter-spacing: 0.1em;
     background: #005d8c;
     color: #fff;
@@ -395,6 +379,18 @@ body .dashicons :before {
     margin: 0px 2px;
     text-align: center;
     white-space: nowrap;
+}
+
+@media only screen and (min-width: 1500px) {
+    .c9-admin-dashboard-widget ul li .btn-c9-admin {
+        white-space: initial;
+    }
+}
+
+@media only screen and (max-width: 1260px) {
+    .c9-admin-dashboard-widget ul li .btn-c9-admin {
+        white-space: initial;
+    }
 }
 
 .c9-admin-dashboard-widget ul li .btn-c9-admin:hover {
@@ -406,56 +402,56 @@ body .dashicons :before {
 .c9-admin-dashboard-widget ul li .btn-c9-admin:before {
     display: block;
     font-size: 30px;
-    font-family: 'dashicons';
+    font-family: "dashicons";
     margin: 0px auto 15px auto;
     text-align: center;
     font-weight: 400;
 }
 
 .btn-c9admin-addpost:before {
-    content: '\f109';
+    content: "\f109";
 }
 
 .btn-c9admin-addpage:before {
-    content: '\f105';
+    content: "\f105";
 }
 
 .btn-c9admin-navigation:before {
-    content: '\f333';
+    content: "\f333";
 }
 
 .btn-c9admin-footer:before {
-    content: '\f479';
+    content: "\f479";
 }
 
 .btn-c9admin-theme:before {
-    content: '\f100';
+    content: "\f100";
 }
 
 .btn-c9admin-settings:before {
-    content: '\f308';
+    content: "\f308";
 }
 
 .btn-c9admin-reusable:before {
-    content: '\f478';
+    content: "\f478";
 }
 
 .btn-c9admin-media:before {
-    content: '\f104';
+    content: "\f104";
 }
 
 .btn-c9admin-blocks:before {
-    content: '\f538';
+    content: "\f538";
 }
 
 .btn-c9admin-support:before {
-    content: '\f338';
+    content: "\f338";
 }
 
 .btn-c9admin-docs:before {
-    content: '\f330';
+    content: "\f330";
 }
 
 .btn-c9admin-account:before {
-    content: '\f322';
+    content: "\f322";
 }
