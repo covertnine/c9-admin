@@ -19,6 +19,10 @@ COVERT NINE's admin plugin. It includes some enhancements to the WordPress backe
 
 # Changelog
 
+## 1.1.1
+
+- Adjustments to dashboard widget CSS for all screen sizes
+
 ## 1.1
 
 - Added hide comment item setting. Added first version of dashboard widget
