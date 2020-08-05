@@ -5,7 +5,7 @@ Donate link: https://www.covertnine.com/about
 Requires at least: 4.9.2
 Tested up to: 5.4.2
 Requires PHP: 7.1
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,11 +36,11 @@ Yes. Click on Settings > C9 Admin and then check the \"Disable Custom Skin For A
 3. admin-3.jpg
 
 == Changelog ==
-v1.1.1
+v1.1.2
 
 Initial public release of C9 Admin plugin.
 
 == Upgrade Notice ==
-v1.1.1
+v1.1.2
 
 Initial plugin release.
