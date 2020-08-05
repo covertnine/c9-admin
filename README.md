@@ -1,6 +1,6 @@
 # C9 Admin Plugin
 
-COVERT NINE's admin plugin. It includes some enhancements to the WordPress backend including a collapsed navigation on post and page editing screens for allowing for more space in the editor, a limit to image sizes to prompt users who are uploading high resolution images to a web site that they may want to scale down, and several other enhancements to WordPress.
+A WordPress Admin enhancement plugin with a custom skin, and many other customizations for WordPress and the Dashboard. Settings include customizing labels of the admin menu links, hiding admin sections like Comments, Posts, Plugins, hiding the updates and notifications, hiding admin menu bar, hiding attachment pages. Also includes a new default dashboard widget with links to key parts of the WordPress Admin.
 
 ## C9 Admin Options
 
