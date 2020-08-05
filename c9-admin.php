@@ -8,7 +8,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       C9 Admin Dashboard
- * Plugin URI:        https://www.covertnine.com/
+ * Plugin URI:        https://www.covertnine.com/c9-admin-dashboard-plugin
  * Description:       Essential WordPress admin features for managing client sites including customization of admin screens, labels, plugin/theme update screen visibility and more.
  * Version:           1.1.2
  * Author:            COVERT NINE

@@ -8,6 +8,8 @@ Requires PHP: 7.1
 Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: c9-admin
+Domain Path: /languages
 
 A WordPress Admin enhancement plugin with a custom skin, and many other customizations for WordPress and the Dashboard. Settings include customizing labels of the admin menu links, hiding admin sections like Comments, Posts, Plugins, hiding the updates and notifications, hiding admin menu bar, hiding attachment pages. Also includes a new default dashboard widget with links to key parts of the WordPress Admin.
 
