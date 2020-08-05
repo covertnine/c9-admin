@@ -7,10 +7,10 @@
  * @since   1.0.1
  *
  * @wordpress-plugin
- * Plugin Name:       C9 Admin
+ * Plugin Name:       C9 Admin Dashboard
  * Plugin URI:        https://github.com/covertnine/c9-admin
  * Description:       Essential WordPress admin features for managing client sites including customization of admin screens, labels, plugin/theme update screen visibility and more.
- * Version:           1.1.1
+ * Version:           1.1.2
  * Author:            COVERT NINE
  * Author URI:        https://www.covertnine.com
  * License:           GPL-2.0+
@@ -35,7 +35,7 @@ if ( ! defined( 'ORPHAN_ATTACHMENT_REDIRECT_CODE' ) ) {
 /**
  * Currently plugin version.
  */
-define( 'C9_ADMIN_VERSION', '1.1.1' );
+define( 'C9_ADMIN_VERSION', '1.1.2' );
 
 
 /**
