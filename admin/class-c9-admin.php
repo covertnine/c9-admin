@@ -125,9 +125,9 @@ class C9_Admin
     public function enqueue_scripts()
     {
 
-        wp_enqueue_script('hoverintent', plugin_dir_url(__FILE__) . 'js/jquery.hoverIntent.min.js', array('jquery'), $this->version, false);
+        wp_enqueue_script('hoverIntent', '', array('jquery'), $this->version, false);
 
-        wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/c9-admin.js', array('hoverintent'), $this->version, false);
+        wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/c9-admin.js', array('jquery'), $this->version, false);
     }
 
     /**
