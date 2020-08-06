@@ -1,0 +1,250 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: C9 Admin Dashboard\n"
+"POT-Creation-Date: 2020-08-05 19:51-0500\n"
+"PO-Revision-Date: 2020-08-05 19:51-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: c9-admin.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: admin/class-c9-admin.php:90
+msgid "Image"
+msgstr ""
+
+#: admin/class-c9-admin.php:155
+msgid "Settings"
+msgstr ""
+
+#: admin/class-c9-admin.php:258 admin/class-c9-admin.php:277
+msgid "Comments"
+msgstr ""
+
+#: admin/class-c9-admin.php:266
+msgid "Audit Log"
+msgstr ""
+
+#: admin/class-c9-admin.php:267
+msgid "Search &amp; Filter"
+msgstr ""
+
+#: admin/class-c9-admin.php:268
+msgid "Mega Menu"
+msgstr ""
+
+#: admin/class-c9-admin.php:269
+msgid "Max Mega Menu"
+msgstr ""
+
+#: admin/class-c9-admin.php:273
+msgid "Plugins"
+msgstr ""
+
+#: admin/class-c9-admin.php:548
+msgid "C9 Website Admin Dashboard"
+msgstr ""
+
+#: admin/class-c9-admin.php:580
+msgid "Add or Edit Content"
+msgstr ""
+
+#: admin/class-c9-admin.php:589
+msgid "Theme Settings + Media Library"
+msgstr ""
+
+#: admin/class-c9-admin.php:597
+msgid "Using C9 Blocks"
+msgstr ""
+
+#: admin/class-c9-admin.php:604
+msgid "Get Support"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:63
+#: admin/partials/c9-admin-display.php:66
+msgid "Disable admin bar on frontend"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:72
+#: admin/partials/c9-admin-display.php:75
+msgid "Disable media attachment pages"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:82
+msgid "Hide default Posts"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:85
+msgid "Hide default posts"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:90
+#: admin/partials/c9-admin-display.php:93
+msgid "Hide developer-specific menu items"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:98
+#: admin/partials/c9-admin-display.php:101
+msgid "Hide SEO settings"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:106
+msgid "Hide Matomo Analytics"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:109
+msgid "Hide Matomo analytics settings"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:114
+#: admin/partials/c9-admin-display.php:117
+msgid "Hide user settings"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:123
+#: admin/partials/c9-admin-display.php:126
+msgid "Make notification visible to admins only"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:131
+#: admin/partials/c9-admin-display.php:134
+msgid "Suppress update notifications"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:138
+#: admin/partials/c9-admin-display.php:141
+msgid "Hide Updates menu item"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:145
+#: admin/partials/c9-admin-display.php:148
+msgid "Hide Comments menu item"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:152
+msgid "Hide Plugin Menu Item"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:155
+msgid "Hide Plugins menu item"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:159
+msgid "Custom Admin Styles"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:161
+msgid "Custom Skin Admin"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:164
+msgid "Disable custom skin for admin"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:170
+msgid "Image Size Limit"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:172
+msgid "Limit Image Size"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:175
+msgid "Limit image size"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:179
+msgid "Define your local Minimums and Maximums"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:182
+msgid "Max Side Length"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:195
+msgid "Min Side Length"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:208
+msgid "Max File Size"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:221
+#: admin/partials/c9-admin-display.php:223
+msgid "Custom Menu Labels"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:226
+msgid "Define custom labels"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:230
+#: admin/partials/c9-admin-display.php:233
+msgid "Menu Label"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:245
+#: admin/partials/c9-admin-display.php:248
+msgid "Pages Label"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:260
+#: admin/partials/c9-admin-display.php:263
+msgid "Media Label"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:275
+msgid "Posts Label"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:287
+msgid "Post Categories Label"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:299
+msgid "Posts Tags Label"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:311
+msgid "Upload Files Label"
+msgstr ""
+
+#: admin/partials/c9-admin-display.php:323
+msgid "All Files Label"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "C9 Admin Dashboard"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://www.covertnine.com/c9-admin-dashboard-plugin"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Essential WordPress admin features for managing client sites including "
+"customization of admin screens, labels, plugin/theme update screen "
+"visibility and more."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "COVERT NINE"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.covertnine.com"
+msgstr ""

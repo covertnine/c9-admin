@@ -33,9 +33,10 @@ Can I disable the admin custom design?
 Yes. Click on Settings > C9 Admin and then check the \"Disable Custom Skin For Admin\" setting.
 
 == Screenshots ==
-1. admin-1.jpg
-2. admin-2.jpg
-3. admin-3.jpg
+1. C9 Admin Dashboard Widget
+2. C9 Admin Custom Skin Hover Style
+3. WordPress Block Editor with C9 Admin activated
+4. C9 Admin Settings - Control Admin Screens and Labels
 
 == Changelog ==
 v1.1.2
