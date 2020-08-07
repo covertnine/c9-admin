@@ -5,8 +5,7 @@
 
 @import url("https://fonts.googleapis.com/css?family=Muli:400,700,900&display=swap");
 
-body {
-    /* background-color: #f4f4f4; */
+#wpwrap {
     font-family: "Muli", "helvetica neue", helvetica, sans-serif;
 }
 
@@ -151,7 +150,7 @@ div.wp-menu-image:before {
 
 #adminmenu a {
     color: #191e23;
-    letter-spacing: 0.1em;
+    letter-spacing: 1px;
 }
 
 #adminmenu .wp-submenu a.current {
