@@ -1,4 +1,5 @@
 <?php
+
 /**
  * C9 Admin Base
  *
@@ -20,44 +21,42 @@
  */
 
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
+if (!defined('WPINC')) {
 	die;
 }
 
-if ( ! defined( 'ATTACHMENT_REDIRECT_CODE' ) ) {
-	define( 'ATTACHMENT_REDIRECT_CODE', '301' ); // Default redirect code for attachments with existing parent post.
+if (!defined('C9_ADMIN_ATTACHMENT_REDIRECT_CODE')) {
+	define('C9_ADMIN_ATTACHMENT_REDIRECT_CODE', '301'); // Default redirect code for attachments with existing parent post.
 }
 
-if ( ! defined( 'ORPHAN_ATTACHMENT_REDIRECT_CODE' ) ) {
-	define( 'ORPHAN_ATTACHMENT_REDIRECT_CODE', '302' ); // Default redirect code for attachments with no parent post.
+if (!defined('C9_ADMIN_ORPHAN_ATTACHMENT_REDIRECT_CODE')) {
+	define('C9_ADMIN_ORPHAN_ATTACHMENT_REDIRECT_CODE', '302'); // Default redirect code for attachments with no parent post.
 }
 
 /**
  * Currently plugin version.
  */
-define( 'C9_ADMIN_VERSION', '1.1.2' );
+define('C9_ADMIN_VERSION', '1.1.2');
 
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'admin/class-c9-admin.php';
+require plugin_dir_path(__FILE__) . 'admin/class-c9-admin.php';
 
-
-if ( ! function_exists( 'c9_mime_types' ) ) {
-	/**
-	 * Add different filetypes to allowed uploads
-	 */
-	function c9_mime_types( $mimes ) {
+/**
+ * Add different filetypes to allowed uploads
+ */
+function c9_admin_mime_types($mimes)
+{
 	$mimes['svg']     = 'image/svg+xml';
 	$mimes['ogg|oga'] = 'audio/ogg';
 	$mimes['webm']    = 'video/webm';
 
 	return $mimes;
-	}
 }
-add_filter( 'upload_mimes', 'c9_mime_types' );    
+add_filter('upload_mimes', 'c9_admin_mime_types');
 
 /**
  * Begins execution of the plugin.
@@ -68,7 +67,8 @@ add_filter( 'upload_mimes', 'c9_mime_types' );
  *
  * @since 1.0.0
  */
-function run_c9_admin() {
-	new C9_Admin( 'C9_Admin', C9_ADMIN_VERSION );
+function run_c9_admin()
+{
+	new C9_Admin('C9_Admin', C9_ADMIN_VERSION);
 }
 run_c9_admin();
