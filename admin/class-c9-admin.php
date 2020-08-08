@@ -400,11 +400,11 @@ class C9_Admin
                     wp_die('Page not found.', '404 - Page not found', 404); // Prevent endless redirection loop in old WP releases and redirecting to trashed posts if an attachment page is visited when parent post is in trash
                 }
 
-                wp_safe_redirect(get_permalink($post->post_parent), ATTACHMENT_REDIRECT_CODE); // Redirect to post/page from where attachment was uploaded
+                wp_safe_redirect(get_permalink($post->post_parent), C9_ADMIN_ATTACHMENT_REDIRECT_CODE); // Redirect to post/page from where attachment was uploaded
                 exit;
             } elseif (is_attachment() && isset($post->post_parent) && is_numeric($post->post_parent) && ($post->post_parent < 1)) {
 
-                wp_safe_redirect(get_bloginfo('wpurl'), ORPHAN_ATTACHMENT_REDIRECT_CODE); // Redirect to home for attachments not associated to any post/page
+                wp_safe_redirect(get_bloginfo('wpurl'), C9_ADMIN_ORPHAN_ATTACHMENT_REDIRECT_CODE); // Redirect to home for attachments not associated to any post/page
                 exit;
             }
         } else {
