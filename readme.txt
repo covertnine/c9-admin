@@ -14,7 +14,7 @@ Domain Path: /languages
 A WordPress Admin enhancement plugin with a custom skin, and many other customizations for WordPress and the Dashboard. Settings include customizing labels of the admin menu links, hiding admin sections like Comments, Posts, Plugins, hiding the updates and notifications, hiding admin menu bar, hiding attachment pages. Also includes a new default dashboard widget with links to key parts of the WordPress Admin.
 
 == Description ==
-COVERT NINE\'s admin dashboard plugin. It includes settings and enhancements to the WordPress backend including hiding specific admin sections like Plugins, Posts, Comments, support for more file uploads like SVG and WEBM, a collapsed navigation on post and page editing screen space, a limit to image sizes to prompt users who are uploading high resolution images, a dashboard widget pointing to key admin pages in the customizer,  an interface for customizing admin labels, and several other enhancements to WordPress\' Admin.
+COVERT NINE's admin dashboard plugin. It includes settings and enhancements to the WordPress backend including hiding specific admin sections like Plugins, Posts, Comments, support for more file uploads like SVG and WEBM, a collapsed navigation on post and page editing screen space, a limit to image sizes to prompt users who are uploading high resolution images, a dashboard widget pointing to key admin pages in the customizer,  an interface for customizing admin labels, and several other enhancements to WordPress' Admin.
 
 == Installation ==
 To install the C9 Admin Plugin, do the following:
@@ -26,11 +26,11 @@ To install the C9 Admin Plugin, do the following:
 == Frequently Asked Questions ==
 How do I find my plugins once I activate this plugin?
 
-Click the Settings > C9 Admin link from the admin. Uncheck the \"Hide Plugins Page\" setting to begin seeing the Plugins menu.
+Click the Settings > C9 Admin link from the admin. Uncheck the "Hide Plugins Page" setting to begin seeing the Plugins menu.
 
 Can I disable the admin custom design? 
 
-Yes. Click on Settings > C9 Admin and then check the \"Disable Custom Skin For Admin\" setting.
+Yes. Click on Settings > C9 Admin and then check the Disable Custom Skin For Admin setting.
 
 == Screenshots ==
 1. C9 Admin Dashboard Widget
