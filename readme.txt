@@ -1,9 +1,9 @@
-=== C9 Admin ===
+=== C9 Admin Dashboard ===
 Contributors: ttoomey, samirillion
-Tags: admin, admin dashboard, dashboard
+Tags: wordpress dashboard, admin dashboard, dashboard, dashboard widgets, admin
 Donate link: https://www.covertnine.com/about
 Requires at least: 4.9.2
-Tested up to: 5.4.2
+Tested up to: 5.5
 Requires PHP: 7.1
 Stable tag: 1.1.2
 License: GPLv2 or later
@@ -11,10 +11,19 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: c9-admin
 Domain Path: /languages
 
-A WordPress Admin enhancement plugin with a custom skin, and many other customizations for WordPress and the Dashboard. Settings include customizing labels of the admin menu links, hiding admin sections like Comments, Posts, Plugins, hiding the updates and notifications, hiding admin menu bar, hiding attachment pages. Also includes a new default dashboard widget with links to key parts of the WordPress Admin.
+Customize the look and functionality of the WordPress admin for your agency clients.
 
 == Description ==
-COVERT NINE's admin dashboard plugin. It includes settings and enhancements to the WordPress backend including hiding specific admin sections like Plugins, Posts, Comments, support for more file uploads like SVG and WEBM, a collapsed navigation on post and page editing screen space, a limit to image sizes to prompt users who are uploading high resolution images, a dashboard widget pointing to key admin pages in the customizer,  an interface for customizing admin labels, and several other enhancements to WordPress' Admin.
+[COVERT NINE](https://www.covertnine.com)'s admin dashboard plugin for improving the design and functionality of the WordPress admin and dashboard. Includes settings and enhancements for hiding specific admin sections like Plugins, Posts, Comments, support for more file uploads like SVG and WEBM, sensible image upload size limits for high resolution images, a dashboard widget pointing to key admin pages in the customizer, and an interface for customizing admin labels.
+
+== Removes WordPress Dashboard Widgets ==
+Upon plugin activation, a new dashboard widget is added with links to key admin pages like widgets and menus, and disables dashboard widgets for WordPress Events, Activity, and Quick Draft.
+
+== Simplify the WordPress Admin Dashboard for Your Clients ==
+Hide specific developer sections of the admin like malware scanning, theme settings, and tools, and even hide the plugins and updates menus so users won't be tempted to update plugins that aren't ready to be updated. Re-label specific sections of the admin like "posts" to be more clear for users who use posts as news, or blog posts. The plugin also moves the navigation links/Menus out from under the Appearance Menu and moves it into the main admin menu bar.
+
+=== C9 WordPress Platform ===
+If you build websites for clients and like the C9 Admin Dashboard plugin, then you'll love our [block-based WordPress themes](https://www.covertnine.com/forms/c9-beta) that work in tandem with the [C9 Blocks plugin](https://wordpress.org/plugins/c9-blocks).
 
 == Installation ==
 To install the C9 Admin Plugin, do the following:
