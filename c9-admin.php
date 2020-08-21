@@ -11,7 +11,7 @@
  * Plugin Name:       C9 Admin Dashboard
  * Plugin URI:        https://www.covertnine.com/c9-admin-dashboard-plugin
  * Description:       Essential WordPress admin features for managing client sites including customization of admin screens, labels, plugin/theme update screen visibility and more.
- * Version:           1.1.2
+ * Version:           1.1.3
  * Author:            COVERT NINE
  * Author URI:        https://www.covertnine.com
  * License:           GPL-2.0+
@@ -36,7 +36,7 @@ if (!defined('C9_ADMIN_ORPHAN_ATTACHMENT_REDIRECT_CODE')) {
 /**
  * Currently plugin version.
  */
-define('C9_ADMIN_VERSION', '1.1.2');
+define('C9_ADMIN_VERSION', '1.1.3');
 
 
 /**
@@ -57,6 +57,66 @@ function c9_admin_mime_types($mimes)
 	return $mimes;
 }
 add_filter('upload_mimes', 'c9_admin_mime_types');
+
+/**
+ * Add logo to WordPress Admin Login
+ */
+function c9_login_logo() {
+
+	$c9_logo_id 	= get_theme_mod( 'custom_logo' );
+	$c9_logo_image  = wp_get_attachment_image_src( $c9_logo_id , 'full' );
+
+	if ( !empty($c9_logo_id) ) { // logo has been uploaded
+		$cortex_logo_image = $c9_logo_image[0];
+	?>
+	<style type="text/css">
+		#login h1 a,
+		.login h1 a {
+			background-image: url('<?php echo $cortex_logo_image; ?>');
+			background-size: contain;
+			width: 200px;
+		}
+	</style>
+<?php
+	} 
+}
+add_action('login_enqueue_scripts', 'c9_login_logo');
+
+
+/**
+ * Add logo to backend
+ */
+function c9_addlogo_to_menu() {
+
+	$c9_logo_id 	= get_theme_mod( 'custom_logo' );
+	$c9_logo_image  = wp_get_attachment_image_src( $c9_logo_id , 'full' );
+
+	if ( !empty($c9_logo_id) ) { // logo has been uploaded
+		$cortex_logo_image = $c9_logo_image[0];
+	?>
+
+	<style type="text/css">
+		#adminmenu:before {
+			content: ' ';
+			display: block;
+			width: 90%;
+			margin: 0px auto;
+			height: 90px;
+			background-image: url('<?php echo $cortex_logo_image; ?>');
+			background-size: contain;
+			background-position: top center;
+			background-repeat: no-repeat;
+		}
+		.folded #adminmenu:before {
+			height: 20px;
+		}
+	</style>
+	<?php
+	}
+
+}
+add_action('admin_head', 'c9_addlogo_to_menu', 99);
+
 
 /**
  * Begins execution of the plugin.

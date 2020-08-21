@@ -19,6 +19,13 @@ A WordPress Admin enhancement plugin with a custom skin, and many other customiz
 
 # Changelog
 
+## 1.1.3
+- Added logo to login screen and admin menu from Customizer
+
+## 1.1.2
+
+- Initial release for WordPress.org
+
 ## 1.1.1
 
 - Adjustments to dashboard widget CSS for all screen sizes

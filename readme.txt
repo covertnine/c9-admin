@@ -48,6 +48,10 @@ Yes. Click on Settings > C9 Admin and then check the Disable Custom Skin For Adm
 4. C9 Admin Settings - Control Admin Screens and Labels
 
 == Changelog ==
+v1.1.3
+
+Added logo to login screen and admin menu from Customizer
+
 v1.1.2
 
 Initial public release of C9 Admin plugin.
