@@ -320,6 +320,13 @@ body .dashicons :before {
     font-size: 10px;
 }
 
+.components-dropdown-menu__menu .components-menu-group .components-button.components-menu-item__button svg {
+    height: 20px;
+    width: 20px;
+    margin-right: 8px !important;
+    margin-left: 0px !important;
+}
+
 /* inspector buttons height */
 
 .components-panel__body.plugin-c9-panel .components-button.is-large {
