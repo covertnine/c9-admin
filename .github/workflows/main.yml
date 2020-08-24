@@ -1,0 +1,19 @@
+name: Deploy to WordPress.org
+on:
+  push:
+    branches:
+    - "*"
+jobs:
+  tag:
+    name: New tag - deploy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: WordPress Plugin Deploy
+    uses: varunsridharan/action-wp-org-deploy@1.3
+      with:
+        WORDPRESS_PASSWORD: ${{ secrets.WORDPRESS_PASSWORD }}
+        WORDPRESS_USERNAME: ${{ secrets.WORDPRESS_USERNAME }}
+        SLUG: c9-admin-dashboard
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
