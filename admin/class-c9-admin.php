@@ -39,8 +39,6 @@ class C9_Admin
             add_action('admin_enqueue_scripts', array($this, 'enqueue_styles'));
             add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'));
         }
-        // Add menu item
-        add_action('admin_menu', array($this, 'add_plugin_admin_menu'));
 
         // Add Settings link to the plugin
         $plugin_basename = plugin_basename(plugin_dir_path(__DIR__) . $this->plugin_name . '.php');
@@ -115,6 +113,9 @@ class C9_Admin
     public function enqueue_styles()
     {
         wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/c9-admin.css', array(), $this->version, 'all');
+
+        // Css rules for Color Picker
+        wp_enqueue_style('wp-color-picker');
     }
 
     /**
@@ -127,7 +128,8 @@ class C9_Admin
 
         wp_enqueue_script('hoverIntent', '', array('jquery'), $this->version, false);
 
-        wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/c9-admin.js', array('jquery'), $this->version, false);
+        // Add the wp-color-picker dependecy to js file
+        wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/c9-admin.js', array('jquery', 'wp-color-picker'), $this->version, false);
     }
 
     /**
@@ -175,6 +177,20 @@ class C9_Admin
         register_setting($this->plugin_name, $this->plugin_name, array($this, 'validate'));
     }
 
+
+    /**
+     * Function that will check if value is a valid HEX color.
+     */
+    public function check_color($value)
+    {
+
+        if (preg_match('/^#[a-f0-9]{6}$/i', $value)) { // if user insert a HEX color with #     
+            return true;
+        }
+
+        return false;
+    }
+
     /**
      * Validate Option Input
      **/
@@ -215,6 +231,19 @@ class C9_Admin
         $valid['custom_all_files_label'] = strval($input['custom_all_files_label']);
         // $valid['custom_analytics_label'] = strval($input['custom_analytics_label']);
 
+        // Validate Background Color
+        $valid['admin_menu_color'] = trim($input['admin_menu_color']);
+        $valid['admin_menu_color'] = strip_tags(stripslashes($valid['admin_menu_color']));
+
+        // Check if is a valid hex color
+        if (FALSE === $this->check_color($valid['admin_menu_color'])) {
+
+            // Set the error message
+            add_settings_error('admin_menu_color', 'admin_menu_color_bg_error', 'Insert a valid color for Admin MenuBackground', 'error'); // $setting, $code, $message, $type
+
+            // Get the previous valid value
+            $valid['admin_menu_color'] = $this->plugin_name['admin_menu_color'];
+        }
 
         return $valid;
     }
@@ -610,5 +639,4 @@ class C9_Admin
         </div>
         ';
     }
-
 }
