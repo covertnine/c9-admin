@@ -37,7 +37,7 @@
         $max_size = $options['max_size'];
         $min_px = $options['min_px'];
         $custom_skin = $options['custom_skin'];
-        $admin_menu_color = $options['admin_menu_color']
+        $admin_menu_color = $options['admin_menu_color'];
         $hide_plugin_menu_item = $options['hide_plugin_menu_item'];
         $hide_update_menu_item = $options['hide_update_menu_item'];
         $hide_comment_menu_item = $options['hide_comment_menu_item'];
