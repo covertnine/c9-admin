@@ -114,11 +114,11 @@ function c9_addlogo_to_menu() {
 			content: ' ';
 			display: block;
 			width: 90%;
-			margin: 0px auto;
+			margin: 0px auto 12px auto;
 			height: 90px;
 			background-image: url('<?php echo $c9admin_logo_image; ?>');
 			background-size: contain;
-			background-position: top center;
+			background-position: center;
 			background-repeat: no-repeat;
 		}
 		.folded #adminmenu:before {
@@ -140,6 +140,23 @@ function c9_addlogo_to_menu() {
 		#adminmenu a.wp-has-current-submenu:focus+.wp-submenu,
 		#adminmenu .opensub a.wp-has-current-submenu:focus+.wp-submenu {
 			background-color: <?php echo esc_html($c9_admin_menu_color); ?>;
+		}
+	</style>
+<?php
+	}
+
+		if (get_option('C9_Admin')['admin_menu_text_color']) {
+
+		$c9_admin_menu_text_color = get_option('C9_Admin')['admin_menu_text_color'];
+	?>
+
+	<style type="text/css">
+		#adminmenu div.wp-menu-image:before, div.wp-menu-image:before,
+		#adminmenu a,
+		#adminmenu .wp-submenu a,
+		#adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a,
+		#adminmenu li:not(.opensub) .wp-submenu a {
+			color: <?php echo esc_html($c9_admin_menu_text_color); ?>;
 		}
 	</style>
 <?php

@@ -239,13 +239,32 @@ class C9_Admin
         $valid['admin_menu_color'] = strip_tags(stripslashes($valid['admin_menu_color']));
 
         // Check if is a valid hex color
-        if (FALSE === $this->c9_check_color($valid['admin_menu_color'])) {
+        if ( (!empty($this->plugin_name['admin_menu_color']) ) && (FALSE === $this->c9_check_color($valid['admin_menu_color']) ) ) {
+
 
             // Set the error message
             add_settings_error('admin_menu_color', 'admin_menu_color_bg_error', 'Insert a valid color for the WordPress admin menu background', 'error'); // $setting, $code, $message, $type
 
             // Get the previous valid value
-            $valid['admin_menu_color'] = $this->plugin_name['admin_menu_color'];
+            if ( !empty($this->plugin_name['admin_menu_color']) ) {
+                $valid['admin_menu_color'] = $this->plugin_name['admin_menu_color'];
+            }
+        }
+        
+        // Validate Admin Menu Text Color
+        $valid['admin_menu_text_color'] = trim($input['admin_menu_text_color']);
+        $valid['admin_menu_text_color'] = strip_tags(stripslashes($valid['admin_menu_text_color']));
+
+        // Check if is a valid hex color
+        if ( (!empty($this->plugin_name['admin_menu_text_color']) ) && (FALSE === $this->c9_check_color($valid['admin_menu_text_color']) ) ) {
+
+            // Set the error message
+            add_settings_error('admin_menu_text_color', 'admin_menu_text_color_bg_error', 'Insert a valid color for the WordPress admin menu text', 'error'); // $setting, $code, $message, $type
+
+            // Get the previous valid value
+            if ( !empty($this->plugin_name['admin_menu_text_color']) ) {
+                $valid['admin_menu_text_color'] = $this->plugin_name['admin_menu_text_color'];
+            }
         }
       
         // Validate Admin Login Background Color
@@ -253,13 +272,15 @@ class C9_Admin
         $valid['admin_login_bg_color'] = strip_tags(stripslashes($valid['admin_login_bg_color']));
 
         // Check if is a valid hex color
-        if (FALSE === $this->c9_check_color($valid['admin_login_bg_color'])) {
+        if ( (!empty($this->plugin_name['admin_login_bg_color']) ) && (FALSE === $this->c9_check_color($valid['admin_login_bg_color']) ) ) {
 
             // Set the error message
             add_settings_error('admin_menu_color', 'admin_login_bg_error', 'Insert a valid color for WordPress admin login screen background', 'error'); // $setting, $code, $message, $type
 
             // Get the previous valid value
-            $valid['admin_login_bg_color'] = $this->plugin_name['admin_login_bg_color'];
+            if ( !empty($this->plugin_name['admin_login_bg_color']) ) {
+                $valid['admin_login_bg_color'] = $this->plugin_name['admin_login_bg_color'];
+            }
         }
         return $valid;
     }
@@ -624,36 +645,36 @@ class C9_Admin
         <div class="c9-admin-dashboard-widget">
         <h3>' . __('Add or Edit Content', 'c9-admin') . '</h3>
         <ul>
-        <li><a href="' . admin_url('post-new.php?post_type=post') . '" class="btn-c9-admin btn-c9admin-addpost">' . __('Add', 'c9-admin') . ' ' . $this->get_label('custom_posts_label', 'Post') . '</a></li>
-        <li><a href="' . admin_url('post-new.php?post_type=page') . '" class="btn-c9-admin btn-c9admin-addpage">' . __('Add', 'c9-admin') . ' ' . $this->get_label('custom_pages_label', 'Page') . '</a></li>
-        <li><a href="' . admin_url('customize.php?autofocus[panel]=nav_menus') . '" class="btn-c9-admin btn-c9admin-navigation">' . __('Navigation Links', 'c9-admin') . '</a></li>
-        <li><a href="' . admin_url('customize.php?autofocus[panel]=widgets') . '" class="btn-c9-admin btn-c9admin-footer">' . __('Footer Content', 'c9-admin') . '</a></li>
+        <li><a href="' . admin_url('post-new.php?post_type=post') . '" class="btn-c9-admin btn-c9admin-addpost"><span>' . __('Add', 'c9-admin') . ' ' . $this->get_label('custom_posts_label', 'Post') . '</span></a></li>
+        <li><a href="' . admin_url('post-new.php?post_type=page') . '" class="btn-c9-admin btn-c9admin-addpage"><span>' . __('Add', 'c9-admin') . ' ' . $this->get_label('custom_pages_label', 'Page') . '</span></a></li>
+        <li><a href="' . admin_url('customize.php?autofocus[panel]=nav_menus') . '" class="btn-c9-admin btn-c9admin-navigation"><span>' . __('Navigation Links', 'c9-admin') . '</span></a></li>
+        <li><a href="' . admin_url('customize.php?autofocus[panel]=widgets') . '" class="btn-c9-admin btn-c9admin-footer"><span>' . __('Footer Content', 'c9-admin') . '</span></a></li>
         </ul>
         </div>
         <div class="c9-admin-dashboard-widget">
         <h3>' . __('Theme Settings + Libraries', 'c9-admin') . '</h3>
         <ul>
-        <li><a href="' . admin_url('customize.php?autofocus[section]=options') . '" class="btn-c9-admin btn-c9admin-theme">' . __('Theme Appearance', 'c9-admin') . '</a></li>
-        <li><a href="' . admin_url('options-general.php?page=C9_Admin') . '" class="btn-c9-admin btn-c9admin-settings">' . __('C9 Admin Settings', 'c9-admin') . '</a></li>
-        <li><a href="' . admin_url('edit.php?post_type=wp_block') . '" class="btn-c9-admin btn-c9admin-reusable">' . __('Reusable Blocks', 'c9-admin') . '</a></li>
-        <li><a href="' . admin_url('upload.php') . '" class="btn-c9-admin btn-c9admin-media">' . $this->get_label('custom_media_label', 'Media &amp; Files') . '</a></li>
+        <li><a href="' . admin_url('customize.php?autofocus[section]=options') . '" class="btn-c9-admin btn-c9admin-theme"><span>' . __('Theme Appearance', 'c9-admin') . '</span></a></li>
+        <li><a href="' . admin_url('options-general.php?page=C9_Admin') . '" class="btn-c9-admin btn-c9admin-settings"><span>' . __('C9 Admin Settings', 'c9-admin') . '</span></a></li>
+        <li><a href="' . admin_url('edit.php?post_type=wp_block') . '" class="btn-c9-admin btn-c9admin-reusable"><span>' . __('Reusable Blocks', 'c9-admin') . '</span></a></li>
+        <li><a href="' . admin_url('upload.php') . '" class="btn-c9-admin btn-c9admin-media"><span>' . $this->get_label('custom_media_label', 'Media &amp; Files') . '</span></a></li>
         </ul>
         </div>
         <div class="c9-admin-dashboard-widget">
         <h3>' . __('Using C9 Blocks', 'c9-admin') . '</h3>
         <ul>
-        <li><a href="https://www.covertnine.com/c9-blocks-plugin/" title="' . __('C9 Blocks Overview', 'c9-admin') . '" class="btn-c9-admin btn-c9blocks-overview" target="_blank">' . __('C9 Blocks Overview', 'c9-admin') . '</a></li>
-        <li><a href="' . admin_url('themes.php?page=c9-blocks-getting-started') . '" class="btn-c9-admin btn-c9admin-blocks">' . __('C9 Blocks Tutorial', 'c9-admin') . '</a></li>
-        <li><a href="https://www.youtube.com/covertnine" title="' . __('Block Videos', 'c9-admin') . '" class="btn-c9-admin btn-c9block-videos" target="_blank">' . __('C9 Block Videos', 'c9-admin') . '</a></li>
+        <li><a href="https://www.covertnine.com/c9-blocks-plugin/" title="' . __('C9 Blocks Overview', 'c9-admin') . '" class="btn-c9-admin btn-c9blocks-overview" target="_blank"><span>' . __('C9 Blocks Overview', 'c9-admin') . '</span></a></li>
+        <li><a href="' . admin_url('themes.php?page=c9-blocks-getting-started') . '" class="btn-c9-admin btn-c9admin-blocks"><span>' . __('C9 Blocks Getting Started Guide', 'c9-admin') . '</span></a></li>
+        <li><a href="https://www.youtube.com/covertnine" title="' . __('Block Videos', 'c9-admin') . '" class="btn-c9-admin btn-c9block-videos" target="_blank"><span>' . __('C9 Blocks Walk-through Videos', 'c9-admin') . '</span></a></li>
         </ul>
         </div>
         <div class="c9-admin-dashboard-widget">
         <h3>' . __('Get Support', 'c9-admin') . '</h3>
         <ul>
-        <li><a href="https://c9.covertnine.com/" title="' . __('C9 Documentation', 'c9-admin') . '" class="btn-c9-admin btn-c9admin-docs" target="_blank">' .__('C9 Documentation', 'c9-admin') . '</a></li>
-        <li><a href="https://www.covertnine.com/account" title="' . __('COVERT NINE Account', 'c9-admin') . '" class="btn-c9-admin btn-c9admin-account" target="_blank">' . __('C9 Account', 'c9-admin') . '</a></li>
-        <li><a href="https://www.covertnine.com/get-support" title="' . __('Get premium support from COVERT NINE', 'c9-admin') . '" class="btn-c9-admin btn-c9admin-support" target="_blank">' . __('C9 Paid Support', 'c9-admin') . '</a></li>
-        <li><a href="https://wordpress.org/support/forums/" title="' . __('WordPress.org Support', 'c9-admin') . '" class="btn-c9-admin btn-c9wp-support" target="_blank">' . __('WP.org Support', 'c9-admin') . '</a></li>
+        <li><a href="https://c9.covertnine.com/" title="' . __('C9 Theme + Blocks Docs', 'c9-admin') . '" class="btn-c9-admin btn-c9admin-docs" target="_blank"><span>' .__('C9 Theme + Blocks Docs', 'c9-admin') . '</span></a></li>
+        <li><a href="https://www.covertnine.com/account" title="' . __('COVERT NINE Account', 'c9-admin') . '" class="btn-c9-admin btn-c9admin-account" target="_blank"><span>' . __('C9 Account Dashboard', 'c9-admin') . '</span></a></li>
+        <li><a href="https://www.covertnine.com/get-support" title="' . __('Get premium support from COVERT NINE', 'c9-admin') . '" class="btn-c9-admin btn-c9admin-support" target="_blank"><span>' . __('C9 Paid Support', 'c9-admin') . '</span></a></li>
+        <li><a href="https://wordpress.org/support/forums/" title="' . __('WordPress.org Support', 'c9-admin') . '" class="btn-c9-admin btn-c9wp-support" target="_blank"><span>' . __('WP.org Support', 'c9-admin') . '</span></a></li>
         </ul>
         </div>
         ';

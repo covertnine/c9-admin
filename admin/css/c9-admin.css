@@ -134,13 +134,8 @@ div.wp-menu-image:before {
     color: #23282d;
 }
 
-#adminmenu .wp-submenu li.current,
-#adminmenu .wp-submenu li.current a,
-#adminmenu .wp-submenu li.current a:focus,
-#adminmenu .wp-submenu li.current a:hover,
-#adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a,
 #adminmenu li:not(.opensub) .wp-submenu a {
-    color: #23282d !important;
+    color: #23282d;
     /* text-align: center !important; */
 }
 
@@ -166,6 +161,11 @@ div.wp-menu-image:before {
     font-weight: 900;
 }
 
+#adminmenu .wp-submenu li.current,
+#adminmenu .wp-submenu li.current a,
+#adminmenu .wp-submenu li.current a:focus,
+#adminmenu .wp-submenu li.current a:hover,
+#adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a,
 #adminmenu .wp-submenu a:focus,
 #adminmenu .wp-submenu a:hover,
 #adminmenu a:hover,
@@ -294,7 +294,7 @@ div.wp-menu-image:before {
     letter-spacing: 0.2px;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 10px;
+    /* font-size: 10px; */
     color: #191e23;
 }
 
@@ -389,6 +389,8 @@ body .dashicons :before {
 
 .c9-admin-dashboard-widget ul li {
     flex-grow: 1;
+    flex-basis: 0;
+    flex-shrink: 5;
 }
 
 .c9-admin-dashboard-widget ul li:nth-child(even) {
@@ -397,17 +399,20 @@ body .dashicons :before {
 
 .c9-admin-dashboard-widget ul li .btn-c9-admin {
     border: 1px solid rgba(79, 89, 105, 0.2);
-    font: bold 10px/10px "muli", sans-serif;
+    font: bold 11px/13px "muli", sans-serif;
     text-transform: uppercase;
-    border-radius: 4px;
-    padding: 24px 6px 18px 6px;
-    letter-spacing: 0.1em;
+    border-radius: 3px;
+    letter-spacing: 0.07em;
     background: #005d8c;
     color: #fff;
     display: block;
     margin: 0px 2px;
     text-align: center;
-    white-space: nowrap;
+    height: 80px;
+    max-height: 80px;
+    min-height: 80px;
+    position: relative;
+    /* white-space: nowrap; */
 }
 
 @media only screen and (min-width: 1500px) {
@@ -430,11 +435,23 @@ body .dashicons :before {
 
 .c9-admin-dashboard-widget ul li .btn-c9-admin:before {
     display: block;
-    font-size: 30px;
     font-family: "dashicons";
-    margin: 0px auto 15px auto;
+    font-size: 25px;
     text-align: center;
     font-weight: 400;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.c9-admin-dashboard-widget ul li .btn-c9-admin span {
+    display: block;
+    position: absolute;
+    top: 42px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
 }
 
 .btn-c9admin-addpost:before {

@@ -50,7 +50,7 @@ Yes. Click on Settings > C9 Admin and then check the Disable Custom Skin For Adm
 == Changelog ==
 v1.1.4 
 
-Added color settings for admin side bar and admin login screen
+Added color settings for admin side bar and admin login screen, adjustments to backend styling and skin
 
 v1.1.3
 
