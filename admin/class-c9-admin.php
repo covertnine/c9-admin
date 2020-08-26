@@ -184,7 +184,7 @@ class C9_Admin
     /**
      * Function that will check if value is a valid HEX color.
      */
-    public function check_color($value)
+    public function c9_check_color($value)
     {
 
         if (preg_match('/^#[a-f0-9]{6}$/i', $value)) { // if user insert a HEX color with #     
@@ -239,7 +239,7 @@ class C9_Admin
         $valid['admin_menu_color'] = strip_tags(stripslashes($valid['admin_menu_color']));
 
         // Check if is a valid hex color
-        if (FALSE === $this->check_color($valid['admin_menu_color'])) {
+        if (FALSE === $this->c9_check_color($valid['admin_menu_color'])) {
 
             // Set the error message
             add_settings_error('admin_menu_color', 'admin_menu_color_bg_error', 'Insert a valid color for the WordPress admin menu background', 'error'); // $setting, $code, $message, $type
@@ -253,7 +253,7 @@ class C9_Admin
         $valid['admin_login_bg_color'] = strip_tags(stripslashes($valid['admin_login_bg_color']));
 
         // Check if is a valid hex color
-        if (FALSE === $this->check_color($valid['admin_login_bg_color'])) {
+        if (FALSE === $this->c9_check_color($valid['admin_login_bg_color'])) {
 
             // Set the error message
             add_settings_error('admin_menu_color', 'admin_login_bg_error', 'Insert a valid color for WordPress admin login screen background', 'error'); // $setting, $code, $message, $type
