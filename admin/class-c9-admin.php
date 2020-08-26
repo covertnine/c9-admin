@@ -624,35 +624,38 @@ class C9_Admin
         <div class="c9-admin-dashboard-widget">
         <h3>' . __('Add or Edit Content', 'c9-admin') . '</h3>
         <ul>
-        <li><a href="' . admin_url('post-new.php?post_type=post') . '" class="btn-c9-admin btn-c9admin-addpost">Add ' . $this->get_label('custom_posts_label', 'Post') . '</a></li>
-        <li><a href="' . admin_url('post-new.php?post_type=page') . '" class="btn-c9-admin btn-c9admin-addpage">Add ' . $this->get_label('custom_pages_label', 'Page') . '</a></li>
-        <li><a href="' . admin_url('customize.php?autofocus[panel]=nav_menus') . '" class="btn-c9-admin btn-c9admin-navigation">Navigation Links</a></li>
-        <li><a href="' . admin_url('customize.php?autofocus[panel]=widgets') . '" class="btn-c9-admin btn-c9admin-footer">Footer Content</a></li>
+        <li><a href="' . admin_url('post-new.php?post_type=post') . '" class="btn-c9-admin btn-c9admin-addpost">' . __('Add', 'c9-admin') . ' ' . $this->get_label('custom_posts_label', 'Post') . '</a></li>
+        <li><a href="' . admin_url('post-new.php?post_type=page') . '" class="btn-c9-admin btn-c9admin-addpage">' . __('Add', 'c9-admin') . ' ' . $this->get_label('custom_pages_label', 'Page') . '</a></li>
+        <li><a href="' . admin_url('customize.php?autofocus[panel]=nav_menus') . '" class="btn-c9-admin btn-c9admin-navigation">' . __('Navigation Links', 'c9-admin') . '</a></li>
+        <li><a href="' . admin_url('customize.php?autofocus[panel]=widgets') . '" class="btn-c9-admin btn-c9admin-footer">' . __('Footer Content', 'c9-admin') . '</a></li>
         </ul>
         </div>
         <div class="c9-admin-dashboard-widget">
         <h3>' . __('Theme Settings + Media Library', 'c9-admin') . '</h3>
         <ul>
-        <li><a href="' . admin_url('customize.php?autofocus[section]=options') . '" class="btn-c9-admin btn-c9admin-theme">Theme Appearance</a></li>
-        <li><a href="' . admin_url('options-general.php?page=C9_Admin') . '" class="btn-c9-admin btn-c9admin-settings">C9 Admin Settings</a></li>
+        <li><a href="' . admin_url('customize.php?autofocus[section]=options') . '" class="btn-c9-admin btn-c9admin-theme">' . __('Theme Appearance', 'c9-admin') . '</a></li>
+        <li><a href="' . admin_url('options-general.php?page=C9_Admin') . '" class="btn-c9-admin btn-c9admin-settings">' . __('C9 Admin Settings', 'c9-admin') . '</a></li>
         <li><a href="' . admin_url('upload.php') . '" class="btn-c9-admin btn-c9admin-media">' . $this->get_label('custom_media_label', 'Media &amp; Files') . '</a></li>
         </ul>
         </div>
         <div class="c9-admin-dashboard-widget">
         <h3>' . __('Using C9 Blocks', 'c9-admin') . '</h3>
         <ul>
-        <li><a href="' . admin_url('edit.php?post_type=wp_block') . '" class="btn-c9-admin btn-c9admin-reusable">Reusable Blocks Library</a></li>
-        <li><a href="' . admin_url('themes.php?page=c9-blocks-getting-started') . '" class="btn-c9-admin btn-c9admin-blocks">C9 Blocks Tutorial</a></li>
+        <li><a href="' . admin_url('edit.php?post_type=wp_block') . '" class="btn-c9-admin btn-c9admin-reusable">' . __('Reusable Blocks Library', 'c9-admin') . '</a></li>
+        <li><a href="' . admin_url('themes.php?page=c9-blocks-getting-started') . '" class="btn-c9-admin btn-c9admin-blocks">' . __('C9 Blocks Tutorial', 'c9-admin') . '</a></li>
+        <li><a href="https://www.youtube.com/covertnine" title="' . __('Page Building Videos', 'c9-admin') . '" class="btn-c9-admin btn-c9block-videos" target="_blank">' . __('Page Building Videos', 'c9-admin') . '</a></li>
         </ul>
         </div>
         <div class="c9-admin-dashboard-widget">
         <h3>' . __('Get Support', 'c9-admin') . '</h3>
         <ul>
-        <li><a href="https://www.covertnine.com/account" title="COVERT NINE Account" class="btn-c9-admin btn-c9admin-account" target="_blank">COVERTNINE Account</a></li>
-        <li><a href="https://c9.covertnine.com/" title="C9 Documentation" class="btn-c9-admin btn-c9admin-docs" target="_blank">C9 Documentation</a></li>
-        <li><a href="https://www.covertnine.com/get-support" title="Get premium support from COVERT NINE" class="btn-c9-admin btn-c9admin-support" target="_blank">Paid Support</a></li>
+        <li><a href="https://c9.covertnine.com/" title="' . __('C9 Documentation', 'c9-admin') . '" class="btn-c9-admin btn-c9admin-docs" target="_blank">' .__('C9 Documentation', 'c9-admin') . '</a></li>
+        <li><a href="https://www.covertnine.com/account" title="' . __('COVERT NINE Account', 'c9-admin') . '" class="btn-c9-admin btn-c9admin-account" target="_blank">' . __('C9 Account', 'c9-admin') . '</a></li>
+        <li><a href="https://www.covertnine.com/get-support" title="' . __('Get premium support from COVERT NINE', 'c9-admin') . '" class="btn-c9-admin btn-c9admin-support" target="_blank">' . __('C9 Paid Support', 'c9-admin') . '</a></li>
+        <li><a href="https://wordpress.org/support/forums/" title="' . __('WordPress.org Support', 'c9-admin') . '" class="btn-c9-admin btn-c9wp-support" target="_blank">' . __('WP.org Support', 'c9-admin') . '</a></li>
         </ul>
         </div>
         ';
+        
     }
 }

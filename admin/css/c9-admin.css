@@ -78,7 +78,7 @@ body:not(.block-editor-page) #adminmenu .wp-menu-open .wp-submenu li:before {
 #adminmenu .wp-has-current-submenu .wp-submenu,
 #adminmenu a.wp-has-current-submenu:focus+.wp-submenu,
 #adminmenu .opensub a.wp-has-current-submenu:focus+.wp-submenu {
-    background-color: #f4f4f4 !important;
+    background-color: #f4f4f4;
     color: #23282d !important;
 }
 
@@ -144,6 +144,11 @@ div.wp-menu-image:before {
     /* text-align: center !important; */
 }
 
+#collapse-button .collapse-button-icon:after,
+#collapse-button .collapse-button-label {
+    line-height: 20px;
+}
+
 /* submenu links are light cause they're on a dark bg*/
 
 /* creating problems on click */
@@ -154,7 +159,7 @@ div.wp-menu-image:before {
 
 #adminmenu a {
     color: #191e23;
-    letter-spacing: 1px;
+    letter-spacing: .8px;
 }
 
 #adminmenu .wp-submenu a.current {
@@ -228,14 +233,19 @@ div.wp-menu-image:before {
 
 #wpcontent,
 #wpfooter {
-    margin-left: 200px;
+    margin-left: 180px;
 }
 
 #adminmenu,
 #adminmenu .wp-submenu,
 #adminmenuback,
 #adminmenuwrap {
-    width: 200px;
+    width: 180px;
+}
+
+#adminmenu .wp-not-current-submenu .wp-submenu,
+.folded #adminmenu .wp-has-current-submenu .wp-submenu {
+    width: 180px
 }
 
 #adminmenuwrap {
@@ -243,7 +253,7 @@ div.wp-menu-image:before {
 }
 
 #adminmenu .opensub .wp-submenu {
-    left: 200px;
+    left: 180px;
     background-color: #191e23;
 }
 
@@ -473,4 +483,12 @@ body .dashicons :before {
 
 .btn-c9admin-account:before {
     content: "\f322";
+}
+
+.btn-c9wp-support:before {
+    content: "\f120";
+}
+
+.btn-c9block-videos:before {
+    content: "\f19b";
 }

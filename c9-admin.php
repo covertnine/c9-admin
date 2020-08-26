@@ -134,7 +134,11 @@ function c9_addlogo_to_menu() {
 	?>
 
 	<style type="text/css">
-		#adminmenuwrap,#adminmenu {
+		#adminmenuwrap,
+		#adminmenu,
+		#adminmenu .wp-has-current-submenu .wp-submenu,
+		#adminmenu a.wp-has-current-submenu:focus+.wp-submenu,
+		#adminmenu .opensub a.wp-has-current-submenu:focus+.wp-submenu {
 			background-color: <?php echo esc_html($c9_admin_menu_color); ?>;
 		}
 	</style>
