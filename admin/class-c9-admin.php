@@ -631,19 +631,20 @@ class C9_Admin
         </ul>
         </div>
         <div class="c9-admin-dashboard-widget">
-        <h3>' . __('Theme Settings + Media Library', 'c9-admin') . '</h3>
+        <h3>' . __('Theme Settings + Libraries', 'c9-admin') . '</h3>
         <ul>
         <li><a href="' . admin_url('customize.php?autofocus[section]=options') . '" class="btn-c9-admin btn-c9admin-theme">' . __('Theme Appearance', 'c9-admin') . '</a></li>
         <li><a href="' . admin_url('options-general.php?page=C9_Admin') . '" class="btn-c9-admin btn-c9admin-settings">' . __('C9 Admin Settings', 'c9-admin') . '</a></li>
+        <li><a href="' . admin_url('edit.php?post_type=wp_block') . '" class="btn-c9-admin btn-c9admin-reusable">' . __('Reusable Blocks', 'c9-admin') . '</a></li>
         <li><a href="' . admin_url('upload.php') . '" class="btn-c9-admin btn-c9admin-media">' . $this->get_label('custom_media_label', 'Media &amp; Files') . '</a></li>
         </ul>
         </div>
         <div class="c9-admin-dashboard-widget">
         <h3>' . __('Using C9 Blocks', 'c9-admin') . '</h3>
         <ul>
-        <li><a href="' . admin_url('edit.php?post_type=wp_block') . '" class="btn-c9-admin btn-c9admin-reusable">' . __('Reusable Blocks Library', 'c9-admin') . '</a></li>
+        <li><a href="https://www.covertnine.com/c9-blocks-plugin/" title="' . __('C9 Blocks Overview', 'c9-admin') . '" class="btn-c9-admin btn-c9blocks-overview" target="_blank">' . __('C9 Blocks Overview', 'c9-admin') . '</a></li>
         <li><a href="' . admin_url('themes.php?page=c9-blocks-getting-started') . '" class="btn-c9-admin btn-c9admin-blocks">' . __('C9 Blocks Tutorial', 'c9-admin') . '</a></li>
-        <li><a href="https://www.youtube.com/covertnine" title="' . __('Page Building Videos', 'c9-admin') . '" class="btn-c9-admin btn-c9block-videos" target="_blank">' . __('Page Building Videos', 'c9-admin') . '</a></li>
+        <li><a href="https://www.youtube.com/covertnine" title="' . __('Block Videos', 'c9-admin') . '" class="btn-c9-admin btn-c9block-videos" target="_blank">' . __('C9 Block Videos', 'c9-admin') . '</a></li>
         </ul>
         </div>
         <div class="c9-admin-dashboard-widget">

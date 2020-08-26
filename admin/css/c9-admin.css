@@ -492,3 +492,7 @@ body .dashicons :before {
 .btn-c9block-videos:before {
     content: "\f19b";
 }
+
+.btn-c9blocks-overview:before {
+    content: "\f15c";
+}
