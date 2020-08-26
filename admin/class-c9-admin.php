@@ -88,7 +88,7 @@ class C9_Admin
      */
     public function add_post_admin_thumbnail_column($columns)
     {
-        $columns['c9_thumb'] = __('Image', 'c9-admin');
+        $columns['c9_thumb'] = __('Featured Image', 'c9-admin');
         return $columns;
     }
 
