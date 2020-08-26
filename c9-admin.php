@@ -67,24 +67,38 @@ function c9_login_logo() {
 	$c9_logo_image  = wp_get_attachment_image_src( $c9_logo_id , 'full' );
 
 	if ( !empty($c9_logo_id) ) { // logo has been uploaded
-		$cortex_logo_image = $c9_logo_image[0];
+		$c9admin_logo_image = $c9_logo_image[0];
 	?>
 	<style type="text/css">
 		#login h1 a,
 		.login h1 a {
-			background-image: url('<?php echo $cortex_logo_image; ?>');
+			background-image: url('<?php echo $c9admin_logo_image; ?>');
 			background-size: contain;
 			width: 200px;
 		}
 	</style>
 <?php
 	} 
+
+	if (get_option('C9_Admin')['admin_login_bg_color']) {
+
+		$c9_admin_login_bg_color = get_option('C9_Admin')['admin_login_bg_color'];
+	?>
+
+	<style type="text/css">
+		body.login {
+			background-color: <?php echo esc_html($c9_admin_login_bg_color); ?>;
+		}
+	</style>
+<?php
+	}
+
 }
 add_action('login_enqueue_scripts', 'c9_login_logo');
 
 
 /**
- * Add logo to backend
+ * Add logo and admin menu color to backend
  */
 function c9_addlogo_to_menu() {
 
@@ -92,7 +106,7 @@ function c9_addlogo_to_menu() {
 	$c9_logo_image  = wp_get_attachment_image_src( $c9_logo_id , 'full' );
 
 	if ( !empty($c9_logo_id) ) { // logo has been uploaded
-		$cortex_logo_image = $c9_logo_image[0];
+		$c9admin_logo_image = $c9_logo_image[0];
 	?>
 
 	<style type="text/css">
@@ -102,7 +116,7 @@ function c9_addlogo_to_menu() {
 			width: 90%;
 			margin: 0px auto;
 			height: 90px;
-			background-image: url('<?php echo $cortex_logo_image; ?>');
+			background-image: url('<?php echo $c9admin_logo_image; ?>');
 			background-size: contain;
 			background-position: top center;
 			background-repeat: no-repeat;
@@ -112,6 +126,19 @@ function c9_addlogo_to_menu() {
 		}
 	</style>
 	<?php
+	}
+
+	if (get_option('C9_Admin')['admin_menu_color']) {
+
+		$c9_admin_menu_color = get_option('C9_Admin')['admin_menu_color'];
+	?>
+
+	<style type="text/css">
+		#adminmenuwrap,#adminmenu {
+			background-color: <?php echo esc_html($c9_admin_menu_color); ?>;
+		}
+	</style>
+<?php
 	}
 
 }

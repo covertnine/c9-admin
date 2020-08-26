@@ -88,7 +88,7 @@ class C9_Admin
      */
     public function add_post_admin_thumbnail_column($columns)
     {
-        $columns['c9_thumb'] = __('Image');
+        $columns['c9_thumb'] = __('Image', 'c9-admin');
         return $columns;
     }
 
@@ -131,7 +131,7 @@ class C9_Admin
 
         wp_enqueue_script('hoverIntent', '', array('jquery'), $this->version, false);
 
-        // Add the wp-color-picker dependecy to js file
+        // Add the js file
         wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/c9-admin.js', array('jquery', 'wp-color-picker'), $this->version, false);
     }
 
@@ -234,7 +234,7 @@ class C9_Admin
         $valid['custom_all_files_label'] = strval($input['custom_all_files_label']);
         // $valid['custom_analytics_label'] = strval($input['custom_analytics_label']);
 
-        // Validate Background Color
+        // Validate Admin Menu Background Color
         $valid['admin_menu_color'] = trim($input['admin_menu_color']);
         $valid['admin_menu_color'] = strip_tags(stripslashes($valid['admin_menu_color']));
 
@@ -242,12 +242,25 @@ class C9_Admin
         if (FALSE === $this->check_color($valid['admin_menu_color'])) {
 
             // Set the error message
-            add_settings_error('admin_menu_color', 'admin_menu_color_bg_error', 'Insert a valid color for Admin MenuBackground', 'error'); // $setting, $code, $message, $type
+            add_settings_error('admin_menu_color', 'admin_menu_color_bg_error', 'Insert a valid color for the WordPress admin menu background', 'error'); // $setting, $code, $message, $type
 
             // Get the previous valid value
             $valid['admin_menu_color'] = $this->plugin_name['admin_menu_color'];
         }
+      
+        // Validate Admin Login Background Color
+        $valid['admin_login_bg_color'] = trim($input['admin_login_bg_color']);
+        $valid['admin_login_bg_color'] = strip_tags(stripslashes($valid['admin_login_bg_color']));
 
+        // Check if is a valid hex color
+        if (FALSE === $this->check_color($valid['admin_login_bg_color'])) {
+
+            // Set the error message
+            add_settings_error('admin_menu_color', 'admin_login_bg_error', 'Insert a valid color for WordPress admin login screen background', 'error'); // $setting, $code, $message, $type
+
+            // Get the previous valid value
+            $valid['admin_login_bg_color'] = $this->plugin_name['admin_login_bg_color'];
+        }
         return $valid;
     }
 

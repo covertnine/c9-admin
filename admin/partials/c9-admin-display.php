@@ -38,6 +38,7 @@
         $min_px = $options['min_px'];
         $custom_skin = $options['custom_skin'];
         $admin_menu_color = $options['admin_menu_color'];
+        $admin_login_bg_color = $options['admin_login_bg_color'];
         $hide_plugin_menu_item = $options['hide_plugin_menu_item'];
         $hide_update_menu_item = $options['hide_update_menu_item'];
         $hide_comment_menu_item = $options['hide_comment_menu_item'];
@@ -164,8 +165,9 @@
                 <input type="checkbox" id="<?php echo $this->plugin_name; ?>-custom_skin" name="<?php echo $this->plugin_name; ?>[custom_skin]" value="1" <?php checked($custom_skin, 1); ?> />
                 <span><?php esc_html_e('Disable custom skin for admin', 'c9-admin'); ?></span>
             </label>
+            <h4><?php esc_html_e('Admin Sidebar Menu Color', 'c9-admin'); ?></h4>
             <label for="<?php echo $this->plugin_name; ?>-admin_menu_color">
-                <div class="c9-label"><?php esc_html_e('Add custom color to the admin side menu', 'c9-admin'); ?></div>
+                <div class="c9-label sr-only"><?php esc_html_e('Select Admin Menu Color', 'c9-admin'); ?></div>
                 <input type="text" class="small c9-color-picker" id="<?php echo $this->plugin_name; ?>-admin_menu_color" name="<?php echo $this->plugin_name; ?>[admin_menu_color]" value=<?php echo '"';
                 if (!empty($admin_menu_color)) {
                     echo $admin_menu_color;
@@ -173,7 +175,16 @@
                                                                                                                                                                             echo '"';
                 ?> />
             </label>
-        </fieldset>
+            <h4><?php esc_html_e('Admin Login Screen Background Color', 'c9-admin'); ?></h4>
+            <label for="<?php echo $this->plugin_name; ?>-admin_login_bg_color">
+                <div class="c9-label sr-only"><?php esc_html_e('Select Background Color', 'c9-admin'); ?></div>
+                <input type="text" class="small c9-color-picker" id="<?php echo $this->plugin_name; ?>-admin_login_bg_color" name="<?php echo $this->plugin_name; ?>[admin_login_bg_color]" value=<?php echo '"';
+                if (!empty($admin_login_bg_color)) {
+                    echo $admin_login_bg_color;
+                }
+                                                                                                                                                                            echo '"';
+                ?> />
+            </label>        </fieldset>
 
 
         <hr>
