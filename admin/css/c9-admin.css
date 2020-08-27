@@ -5,8 +5,21 @@
 
 @import url("https://fonts.googleapis.com/css?family=Muli:400,700,900&display=swap");
 
+.wrap h1,
+.wrap h2 {
+    line-height: 1;
+}
+
 .wrap h1 {
     font-size: 40px;
+}
+
+.wrap h2 {
+    font-size: 32px;
+}
+
+.wrap h4 {
+    margin: 1em 0 .5em 0;
 }
 
 #wpwrap {
@@ -174,7 +187,8 @@ div.wp-menu-image:before {
     color: #00b9eb !important;
 }
 
-#adminmenu li>a .wp-menu-name {
+#adminmenu li>a .wp-menu-name,
+.auto-fold #adminmenu li a {
     font-size: 14px;
 }
 
@@ -183,9 +197,29 @@ div.wp-menu-image:before {
     padding: 10px 15px;
 }
 
+@media only screen and (max-width: 960px) {
+    #adminmenu a.menu-top {
+        padding: 10px;
+    }
+}
+
 /* settings page */
-.c9-admin-settings-wrap label {
-    margin-right: 20px;
+@media only screen and (min-width: 992px) {
+
+
+    .c9-admin-settings-wrap {
+        display: -ms-grid;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "col1 col2"
+            "col3 col4";
+        gap: 30px;
+    }
+
+}
+
+.c9-admin-settings-wrap .col {
+    max-width: 450px;
 }
 
 .c9-label {
@@ -301,6 +335,12 @@ div.wp-menu-image:before {
 .wp-core-ui .button.button-primary,
 .wp-core-ui button.button-primary {
     color: #fff;
+}
+
+.wp-core-ui .updated .button-link,
+.wp-core-iu .button-link {
+    text-transform: none;
+    font-size: inherit;
 }
 
 /* default dashicons */

@@ -141,7 +141,7 @@ class C9_Admin
     public function add_plugin_admin_menu()
     {
         add_options_page(
-            'C9 Admin Options',
+            'C9 Admin Dashboard Plugin Settings',
             'C9 Admin',
             'manage_options',
             $this->plugin_name,
