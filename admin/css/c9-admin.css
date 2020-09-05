@@ -355,9 +355,18 @@ div.wp-menu-image:before {
 
 /* wp buttons */
 .editor-post-trash.components-button,
-.components-button.is-tertiary {
+.components-button.is-tertiary,
+.components-panel__body .components-button.has-text {
     box-shadow: inset 0 0 0 .8px #E8E8E8;
+}
 
+.components-panel__body h2~div>.components-button {
+    margin-bottom: 8px;
+    box-shadow: inset 0 0 0 .8px #E8E8E8;
+}
+
+.components-button~h5 {
+    margin-top: 10px;
 }
 
 .wp-core-ui .button-group.button-large .button,
