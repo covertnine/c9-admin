@@ -155,7 +155,8 @@ function c9_addlogo_to_menu() {
 		#adminmenu a,
 		#adminmenu .wp-submenu a,
 		#adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a,
-		#adminmenu li:not(.opensub) .wp-submenu a {
+		#adminmenu li:not(.opensub) .wp-submenu a,
+		#adminmenu .wp-has-current-submenu:not(.opensub) .wp-submenu a {
 			color: <?php echo esc_html($c9_admin_menu_text_color); ?>;
 		}
 	</style>
