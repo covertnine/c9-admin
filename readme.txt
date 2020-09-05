@@ -48,6 +48,10 @@ Yes. Click on Settings > C9 Admin and then check the Disable Custom Skin For Adm
 4. C9 Admin Settings - Control Admin Screens and Labels
 
 == Changelog ==
+v1.1.6
+
+Added more CSS declarations for admin menu text color
+
 v1.1.5
 
 Adjustments to backend styling to account for WP 5.5 updates.
