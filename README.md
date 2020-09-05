@@ -19,6 +19,14 @@ A WordPress Admin enhancement plugin with a custom skin, and many other customiz
 
 # Changelog
 
+## 1.1.4 
+
+- Adjustments to backend styling to account for WP 5.5 updates.
+
+## 1.1.4 
+
+- Added color settings for admin side bar and admin login screen, adjustments to backend styling and skin
+
 ## 1.1.3
 - Added logo to login screen and admin menu from Customizer
 

@@ -3,9 +3,9 @@ Contributors: ttoomey, samirillion
 Tags: wordpress dashboard, admin dashboard, dashboard, dashboard widgets, admin
 Donate link: https://www.covertnine.com/about
 Requires at least: 4.9.2
-Tested up to: 5.5
+Tested up to: 5.5.1
 Requires PHP: 7.1
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: c9-admin
@@ -48,6 +48,10 @@ Yes. Click on Settings > C9 Admin and then check the Disable Custom Skin For Adm
 4. C9 Admin Settings - Control Admin Screens and Labels
 
 == Changelog ==
+v1.1.5
+
+Adjustments to backend styling to account for WP 5.5 updates.
+
 v1.1.4 
 
 Added color settings for admin side bar and admin login screen, adjustments to backend styling and skin
