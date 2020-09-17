@@ -194,11 +194,11 @@ $custom_all_files_label = $options['custom_all_files_label'];
                     <label for="<?php echo $this->plugin_name; ?>-admin_login_bg_color">
                         <div class="c9-label sr-only"><?php esc_html_e('Select Background Color', 'c9-admin'); ?></div>
                         <input type="text" class="small c9-color-picker" id="<?php echo $this->plugin_name; ?>-admin_login_bg_color" name="<?php echo $this->plugin_name; ?>[admin_login_bg_color]" value=<?php echo '"';
-                                                                                                                                                                                                            if (!empty($admin_login_bg_color)) {
-                                                                                                                                                                                                                echo $admin_login_bg_color;
-                                                                                                                                                                                                            }
-                                                                                                                                                                                                            echo '"';
-                                                                                                                                                                                                            ?> />
+                        if (!empty($admin_login_bg_color)) {
+                        echo $admin_login_bg_color;
+                        }
+                        echo '"';
+                        ?> />
                     </label>
                 </fieldset>
 
@@ -317,7 +317,7 @@ $custom_all_files_label = $options['custom_all_files_label'];
                                                                                                                                                                                                     ?> />
                         </label>
                     </fieldset>
-                <?php submit_button('Save all changes', 'primary', 'submit', true); ?>
+                    <?php submit_button('Save all changes', 'primary', 'submit', true); ?>
             </div>
 
             <div class="col">
@@ -380,6 +380,6 @@ $custom_all_files_label = $options['custom_all_files_label'];
 </div><!-- .c9-admin-settings-wrap-->
 
 <h3><?php echo esc_html_e('Have a suggestion for Tim + the team?', 'c9-admin'); ?></h3>
-<p><?php echo __('Don\'t just sit there, post it on our <a href="https://www.covertnine.com/community/" target="_blank">community forum</a> and we\'ll respond personally.', 'c9-admin'); ?></p>
+<p><?php echo __('Don\'t just sit there; post it on our <a href="https://www.covertnine.com/community/" target="_blank">community forum</a>, and we\'ll respond personally.', 'c9-admin'); ?></p>
 </div>
-    <!-- .wrap-->
+<!-- .wrap-->

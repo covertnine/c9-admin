@@ -22,7 +22,12 @@
     margin: 1em 0 .5em 0;
 }
 
-#wpwrap {
+#wpwrap .components-button,
+#wpadminbar,
+#adminmenu,
+.wp-heading-inline,
+.c9-admin-settings-wrap,
+.postbox-header {
     font-family: "Muli", "helvetica neue", helvetica, sans-serif;
 }
 
@@ -32,7 +37,6 @@
 
 #wpadminbar {
     background-color: #191e23;
-    font-family: "Muli", "helvetica neue", helvetica, sans-serif;
     letter-spacing: 0.04rem;
     text-transform: uppercase;
     font-weight: 700;
@@ -63,7 +67,6 @@
 #adminmenuback,
 #adminmenuwrap {
     background-color: #f4f4f4;
-    font-family: "Muli", "helvetica neue", helvetica, sans-serif;
 }
 
 #adminmenu .wp-submenu {
@@ -112,8 +115,11 @@ body:not(.block-editor-page) #adminmenu .wp-menu-open .wp-submenu li:before {
 }
 
 #adminmenu .wp-has-current-submenu .wp-submenu,
+#adminmenu .opensub a.wp-has-current-submenu:focus+.wp-submenu,
+#adminmenu .wp-has-current-submenu .wp-submenu.sub-open,
+#adminmenu .wp-has-current-submenu.opensub .wp-submenu,
 #adminmenu a.wp-has-current-submenu:focus+.wp-submenu,
-#adminmenu .opensub a.wp-has-current-submenu:focus+.wp-submenu {
+.no-js li.wp-has-current-submenu:hover .wp-submenu {
     background-color: #f4f4f4;
     color: #23282d !important;
 }
@@ -126,7 +132,6 @@ body:not(.block-editor-page) #adminmenu .wp-menu-open .wp-submenu li:before {
 body:not(.folded) #adminmenu .opensub.wp-has-current-submenu:focus+.wp-submenu li a,
 body:not(.folded) #adminmenu .opensub.wp-has-current-submenu:focus+.wp-submenu li a:focus #adminmenu .opensub.wp-has-current-submenu:focus+.wp-submenu li a,
 #adminmenu .opensub.wp-has-current-submenu:focus+.wp-submenu li a:focus {
-    /* text-align: center !important; */
     color: #23282d !important;
 }
 
@@ -172,7 +177,8 @@ div.wp-menu-image:before {
 #adminmenu .wp-submenu li.current a,
 #adminmenu .wp-submenu li.current a:focus,
 #adminmenu .wp-submenu li.current a:hover,
-#adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a {
+#adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a,
+#adminmenu .wp-menu-open .wp-submenu a {
     /* text-align: center; */
     color: #23282d;
 }
@@ -182,8 +188,8 @@ div.wp-menu-image:before {
     /* text-align: center !important; */
 }
 
-#adminmenu .wp-has-submenu .wp-submenu a,
-#adminmenu li:not(.opensub) .wp-submenu a {
+#adminmenu .wp-has-submenu:not(.wp-menu-open) .wp-submenu a,
+#adminmenu li:not(.opensub):not(.wp-menu-open) .wp-submenu a {
     color: #fff;
 }
 
@@ -198,7 +204,7 @@ div.wp-menu-image:before {
 
 /* creating problems on click */
 
-#adminmenu .opensub .wp-submenu a {
+#adminmenu .opensub:not(.wp-menu-open) .wp-submenu a {
     color: #ffffff;
 }
 
