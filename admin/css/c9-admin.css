@@ -43,7 +43,10 @@ div#widgets-right .sidebar-name h3,
 .components-panel,
 .media-modal-content,
 .media-frame-content,
-.components-snackbar__content {
+.components-snackbar__content,
+.customize-control-title,
+#customize-theme-controls,
+.wp-full-overlay-sidebar-content {
     font-family: "Muli",
         "helvetica neue",
         helvetica,
@@ -98,11 +101,16 @@ div#widgets-right .sidebar-name h3 {
 }
 
 #adminmenu .dashicons-before:before,
-.dashicons-before img {
+#adminmenu .dashicons-before img {
     font-size: 13px;
     width: 13px;
     height: 13px;
     line-height: 20px;
+}
+
+.dashicons,
+.dashicons-before:before {
+    font-size: 20px;
 }
 
 #adminmenu a.wp-has-current-submenu:focus+.wp-submenu,
@@ -414,13 +422,31 @@ div.wp-menu-image:before {
 #post-query-submit,
 .wp-core-ui p .button,
 .wrap .page-title-action,
-.media-router .media-menu-item {
+.media-router .media-menu-item,
+#customize-controls .wp-core-ui .button,
+.wp-core-ui .button-link {
     font-family: "Muli", "helvetica neue", helvetica, sans-serif;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 11px;
     color: #191e23;
+    text-decoration: none;
+}
+
+.wp-core-ui button:not(.button-link) {
+    font-family: "Muli",
+        "helvetica neue",
+        helvetica,
+        sans-serif;
+    letter-spacing: 0px;
+    box-shadow: none;
+}
+
+.wp-core-ui .button,
+.wp-core-ui .button-primary,
+.wp-core-ui .button-secondary {
+    padding: 2px 12px;
 }
 
 /* tabs in media uploader */
