@@ -11,7 +11,7 @@
  * Plugin Name:       C9 Admin Dashboard
  * Plugin URI:        https://www.covertnine.com/c9-admin-dashboard-plugin
  * Description:       Essential WordPress admin features for managing client sites including customization of admin screens, labels, plugin/theme update screen visibility and more.
- * Version:           1.1.7
+ * Version:           1.1.8
  * Author:            COVERT NINE
  * Author URI:        https://www.covertnine.com
  * License:           GPL-2.0+
@@ -137,6 +137,7 @@ function c9_addlogo_to_menu() {
 		#adminmenuwrap,
 		#adminmenu,
 		#adminmenu .wp-has-current-submenu .wp-submenu,
+		#adminmenu .wp-has-current-submenu.opensub .wp-submenu,
 		#adminmenu a.wp-has-current-submenu:focus+.wp-submenu,
 		#adminmenu .opensub a.wp-has-current-submenu:focus+.wp-submenu {
 			background-color: <?php echo esc_html($c9_admin_menu_color); ?>;
@@ -155,6 +156,7 @@ function c9_addlogo_to_menu() {
 		#adminmenu a,
 		#adminmenu .wp-submenu a,
 		#adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a,
+		#adminmenu .wp-has-current-submenu.opensub .wp-submenu a,
 		#adminmenu li:not(.opensub) .wp-submenu a,
 		#adminmenu .wp-has-current-submenu:not(.opensub) .wp-submenu a {
 			color: <?php echo esc_html($c9_admin_menu_text_color); ?>;

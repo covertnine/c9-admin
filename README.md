@@ -19,6 +19,10 @@ A WordPress Admin enhancement plugin with a custom skin, and many other customiz
 
 # Changelog
 
+## 1.1.8
+
+- More CSS customizations in admin, updates to buttons
+
 ## 1.1.7
 
 - CSS backend cleanup to avoid font issues in block editor, typo fixes
