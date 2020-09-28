@@ -36,7 +36,7 @@ if (!defined('C9_ADMIN_ORPHAN_ATTACHMENT_REDIRECT_CODE')) {
 /**
  * Currently plugin version.
  */
-define('C9_ADMIN_VERSION', '1.1.7');
+define('C9_ADMIN_VERSION', '1.1.8');
 
 
 /**
