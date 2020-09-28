@@ -22,6 +22,7 @@
     margin: 1em 0 .5em 0;
 }
 
+/* c9-admin typography */
 .wp-admin .wrap,
 .wrap h1,
 .wrap h2,
@@ -46,7 +47,9 @@ div#widgets-right .sidebar-name h3,
 .components-snackbar__content,
 .customize-control-title,
 #customize-theme-controls,
-.wp-full-overlay-sidebar-content {
+.wp-full-overlay-sidebar-content,
+.components-notice__content,
+.components-placeholder {
     font-family: "Muli",
         "helvetica neue",
         helvetica,
@@ -407,7 +410,7 @@ div.wp-menu-image:before {
     margin-top: 10px;
 }
 
-/* more wp button fonts */
+/* wp buttons fonts */
 .wp-core-ui .button-group.button-large .button,
 .wp-core-ui .button.button-large,
 .wp-core-ui button,
@@ -434,13 +437,19 @@ div.wp-menu-image:before {
     text-decoration: none;
 }
 
-.wp-core-ui button:not(.button-link) {
+.wp-core-ui button:not(.button-link):not(.is-tertiary):not(.is-secondary):not(.is-primary) {
     font-family: "Muli",
         "helvetica neue",
         helvetica,
         sans-serif;
     letter-spacing: 0px;
     box-shadow: none;
+    text-transform: none;
+    font-size: 13px;
+}
+
+.components-button.plugin-c9-panel-button {
+    letter-spacing: .5px;
 }
 
 .wp-core-ui .button,
@@ -453,6 +462,8 @@ div.wp-menu-image:before {
 .media-router .media-menu-item {
     padding: 8px 16px;
 }
+
+
 
 #doaction,
 #doaction2,
@@ -478,6 +489,11 @@ div.wp-menu-image:before {
     letter-spacing: .6px;
 }
 
+/* placeholder component */
+.components-placeholder {
+    border: 1px solid #191e23;
+}
+
 /* default dashicons */
 
 body .dashicons,
@@ -490,6 +506,7 @@ body .dashicons :before {
     white-space: nowrap;
 }
 
+/* edit post header */
 .edit-post-header .components-button.editor-post-preview,
 .edit-post-header .components-button.editor-post-publish-button,
 .edit-post-header .components-button.editor-post-publish-panel__toggle,
@@ -502,6 +519,10 @@ body .dashicons :before {
     font-size: 11px;
     letter-spacing: 0.6px;
     text-transform: uppercase;
+}
+
+.edit-post-header__settings .components-button.is-tertiary {
+    padding: 6px 12px;
 }
 
 /* 3 dots menu from Gutenberg edit screen */
@@ -522,12 +543,28 @@ body .dashicons :before {
 }
 
 /* inspector buttons height */
-
 .components-panel__body.plugin-c9-panel .components-button.is-large {
     height: auto;
 }
 
+/* sidebar */
 /* side bar adjustments */
+/* sidebar components tab */
+.components-button.edit-post-sidebar__panel-tab {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: "Muli",
+        "helvetica neue",
+        helvetica,
+        sans-serif;
+    opacity: .7;
+}
+
+/* components sidebar panel title color */
+.components-panel__body-title .components-panel__body-toggle.components-button {
+    color: #191e23;
+}
 
 .components-panel,
 .editor-post-publish-panel {
@@ -541,12 +578,6 @@ body .dashicons :before {
 
 .edit-post-sidebar label {
     margin-bottom: 0px;
-}
-
-.components-button.edit-post-sidebar__panel-tab {
-    font-weight: bold;
-    font-size: 12px;
-    opacity: .7;
 }
 
 .components-base-control .components-base-control__field~p {
@@ -569,6 +600,29 @@ body .dashicons :before {
     margin-bottom: 0;
 }
 
+.components-menu-group .components-button {
+    text-transform: none;
+    font-size: 13px;
+    letter-spacing: 0px;
+}
+
+/* sidebar pop over menu font size */
+.components-popover__content .components-menu-group__label {
+    font-size: 13px;
+}
+
+/* plugin names in sidebar */
+.interface-complementary-area-header strong {
+    font-size: 13px;
+}
+
+/* components modal from editor options */
+.components-modal__header .components-modal__header-heading,
+.edit-post-options-modal__section-title,
+.components-checkbox-control__input-container .components-checkbox-control__label {
+    font-size: 13px;
+}
+
 /* inspector toggle headings */
 .components-panel__body-title .components-panel__body-toggle.components-button {
     font-size: 14px;
@@ -582,16 +636,17 @@ body .dashicons :before {
 }
 
 /* tooltip pop over adjustments */
-
 /* URL tooltips in editor */
-
 .components-popover__content {
     font-size: 11px;
 }
 
 /* admin dashboard widget */
 #dashboard-widgets .inside .c9-admin-dashboard-widget h3 {
-    font: bold 12px/1 "muli", sans-serif;
+    font: bold 12px/1 "Muli",
+        "helvetica neue",
+        helvetica,
+        sans-serif;
     text-transform: uppercase;
     color: #555d66;
     letter-spacing: .6px;
