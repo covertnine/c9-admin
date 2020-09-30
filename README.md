@@ -19,6 +19,10 @@ A WordPress Admin enhancement plugin with a custom skin, and many other customiz
 
 # Changelog
 
+## v1.1.9
+
+- Active button and appender button CSS bug fixes.
+
 ## 1.1.8
 
 - More CSS customizations in admin, updates to buttons

@@ -48,6 +48,11 @@ Yes. Click on Settings > C9 Admin and then check the Disable Custom Skin For Adm
 4. C9 Admin Settings - Control Admin Screens and Labels
 
 == Changelog ==
+
+v1.1.9
+
+Active button and appender button CSS bug fixes.
+
 v1.1.8
 
 More CSS customizations in admin, updates to buttons
