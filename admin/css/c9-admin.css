@@ -494,7 +494,21 @@ div.wp-menu-image:before {
     text-decoration: none;
 }
 
-.wp-core-ui button:not(.button-link):not(.is-tertiary):not(.is-secondary):not(.is-primary):not(.button):not(.edit-post-sidebar__panel-tab):not(.components-panel__body-toggle) {
+.wrap .add-new-h2,
+.wrap .add-new-h2:active,
+.wrap .page-title-action,
+.wrap .page-title-action:active {
+    font-family: 'muli',
+        'helvetica neue',
+        helvetica,
+        sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 11px;
+}
+
+.wp-core-ui button:not(.button-link):not(.is-tertiary):not(.is-secondary):not(.is-primary):not(.button):not(.edit-post-sidebar__panel-tab):not(.components-panel__body-toggle):not(.block-editor-button-block-appender) {
     font-family: 'muli',
         'helvetica neue',
         helvetica,
