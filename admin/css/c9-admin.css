@@ -525,6 +525,10 @@ button.dashicons:before {
     font-size: 20px;
 }
 
+.button.dashicons.publish-settings:before {
+    font-size: 13px;
+}
+
 .components-button.plugin-c9-panel-button {
     letter-spacing: .4px;
 }
@@ -596,9 +600,12 @@ body .dashicons :before {
     text-transform: uppercase;
 }
 
-.edit-post-header__settings .components-button.is-tertiary {
-    padding: 6px 12px;
+@media only screen and (min-width: 600px) {
+    .edit-post-header__settings .components-button.is-tertiary {
+        padding: 6px 12px;
+    }
 }
+
 
 /* 3 dots menu from Gutenberg edit screen */
 
