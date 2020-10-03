@@ -19,6 +19,10 @@ A WordPress Admin enhancement plugin with a custom skin, and many other customiz
 
 # Changelog
 
+## v1.2.0
+
+- Style adjustments for buttons and inspector elements in Gutenberg
+
 ## v1.1.9
 
 - Active button and appender button CSS bug fixes.

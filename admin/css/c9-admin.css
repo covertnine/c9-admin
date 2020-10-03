@@ -508,7 +508,7 @@ div.wp-menu-image:before {
     font-size: 11px;
 }
 
-.wp-core-ui button:not(.button-link):not(.is-tertiary):not(.is-secondary):not(.is-primary):not(.button):not(.edit-post-sidebar__panel-tab):not(.components-panel__body-toggle):not(.block-editor-button-block-appender) {
+.wp-core-ui button:not(.button-link):not(.is-tertiary):not(.is-secondary):not(.is-primary):not(.button):not(.edit-post-sidebar__panel-tab):not(.components-panel__body-toggle):not(.block-editor-button-block-appender):not(.has-icon):not(.has-icon.has-text):not(.is-small) {
     font-family: 'muli',
         'helvetica neue',
         helvetica,
@@ -517,6 +517,17 @@ div.wp-menu-image:before {
     box-shadow: none;
     text-transform: none;
     font-size: 13px;
+}
+
+.components-button.has-text.has-icon:hover,
+.components-button.has-text.has-icon:focus,
+.components-button.is-small:hover {
+    box-shadow: inset 0 0 0 0.8px var(--wp-admin-theme-color);
+}
+
+.c9-key-stepper .components-button {
+    box-shadow: inset 0 0 0 0.8px var(--gray);
+    margin-top: 5px;
 }
 
 button.dashicons,
