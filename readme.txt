@@ -3,7 +3,7 @@ Contributors: ttoomey, samirillion
 Tags: wordpress dashboard, admin dashboard, dashboard, dashboard widgets, admin
 Donate link: https://www.covertnine.com/about
 Requires at least: 4.9.2
-Tested up to: 5.5.1
+Tested up to: 5.5.3
 Requires PHP: 7.1
 Stable tag: 1.2.0
 License: GPLv2 or later
@@ -51,7 +51,11 @@ Yes. Click on Settings > C9 Admin and then check the Disable Custom Skin For Adm
 
 v1.2.0
 
+<<<<<<< HEAD
 Style adjustments for buttons and inspector elements in Gutenberg
+=======
+Style updates
+>>>>>>> develop
 
 v1.1.9
 
