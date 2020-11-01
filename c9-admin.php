@@ -11,7 +11,7 @@
  * Plugin Name:       C9 Admin Dashboard
  * Plugin URI:        https://www.covertnine.com/c9-admin-dashboard-plugin
  * Description:       Essential WordPress admin features for managing client sites including customization of admin screens, labels, plugin/theme update screen visibility and more.
- * Version:           1.1.9
+ * Version:           1.2.0
  * Author:            COVERT NINE
  * Author URI:        https://www.covertnine.com
  * License:           GPL-2.0+
@@ -36,7 +36,7 @@ if (!defined('C9_ADMIN_ORPHAN_ATTACHMENT_REDIRECT_CODE')) {
 /**
  * Currently plugin version.
  */
-define('C9_ADMIN_VERSION', '1.1.9');
+define('C9_ADMIN_VERSION', '1.2.0');
 
 
 /**
@@ -61,38 +61,38 @@ add_filter('upload_mimes', 'c9_admin_mime_types');
 /**
  * Add logo to WordPress Admin Login
  */
-function c9_login_logo() {
+function c9_login_logo()
+{
 
-	$c9_logo_id 	= get_theme_mod( 'custom_logo' );
-	$c9_logo_image  = wp_get_attachment_image_src( $c9_logo_id , 'full' );
+	$c9_logo_id 	= get_theme_mod('custom_logo');
+	$c9_logo_image  = wp_get_attachment_image_src($c9_logo_id, 'full');
 
-	if ( !empty($c9_logo_id) ) { // logo has been uploaded
+	if (!empty($c9_logo_id)) { // logo has been uploaded
 		$c9admin_logo_image = $c9_logo_image[0];
-	?>
-	<style type="text/css">
-		#login h1 a,
-		.login h1 a {
-			background-image: url('<?php echo $c9admin_logo_image; ?>');
-			background-size: contain;
-			width: 200px;
-		}
-	</style>
-<?php
-	} 
+?>
+		<style type="text/css">
+			#login h1 a,
+			.login h1 a {
+				background-image: url('<?php echo $c9admin_logo_image; ?>');
+				background-size: contain;
+				width: 200px;
+			}
+		</style>
+	<?php
+	}
 
 	if (get_option('C9_Admin')['admin_login_bg_color']) {
 
 		$c9_admin_login_bg_color = get_option('C9_Admin')['admin_login_bg_color'];
 	?>
 
-	<style type="text/css">
-		body.login {
-			background-color: <?php echo esc_html($c9_admin_login_bg_color); ?>;
-		}
-	</style>
-<?php
+		<style type="text/css">
+			body.login {
+				background-color: <?php echo esc_html($c9_admin_login_bg_color); ?>;
+			}
+		</style>
+	<?php
 	}
-
 }
 add_action('login_enqueue_scripts', 'c9_login_logo');
 
@@ -100,31 +100,33 @@ add_action('login_enqueue_scripts', 'c9_login_logo');
 /**
  * Add logo and admin menu color to backend
  */
-function c9_addlogo_to_menu() {
+function c9_addlogo_to_menu()
+{
 
-	$c9_logo_id 	= get_theme_mod( 'custom_logo' );
-	$c9_logo_image  = wp_get_attachment_image_src( $c9_logo_id , 'full' );
+	$c9_logo_id 	= get_theme_mod('custom_logo');
+	$c9_logo_image  = wp_get_attachment_image_src($c9_logo_id, 'full');
 
-	if ( !empty($c9_logo_id) ) { // logo has been uploaded
+	if (!empty($c9_logo_id)) { // logo has been uploaded
 		$c9admin_logo_image = $c9_logo_image[0];
 	?>
 
-	<style type="text/css">
-		#adminmenu:before {
-			content: ' ';
-			display: block;
-			width: 90%;
-			margin: 0px auto 12px auto;
-			height: 90px;
-			background-image: url('<?php echo $c9admin_logo_image; ?>');
-			background-size: contain;
-			background-position: center;
-			background-repeat: no-repeat;
-		}
-		.folded #adminmenu:before {
-			height: 20px;
-		}
-	</style>
+		<style type="text/css">
+			#adminmenu:before {
+				content: ' ';
+				display: block;
+				width: 90%;
+				margin: 0px auto 12px auto;
+				height: 90px;
+				background-image: url('<?php echo $c9admin_logo_image; ?>');
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+
+			.folded #adminmenu:before {
+				height: 20px;
+			}
+		</style>
 	<?php
 	}
 
@@ -133,38 +135,38 @@ function c9_addlogo_to_menu() {
 		$c9_admin_menu_color = get_option('C9_Admin')['admin_menu_color'];
 	?>
 
-	<style type="text/css">
-		#adminmenuwrap,
-		#adminmenu,
-		#adminmenu .wp-has-current-submenu .wp-submenu,
-		#adminmenu .wp-has-current-submenu.opensub .wp-submenu,
-		#adminmenu a.wp-has-current-submenu:focus+.wp-submenu,
-		#adminmenu .opensub a.wp-has-current-submenu:focus+.wp-submenu {
-			background-color: <?php echo esc_html($c9_admin_menu_color); ?>;
-		}
-	</style>
-<?php
+		<style type="text/css">
+			#adminmenuwrap,
+			#adminmenu,
+			#adminmenu .wp-has-current-submenu .wp-submenu,
+			#adminmenu .wp-has-current-submenu.opensub .wp-submenu,
+			#adminmenu a.wp-has-current-submenu:focus+.wp-submenu,
+			#adminmenu .opensub a.wp-has-current-submenu:focus+.wp-submenu {
+				background-color: <?php echo esc_html($c9_admin_menu_color); ?>;
+			}
+		</style>
+	<?php
 	}
 
-		if (get_option('C9_Admin')['admin_menu_text_color']) {
+	if (get_option('C9_Admin')['admin_menu_text_color']) {
 
 		$c9_admin_menu_text_color = get_option('C9_Admin')['admin_menu_text_color'];
 	?>
 
-	<style type="text/css">
-		#adminmenu div.wp-menu-image:before, div.wp-menu-image:before,
-		#adminmenu a,
-		#adminmenu .wp-submenu a,
-		#adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a,
-		#adminmenu .wp-has-current-submenu.opensub .wp-submenu a,
-		#adminmenu li:not(.opensub) .wp-submenu a,
-		#adminmenu .wp-has-current-submenu:not(.opensub) .wp-submenu a {
-			color: <?php echo esc_html($c9_admin_menu_text_color); ?>;
-		}
-	</style>
+		<style type="text/css">
+			#adminmenu div.wp-menu-image:before,
+			div.wp-menu-image:before,
+			#adminmenu a,
+			#adminmenu .wp-submenu a,
+			#adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a,
+			#adminmenu .wp-has-current-submenu.opensub .wp-submenu a,
+			#adminmenu li:not(.opensub) .wp-submenu a,
+			#adminmenu .wp-has-current-submenu:not(.opensub) .wp-submenu a {
+				color: <?php echo esc_html($c9_admin_menu_text_color); ?>;
+			}
+		</style>
 <?php
 	}
-
 }
 add_action('admin_head', 'c9_addlogo_to_menu', 99);
 

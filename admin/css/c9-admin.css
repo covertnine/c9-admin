@@ -58,7 +58,8 @@ div#widgets-right .sidebar-name h3,
 .block-editor-block-inspector,
 .components-base-control,
 .components-placeholder,
-.components-placeholder>div {
+.components-placeholder>div,
+.editor-post-title__block .editor-post-title__input {
     font-family: 'muli',
         'helvetica neue',
         helvetica,
@@ -535,8 +536,17 @@ button.dashicons:before {
 
 .wp-core-ui .button,
 .wp-core-ui .button-primary,
-.wp-core-ui .button-secondary {
+.wp-core-ui .button-secondary,
+#wpbody .wrap .button {
     padding: 2px 12px;
+}
+
+#wpbody .wrap .active-theme .button,
+.button.activate {
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: .5px;
+    padding: 10px 12px 6px 12px;
 }
 
 /* tabs in media uploader */
