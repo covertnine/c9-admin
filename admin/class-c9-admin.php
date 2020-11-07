@@ -34,7 +34,7 @@ class C9_Admin
 
         $this->plugin_name = $plugin_name;
         $this->version = $version;
-        
+
         // Add menu item
         add_action('admin_menu', array($this, 'add_plugin_admin_menu'));
 
@@ -239,46 +239,46 @@ class C9_Admin
         $valid['admin_menu_color'] = strip_tags(stripslashes($valid['admin_menu_color']));
 
         // Check if is a valid hex color
-        if ( (!empty($this->plugin_name['admin_menu_color']) ) && (FALSE === $this->c9_check_color($valid['admin_menu_color']) ) ) {
+        if ((!empty($this->plugin_name['admin_menu_color'])) && (FALSE === $this->c9_check_color($valid['admin_menu_color']))) {
 
 
             // Set the error message
             add_settings_error('admin_menu_color', 'admin_menu_color_bg_error', 'Insert a valid color for the WordPress admin menu background', 'error'); // $setting, $code, $message, $type
 
             // Get the previous valid value
-            if ( !empty($this->plugin_name['admin_menu_color']) ) {
+            if (!empty($this->plugin_name['admin_menu_color'])) {
                 $valid['admin_menu_color'] = $this->plugin_name['admin_menu_color'];
             }
         }
-        
+
         // Validate Admin Menu Text Color
         $valid['admin_menu_text_color'] = trim($input['admin_menu_text_color']);
         $valid['admin_menu_text_color'] = strip_tags(stripslashes($valid['admin_menu_text_color']));
 
         // Check if is a valid hex color
-        if ( (!empty($this->plugin_name['admin_menu_text_color']) ) && (FALSE === $this->c9_check_color($valid['admin_menu_text_color']) ) ) {
+        if ((!empty($this->plugin_name['admin_menu_text_color'])) && (FALSE === $this->c9_check_color($valid['admin_menu_text_color']))) {
 
             // Set the error message
             add_settings_error('admin_menu_text_color', 'admin_menu_text_color_bg_error', 'Insert a valid color for the WordPress admin menu text', 'error'); // $setting, $code, $message, $type
 
             // Get the previous valid value
-            if ( !empty($this->plugin_name['admin_menu_text_color']) ) {
+            if (!empty($this->plugin_name['admin_menu_text_color'])) {
                 $valid['admin_menu_text_color'] = $this->plugin_name['admin_menu_text_color'];
             }
         }
-      
+
         // Validate Admin Login Background Color
         $valid['admin_login_bg_color'] = trim($input['admin_login_bg_color']);
         $valid['admin_login_bg_color'] = strip_tags(stripslashes($valid['admin_login_bg_color']));
 
         // Check if is a valid hex color
-        if ( (!empty($this->plugin_name['admin_login_bg_color']) ) && (FALSE === $this->c9_check_color($valid['admin_login_bg_color']) ) ) {
+        if ((!empty($this->plugin_name['admin_login_bg_color'])) && (FALSE === $this->c9_check_color($valid['admin_login_bg_color']))) {
 
             // Set the error message
             add_settings_error('admin_menu_color', 'admin_login_bg_error', 'Insert a valid color for WordPress admin login screen background', 'error'); // $setting, $code, $message, $type
 
             // Get the previous valid value
-            if ( !empty($this->plugin_name['admin_login_bg_color']) ) {
+            if (!empty($this->plugin_name['admin_login_bg_color'])) {
                 $valid['admin_login_bg_color'] = $this->plugin_name['admin_login_bg_color'];
             }
         }
@@ -376,11 +376,6 @@ class C9_Admin
             remove_submenu_page('themes.php', 'themes.php');
             remove_submenu_page('themes.php', 'tgmpa-install-plugins');
             remove_submenu_page('themes.php', 'theme-editor.php');
-        }
-
-        // hide seo settings
-        if (get_option($this->plugin_name)['hide_seo_settings']) {
-            remove_menu_page('theseoframework-settings');
         }
 
         // hide Matomo settings
@@ -671,13 +666,12 @@ class C9_Admin
         <div class="c9-admin-dashboard-widget">
         <h3>' . __('Get Support', 'c9-admin') . '</h3>
         <ul>
-        <li><a href="https://c9.covertnine.com/" title="' . __('C9 Theme + Blocks Docs', 'c9-admin') . '" class="btn-c9-admin btn-c9admin-docs" target="_blank"><span>' .__('C9 Theme + Blocks Docs', 'c9-admin') . '</span></a></li>
+        <li><a href="https://c9.covertnine.com/" title="' . __('C9 Theme + Blocks Docs', 'c9-admin') . '" class="btn-c9-admin btn-c9admin-docs" target="_blank"><span>' . __('C9 Theme + Blocks Docs', 'c9-admin') . '</span></a></li>
         <li><a href="https://www.covertnine.com/account" title="' . __('COVERT NINE Account', 'c9-admin') . '" class="btn-c9-admin btn-c9admin-account" target="_blank"><span>' . __('C9 Account Dashboard', 'c9-admin') . '</span></a></li>
         <li><a href="https://www.covertnine.com/get-support" title="' . __('Get premium support from COVERT NINE', 'c9-admin') . '" class="btn-c9-admin btn-c9admin-support" target="_blank"><span>' . __('C9 Paid Support', 'c9-admin') . '</span></a></li>
         <li><a href="https://wordpress.org/support/forums/" title="' . __('WordPress.org Support', 'c9-admin') . '" class="btn-c9-admin btn-c9wp-support" target="_blank"><span>' . __('WP.org Support', 'c9-admin') . '</span></a></li>
         </ul>
         </div>
         ';
-        
     }
 }

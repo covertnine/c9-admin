@@ -99,14 +99,6 @@ $custom_all_files_label = $options['custom_all_files_label'];
                 </fieldset>
 
                 <fieldset>
-                    <legend class="screen-reader-text"><span><?php _e('Hide SEO settings', 'c9-admin'); ?></span></legend>
-                    <label for="<?php echo $this->plugin_name; ?>-hide_seo_settings">
-                        <input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_seo_settings" name="<?php echo $this->plugin_name; ?>[hide_seo_settings]" value="1" <?php checked($hide_seo_settings, 1); ?> />
-                        <span><?php esc_attr_e('Hide SEO settings', 'c9-admin'); ?></span>
-                    </label>
-                </fieldset>
-
-                <fieldset>
                     <legend class="screen-reader-text"><span><?php _e('Hide Matomo Analytics', 'c9-admin'); ?></span></legend>
                     <label for="<?php echo $this->plugin_name; ?>-hide_matomo_settings">
                         <input type="checkbox" id="<?php echo $this->plugin_name; ?>-hide_matomo_settings" name="<?php echo $this->plugin_name; ?>[hide_matomo_settings]" value="1" <?php checked($hide_matomo_settings, 1); ?> />
@@ -194,11 +186,11 @@ $custom_all_files_label = $options['custom_all_files_label'];
                     <label for="<?php echo $this->plugin_name; ?>-admin_login_bg_color">
                         <div class="c9-label sr-only"><?php esc_html_e('Select Background Color', 'c9-admin'); ?></div>
                         <input type="text" class="small c9-color-picker" id="<?php echo $this->plugin_name; ?>-admin_login_bg_color" name="<?php echo $this->plugin_name; ?>[admin_login_bg_color]" value=<?php echo '"';
-                        if (!empty($admin_login_bg_color)) {
-                        echo $admin_login_bg_color;
-                        }
-                        echo '"';
-                        ?> />
+                                                                                                                                                                                                            if (!empty($admin_login_bg_color)) {
+                                                                                                                                                                                                                echo $admin_login_bg_color;
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                            echo '"';
+                                                                                                                                                                                                            ?> />
                     </label>
                 </fieldset>
 
