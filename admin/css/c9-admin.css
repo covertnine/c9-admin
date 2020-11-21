@@ -329,6 +329,10 @@ div.wp-menu-image:before {
     margin-top: 15px;
 }
 
+.c9-label.sr-only {
+    display: none;
+}
+
 .folded #adminmenu li.menu-top {
     height: 54px;
 }
