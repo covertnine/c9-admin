@@ -49,6 +49,10 @@ Yes. Click on Settings > C9 Admin and then check the Disable Custom Skin For Adm
 
 == Changelog ==
 
+v1.2.2
+
+Fixed deactivation errors on some servers. Shout out to reddit user Iamonabike
+
 v1.2.1
 
 Removed SEO setting causing errors.
