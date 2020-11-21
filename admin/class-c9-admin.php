@@ -38,7 +38,7 @@ class C9_Admin
         // Add menu item
         add_action('admin_menu', array($this, 'add_plugin_admin_menu'));
 
-        if (!isset(get_option($this->plugin_name)['custom_skin'])) {
+        if ((empty(get_option($this->plugin_name)['custom_skin'])) && (false == get_option($this->plugin_name)['custom_skin'])) {
             add_action('admin_enqueue_scripts', array($this, 'enqueue_styles'));
             add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'));
         }
@@ -54,7 +54,7 @@ class C9_Admin
         add_action('wp_dashboard_setup', array($this, 'c9_remove_dashboard_widgets'));
         add_action('wp_dashboard_setup', array($this, 'c9_add_dashboard_widget'));
 
-        if (isset(get_option($this->plugin_name)['suppress_update_notice'])) {
+        if (get_option($this->plugin_name)['suppress_update_notice']) {
             add_filter('pre_site_transient_update_core', array($this, 'suppress_update_notice'));
             add_filter('pre_site_transient_update_plugins', array($this, 'suppress_update_notice'));
             add_filter('pre_site_transient_update_themes', array($this, 'suppress_update_notice'));
@@ -301,7 +301,7 @@ class C9_Admin
      **/
     public function show_updated_only_to_admins()
     {
-        if (isset(get_option($this->plugin_name)['admin_only_notifications'])) {
+        if (get_option($this->plugin_name)['admin_only_notifications']) {
             if (!current_user_can('update_core')) {
                 remove_action('admin_notices', 'update_nag', 3);
                 remove_action('network_admin_notices', 'update_nag', 3);
@@ -319,7 +319,7 @@ class C9_Admin
     {
         $remove_menu_items = array();
 
-        if (isset(get_option($this->plugin_name)['hide_developer_items'])) {
+        if (get_option($this->plugin_name)['hide_developer_items']) {
             // $remove_menu_items[] = __('Events');
             $remove_menu_items[] = __('Comments');
             remove_menu_page('wr2x_settings-menu');
@@ -335,15 +335,15 @@ class C9_Admin
             $remove_menu_items[] = __('Max Mega Menu');
         }
 
-        if (isset(get_option($this->plugin_name)['hide_plugin_menu_item'])) {
+        if (get_option($this->plugin_name)['hide_plugin_menu_item']) {
             $remove_menu_items[] = __('Plugins');
         }
 
-        if (isset(get_option($this->plugin_name)['hide_comment_menu_item'])) {
+        if (get_option($this->plugin_name)['hide_comment_menu_item']) {
             $remove_menu_items[] = __('Comments');
         }
 
-        if (isset(get_option($this->plugin_name)['hide_update_menu_item'])) {
+        if (get_option($this->plugin_name)['hide_update_menu_item']) {
             // xdebug_break();
             remove_submenu_page('index.php', 'update-core.php');
         }
@@ -365,7 +365,7 @@ class C9_Admin
      */
     public function remove_custom_admin_menu_items()
     {
-        if (isset(get_option($this->plugin_name)['hide_developer_items'])) {
+        if (get_option($this->plugin_name)['hide_developer_items']) {
             remove_menu_page('wsal-auditlog');
             remove_menu_page('pmxi-admin-home');
             remove_menu_page('maxmegamenu');
@@ -379,18 +379,18 @@ class C9_Admin
         }
 
         // hide Matomo settings
-        if (isset(get_option($this->plugin_name)['hide_matomo_settings'])) {
+        if (get_option($this->plugin_name)['hide_matomo_settings']) {
             remove_menu_page('matomo');
             remove_submenu_page('index.php', 'index.php?page=wp-piwik_stats');
         }
 
         // hide User settings
-        if (isset(get_option($this->plugin_name)['hide_user_settings'])) {
+        if (get_option($this->plugin_name)['hide_user_settings']) {
             remove_menu_page('users.php');
         }
 
         //hide default posts
-        if (isset(get_option($this->plugin_name)['hide_default_posts'])) {
+        if (get_option($this->plugin_name)['hide_default_posts']) {
             remove_menu_page('edit.php');
         }
     }
@@ -521,7 +521,7 @@ class C9_Admin
      */
     function customize_post_admin_menu_labels()
     {
-        if (isset(get_option($this->plugin_name)['define_custom_labels'])) {
+        if (get_option($this->plugin_name)['define_custom_labels']) {
             global $menu;
             global $submenu;
             // print_r($menu);
