@@ -19,6 +19,13 @@ A WordPress Admin enhancement plugin with a custom skin, and many other customiz
 
 # Changelog
 
+## v1.2.2
+
+- Fixing errors on deactivation on some versions of PHP on some servers. Shout out to reddit user Iamonabike
+## v1.2.1
+
+- Style updates to buttons and removing SEO setting causing errors
+
 ## v1.2.0
 
 - Style adjustments for buttons and inspector elements in Gutenberg

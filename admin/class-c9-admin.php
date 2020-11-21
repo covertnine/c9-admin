@@ -38,7 +38,7 @@ class C9_Admin
         // Add menu item
         add_action('admin_menu', array($this, 'add_plugin_admin_menu'));
 
-        if (!get_option($this->plugin_name)['custom_skin']) {
+        if ((empty(get_option($this->plugin_name)['custom_skin'])) && (false == get_option($this->plugin_name)['custom_skin'])) {
             add_action('admin_enqueue_scripts', array($this, 'enqueue_styles'));
             add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'));
         }
@@ -54,7 +54,7 @@ class C9_Admin
         add_action('wp_dashboard_setup', array($this, 'c9_remove_dashboard_widgets'));
         add_action('wp_dashboard_setup', array($this, 'c9_add_dashboard_widget'));
 
-        if (get_option($this->plugin_name)['suppress_update_notice']) {
+        if (isset(get_option($this->plugin_name)['suppress_update_notice'])) {
             add_filter('pre_site_transient_update_core', array($this, 'suppress_update_notice'));
             add_filter('pre_site_transient_update_plugins', array($this, 'suppress_update_notice'));
             add_filter('pre_site_transient_update_themes', array($this, 'suppress_update_notice'));
@@ -290,7 +290,7 @@ class C9_Admin
      */
     public function suppress_update_notice()
     {
-        if (get_option($this->plugin_name)['suppress_update_notice']) {
+        if (isset(get_option($this->plugin_name)['suppress_update_notice'])) {
             global $wp_version;
             return (object) array('last_checked' => time(), 'version_checked' => $wp_version,);
         }
@@ -301,7 +301,7 @@ class C9_Admin
      **/
     public function show_updated_only_to_admins()
     {
-        if (get_option($this->plugin_name)['admin_only_notifications']) {
+        if (isset(get_option($this->plugin_name)['admin_only_notifications'])) {
             if (!current_user_can('update_core')) {
                 remove_action('admin_notices', 'update_nag', 3);
                 remove_action('network_admin_notices', 'update_nag', 3);
@@ -319,7 +319,7 @@ class C9_Admin
     {
         $remove_menu_items = array();
 
-        if (get_option($this->plugin_name)['hide_developer_items']) {
+        if (isset(get_option($this->plugin_name)['hide_developer_items'])) {
             // $remove_menu_items[] = __('Events');
             $remove_menu_items[] = __('Comments');
             remove_menu_page('wr2x_settings-menu');
@@ -335,15 +335,15 @@ class C9_Admin
             $remove_menu_items[] = __('Max Mega Menu');
         }
 
-        if (get_option($this->plugin_name)['hide_plugin_menu_item']) {
+        if (isset(get_option($this->plugin_name)['hide_plugin_menu_item'])) {
             $remove_menu_items[] = __('Plugins');
         }
 
-        if (get_option($this->plugin_name)['hide_comment_menu_item']) {
+        if (isset(get_option($this->plugin_name)['hide_comment_menu_item'])) {
             $remove_menu_items[] = __('Comments');
         }
 
-        if (get_option($this->plugin_name)['hide_update_menu_item']) {
+        if (isset(get_option($this->plugin_name)['hide_update_menu_item'])) {
             // xdebug_break();
             remove_submenu_page('index.php', 'update-core.php');
         }
@@ -365,7 +365,7 @@ class C9_Admin
      */
     public function remove_custom_admin_menu_items()
     {
-        if (get_option($this->plugin_name)['hide_developer_items']) {
+        if (isset(get_option($this->plugin_name)['hide_developer_items'])) {
             remove_menu_page('wsal-auditlog');
             remove_menu_page('pmxi-admin-home');
             remove_menu_page('maxmegamenu');
@@ -379,13 +379,13 @@ class C9_Admin
         }
 
         // hide Matomo settings
-        if (get_option($this->plugin_name)['hide_matomo_settings']) {
+        if (isset(get_option($this->plugin_name)['hide_matomo_settings'])) {
             remove_menu_page('matomo');
             remove_submenu_page('index.php', 'index.php?page=wp-piwik_stats');
         }
 
         // hide User settings
-        if (get_option($this->plugin_name)['hide_user_settings']) {
+        if (isset(get_option($this->plugin_name)['hide_user_settings'])) {
             remove_menu_page('users.php');
         }
 
@@ -402,11 +402,11 @@ class C9_Admin
      */
     public function custom_upload_filter($file)
     {
-        if (get_option($this->plugin_name)['limit_image_size']) {
+        if (isset(get_option($this->plugin_name)['limit_image_size'])) {
 
-            $max_px = get_option($this->plugin_name)['max_px'];
-            $min_px = get_option($this->plugin_name)['min_px'];
-            $max_size = get_option($this->plugin_name)['max_size'];
+            $max_px = isset(get_option($this->plugin_name)['max_px']);
+            $min_px = isset(get_option($this->plugin_name)['min_px']);
+            $max_size = isset(get_option($this->plugin_name)['max_size']);
 
             if (!in_array($file['type'], ['image/jpeg', 'image/gif', 'image/png', 'image/bmp', 'image/tiff', 'image/x-icon'])) {
                 return $file;
@@ -451,7 +451,7 @@ class C9_Admin
      */
     public function attachment_redirect()
     {
-        if (get_option($this->plugin_name)['disable_attachment_pages']) {
+        if (isset(get_option($this->plugin_name)['disable_attachment_pages'])) {
             global $post;
             if (is_attachment() && isset($post->post_parent) && is_numeric($post->post_parent) && ($post->post_parent != 0)) {
 
@@ -478,7 +478,7 @@ class C9_Admin
      */
     public function toggle_admin()
     {
-        if (get_option($this->plugin_name)['disable_admin'] || !is_user_logged_in()) {
+        if (isset(get_option($this->plugin_name)['disable_admin']) || (!is_user_logged_in())) {
             return false;
         } else {
             return true;
@@ -521,7 +521,7 @@ class C9_Admin
      */
     function customize_post_admin_menu_labels()
     {
-        if (get_option($this->plugin_name)['define_custom_labels']) {
+        if (isset(get_option($this->plugin_name)['define_custom_labels'])) {
             global $menu;
             global $submenu;
             // print_r($menu);
