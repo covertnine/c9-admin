@@ -81,7 +81,7 @@ function c9_login_logo()
 	<?php
 	}
 
-	if (get_option('C9_Admin')['admin_login_bg_color']) {
+	if ((isset(get_option('C9_Admin')['admin_login_bg_color'])) && (true == get_option('C9_Admin')['admin_login_bg_color'])) {
 
 		$c9_admin_login_bg_color = get_option('C9_Admin')['admin_login_bg_color'];
 	?>
@@ -129,8 +129,7 @@ function c9_addlogo_to_menu()
 		</style>
 	<?php
 	}
-
-	if (isset(get_option('C9_Admin')['admin_menu_color'])) {
+	if ((isset(get_option('C9_Admin')['admin_menu_color'])) && (true == get_option('C9_Admin')['admin_menu_color'])) {
 
 		$c9_admin_menu_color = get_option('C9_Admin')['admin_menu_color'];
 	?>
@@ -147,8 +146,7 @@ function c9_addlogo_to_menu()
 		</style>
 	<?php
 	}
-
-	if (isset(get_option('C9_Admin')['admin_menu_text_color'])) {
+	if ((isset(get_option('C9_Admin')['admin_menu_text_color'])) && (true == get_option('C9_Admin')['admin_menu_text_color'])) {
 
 		$c9_admin_menu_text_color = get_option('C9_Admin')['admin_menu_text_color'];
 	?>
