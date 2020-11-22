@@ -54,7 +54,7 @@ class C9_Admin
         add_action('wp_dashboard_setup', array($this, 'c9_remove_dashboard_widgets'));
         add_action('wp_dashboard_setup', array($this, 'c9_add_dashboard_widget'));
 
-        if ((isset(get_option($this->plugin_name)['suppress_update_notice'])) && (true == get_option($this->plugin_name)['suppress_update_notice'])) {
+        if ($this->c9_option('suppress_update_notice')) {
             add_filter('pre_site_transient_update_core', array($this, 'suppress_update_notice'));
             add_filter('pre_site_transient_update_plugins', array($this, 'suppress_update_notice'));
             add_filter('pre_site_transient_update_themes', array($this, 'suppress_update_notice'));
@@ -195,6 +195,21 @@ class C9_Admin
     }
 
     /**
+     * Helper function to safely retrieve the value of `get_option($this->plugin_name)[$name]`
+     */
+    private function c9_option($name) {
+        $opt = get_option($this->plugin_name);
+        return ((false !== $opt) && array_key_exists($name, $opt) && !empty($opt[$name]) ? $opt[$name] : false);
+    }
+
+    /**
+     * Helper function to validate boolean form inputs
+     */
+    private function c9_validate($input, $name) {
+        return ((isset($input[$name]) && !empty($input[$name])) ? 1 : 0);
+    }
+
+    /**
      * Validate Option Input
      **/
     public function validate($input)
@@ -203,25 +218,25 @@ class C9_Admin
         $valid = array();
 
         // Cleanup
-        $valid['disable_admin'] = (isset($input['disable_admin']) && !empty($input['disable_admin'])) ? 1 : 0;
-        $valid['disable_attachment_pages'] = (isset($input['disable_attachment_pages']) && !empty($input['disable_attachment_pages'])) ? 1 : 0;
-        $valid['hide_developer_items'] = (isset($input['hide_developer_items']) && !empty($input['hide_developer_items'])) ? 1 : 0;
-        $valid['hide_seo_settings'] = (isset($input['hide_seo_settings']) && !empty($input['hide_seo_settings'])) ? 1 : 0;
-        $valid['hide_matomo_settings'] = (isset($input['hide_matomo_settings']) && !empty($input['hide_matomo_settings'])) ? 1 : 0;
-        $valid['hide_user_settings'] = (isset($input['hide_user_settings']) && !empty($input['hide_user_settings'])) ? 1 : 0;
+        $valid['disable_admin'] = $this->c9_validate($input, 'disable_admin');
+        $valid['disable_attachment_pages'] = $this->c9_validate($input, 'disable_attachment_pages');
+        $valid['hide_developer_items'] = $this->c9_validate($input, 'hide_developer_items');
+        $valid['hide_seo_settings'] = $this->c9_validate($input, 'hide_seo_settings');
+        $valid['hide_matomo_settings'] = $this->c9_validate($input, 'hide_matomo_settings');
+        $valid['hide_user_settings'] = $this->c9_validate($input, 'hide_user_settings');
         //hide_default_posts
-        $valid['hide_default_posts'] = (isset($input['hide_default_posts']) && !empty($input['hide_default_posts'])) ? 1 : 0;
-        $valid['admin_only_notifications'] = (isset($input['admin_only_notifications']) && !empty($input['admin_only_notifications'])) ? 1 : 0;
-        $valid['suppress_update_notice'] = (isset($input['suppress_update_notice']) && !empty($input['suppress_update_notice'])) ? 1 : 0;
-        $valid['limit_image_size'] = (isset($input['limit_image_size']) && !empty($input['limit_image_size'])) ? 1 : 0;
-        $valid['define_custom_labels'] = (isset($input['define_custom_labels']) && !empty($input['define_custom_labels'])) ? 1 : 0;
+        $valid['hide_default_posts'] = $this->c9_validate($input, 'hide_default_posts');
+        $valid['admin_only_notifications'] = $this->c9_validate($input, 'admin_only_notifications');
+        $valid['suppress_update_notice'] = $this->c9_validate($input, 'suppress_update_notice');
+        $valid['limit_image_size'] = $this->c9_validate($input, 'limit_image_size');
+        $valid['define_custom_labels'] = $this->c9_validate($input, 'define_custom_labels');
         $valid['max_px'] = intval($input['max_px']);
         $valid['min_px'] = intval($input['min_px']);
         $valid['max_size'] = intval($input['max_size']);
-        $valid['custom_skin'] = (isset($input['custom_skin']) && !empty($input['custom_skin'])) ? 1 : 0;
-        $valid['hide_plugin_menu_item'] = (isset($input['hide_plugin_menu_item']) && !empty($input['hide_plugin_menu_item'])) ? 1 : 0;
-        $valid['hide_update_menu_item'] = (isset($input['hide_update_menu_item']) && !empty($input['hide_update_menu_item'])) ? 1 : 0;
-        $valid['hide_comment_menu_item'] = (isset($input['hide_comment_menu_item']) && !empty($input['hide_comment_menu_item'])) ? 1 : 0;
+        $valid['custom_skin'] = $this->c9_validate($input, 'custom_skin');
+        $valid['hide_plugin_menu_item'] = $this->c9_validate($input, 'hide_plugin_menu_item');
+        $valid['hide_update_menu_item'] = $this->c9_validate($input, 'hide_update_menu_item');
+        $valid['hide_comment_menu_item'] = $this->c9_validate($input, 'hide_comment_menu_item');
 
 
         $valid['custom_media_label'] = strval($input['custom_media_label']);
@@ -290,7 +305,7 @@ class C9_Admin
      */
     public function suppress_update_notice()
     {
-        if ((isset(get_option($this->plugin_name)['suppress_update_notice'])) && (true == get_option($this->plugin_name)['suppress_update_notice'])) {
+        if ($this->c9_option('suppress_update_notice')) {
             global $wp_version;
             return (object) array('last_checked' => time(), 'version_checked' => $wp_version,);
         }
@@ -301,7 +316,7 @@ class C9_Admin
      **/
     public function show_updated_only_to_admins()
     {
-        if ((isset(get_option($this->plugin_name)['admin_only_notifications'])) && (true == get_option($this->plugin_name)['admin_only_notifications'])) {
+        if ($this->c9_option('admin_only_notifications')) {
             if (!current_user_can('update_core')) {
                 remove_action('admin_notices', 'update_nag', 3);
                 remove_action('network_admin_notices', 'update_nag', 3);
@@ -319,7 +334,7 @@ class C9_Admin
     {
         $remove_menu_items = array();
 
-        if ((isset(get_option($this->plugin_name)['hide_developer_items'])) && (true == get_option($this->plugin_name)['hide_developer_items'])) {
+        if ($this->c9_option('hide_developer_items')) {
             // $remove_menu_items[] = __('Events');
             $remove_menu_items[] = __('Comments');
             remove_menu_page('wr2x_settings-menu');
@@ -335,15 +350,15 @@ class C9_Admin
             $remove_menu_items[] = __('Max Mega Menu');
         }
 
-        if ((isset(get_option($this->plugin_name)['hide_plugin_menu_item'])) && (true == get_option($this->plugin_name)['hide_plugin_menu_item'])) {
+        if ($this->c9_option('hide_plugin_menu_item')) {
             $remove_menu_items[] = __('Plugins');
         }
 
-        if ((isset(get_option($this->plugin_name)['hide_comment_menu_item'])) && (true == get_option($this->plugin_name)['hide_comment_menu_item'])) {
+        if ($this->c9_option('hide_comment_menu_item')) {
             $remove_menu_items[] = __('Comments');
         }
 
-        if ((isset(get_option($this->plugin_name)['hide_update_menu_item'])) && (true == get_option($this->plugin_name)['hide_update_menu_item'])) {
+        if ($this->c9_option('hide_update_menu_item')) {
             // xdebug_break();
             remove_submenu_page('index.php', 'update-core.php');
         }
@@ -365,7 +380,7 @@ class C9_Admin
      */
     public function remove_custom_admin_menu_items()
     {
-        if ((isset(get_option($this->plugin_name)['hide_developer_items'])) && (true == get_option($this->plugin_name)['hide_developer_items'])) {
+        if ($this->c9_option('hide_developer_items')) {
             remove_menu_page('wsal-auditlog');
             remove_menu_page('pmxi-admin-home');
             remove_menu_page('maxmegamenu');
@@ -379,18 +394,18 @@ class C9_Admin
         }
 
         // hide Matomo settings
-        if ((isset(get_option($this->plugin_name)['hide_matomo_settings'])) && (true == get_option($this->plugin_name)['hide_matomo_settings'])) {
+        if ($this->c9_option('hide_matomo_settings')) {
             remove_menu_page('matomo');
             remove_submenu_page('index.php', 'index.php?page=wp-piwik_stats');
         }
 
         // hide User settings
-        if ((isset(get_option($this->plugin_name)['hide_user_settings'])) && (true == get_option($this->plugin_name)['hide_user_settings'])) {
+        if ($this->c9_option('hide_user_settings')) {
             remove_menu_page('users.php');
         }
 
         //hide default posts
-        if ((isset(get_option($this->plugin_name)['hide_default_posts'])) && (true == get_option($this->plugin_name)['hide_default_posts'])) {
+        if ($this->c9_option('hide_default_posts')) {
             remove_menu_page('edit.php');
         }
     }
@@ -402,7 +417,7 @@ class C9_Admin
      */
     public function custom_upload_filter($file)
     {
-        if ((isset(get_option($this->plugin_name)['limit_image_size'])) && (true == get_option($this->plugin_name)['limit_image_size'])) {
+        if ($this->c9_option('limit_image_size')) {
 
             $max_px = get_option($this->plugin_name)['max_px'];
             $min_px = get_option($this->plugin_name)['min_px'];
@@ -451,7 +466,7 @@ class C9_Admin
      */
     public function attachment_redirect()
     {
-        if ((isset(get_option($this->plugin_name)['disable_attachment_pages'])) && (true == get_option($this->plugin_name)['disable_attachment_pages'])) {
+        if ($this->c9_option('disable_attachment_pages')) {
             global $post;
             if (is_attachment() && isset($post->post_parent) && is_numeric($post->post_parent) && ($post->post_parent != 0)) {
 
@@ -478,7 +493,7 @@ class C9_Admin
      */
     public function toggle_admin()
     {
-        if (isset(get_option($this->plugin_name)['disable_admin']) || (!is_user_logged_in())) {
+        if ($this->c9_option('disable_admin') || (!is_user_logged_in())) {
             return false;
         } else {
             return true;
@@ -521,7 +536,7 @@ class C9_Admin
      */
     function customize_post_admin_menu_labels()
     {
-        if (isset(get_option($this->plugin_name)['define_custom_labels'])) {
+        if ($this->c9_option('define_custom_labels')) {
             global $menu;
             global $submenu;
             // print_r($menu);
