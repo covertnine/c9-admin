@@ -12,39 +12,46 @@
  * @subpackage C9_Admin/admin/partials
  */
 
-$options = get_option($this->plugin_name);
-// Cleanup
-$admin_only_notifications = $options['admin_only_notifications'];
-$suppress_update_notice = $options['suppress_update_notice'];
-$disable_admin = $options['disable_admin'];
-$disable_attachment_pages = $options['disable_attachment_pages'];
-$hide_developer_items = $options['hide_developer_items'];
-$hide_seo_settings = $options['hide_seo_settings'];
-$hide_matomo_settings = $options['hide_matomo_settings'];
-$hide_user_settings = $options['hide_user_settings'];
-$hide_default_posts = $options['hide_default_posts'];
-$limit_image_size = $options['limit_image_size'];
-$max_px = $options['max_px'];
-$max_size = $options['max_size'];
-$min_px = $options['min_px'];
-$custom_skin = $options['custom_skin'];
-$admin_menu_color = $options['admin_menu_color'];
-$admin_menu_text_color = $options['admin_menu_text_color'];
-$admin_login_bg_color = $options['admin_login_bg_color'];
-$hide_plugin_menu_item = $options['hide_plugin_menu_item'];
-$hide_update_menu_item = $options['hide_update_menu_item'];
-$hide_comment_menu_item = $options['hide_comment_menu_item'];
+/**
+ * Helper function to safely retrieve the value of `get_option($this->plugin_name)[$name]`
+ */
+$c9_option = function($name) {
+    $opt = get_option($this->plugin_name);
+    return ((false !== $opt) && array_key_exists($name, $opt) && !empty($opt[$name]) ? $opt[$name] : false);
+};
 
-$define_custom_labels = $options['define_custom_labels'];
-$custom_media_label = $options['custom_media_label'];
-$custom_posts_label = $options['custom_posts_label'];
-$custom_pages_label = $options['custom_pages_label'];
-$custom_menu_label = $options['custom_menu_label'];
-$custom_post_categories_label = $options['custom_post_categories_label'];
-$custom_post_tags_label = $options['custom_post_tags_label'];
-$custom_upload_files_label = $options['custom_upload_files_label'];
-$custom_all_files_label = $options['custom_all_files_label'];
-// $custom_analytics_label = $options['custom_analytics_label'];
+// Cleanup
+$admin_only_notifications = $c9_option('admin_only_notifications');
+$suppress_update_notice = $c9_option('suppress_update_notice');
+$disable_admin = $c9_option('disable_admin');
+$disable_attachment_pages = $c9_option('disable_attachment_pages');
+$hide_developer_items = $c9_option('hide_developer_items');
+$hide_seo_settings = $c9_option('hide_seo_settings');
+$hide_matomo_settings = $c9_option('hide_matomo_settings');
+$hide_user_settings = $c9_option('hide_user_settings');
+$hide_default_posts = $c9_option('hide_default_posts');
+$limit_image_size = $c9_option('limit_image_size');
+$max_px = $c9_option('max_px');
+$max_size = $c9_option('max_size');
+$min_px = $c9_option('min_px');
+$custom_skin = $c9_option('custom_skin');
+$admin_menu_color = $c9_option('admin_menu_color');
+$admin_menu_text_color = $c9_option('admin_menu_text_color');
+$admin_login_bg_color = $c9_option('admin_login_bg_color');
+$hide_plugin_menu_item = $c9_option('hide_plugin_menu_item');
+$hide_update_menu_item = $c9_option('hide_update_menu_item');
+$hide_comment_menu_item = $c9_option('hide_comment_menu_item');
+
+$define_custom_labels = $c9_option('define_custom_labels');
+$custom_media_label = $c9_option('custom_media_label');
+$custom_posts_label = $c9_option('custom_posts_label');
+$custom_pages_label = $c9_option('custom_pages_label');
+$custom_menu_label = $c9_option('custom_menu_label');
+$custom_post_categories_label = $c9_option('custom_post_categories_label');
+$custom_post_tags_label = $c9_option('custom_post_tags_label');
+$custom_upload_files_label = $c9_option('custom_upload_files_label');
+$custom_all_files_label = $c9_option('custom_all_files_label');
+// $custom_analytics_label = $c9_option('custom_analytics_label');
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
