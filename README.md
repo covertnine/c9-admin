@@ -19,6 +19,10 @@ A WordPress Admin enhancement plugin with a custom skin, and many other customiz
 
 # Changelog
 
+## v1.2.3
+
+- Better checking for theme settings thanks to dskrepps + Varstahl on Github!
+
 ## v1.2.2
 
 - Fixing errors on deactivation on some versions of PHP on some servers. Shout out to reddit user Iamonabike
