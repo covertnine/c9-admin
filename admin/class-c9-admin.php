@@ -38,7 +38,7 @@ class C9_Admin
         // Add menu item
         add_action('admin_menu', array($this, 'add_plugin_admin_menu'));
 
-        if ((empty(get_option($this->plugin_name)['custom_skin'])) && (false == get_option($this->plugin_name)['custom_skin'])) {
+        if (!$this->c9_option('custom_skin')) {
             add_action('admin_enqueue_scripts', array($this, 'enqueue_styles'));
             add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'));
         }
