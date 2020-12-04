@@ -61,7 +61,7 @@ class C9_Admin
         }
 
         add_action('admin_menu', array($this, 'remove_admin_menu_items'));
-        add_action('admin_init', array($this, 'remove_custom_admin_menu_items'));
+        add_action('admin_menu', array($this, 'remove_custom_admin_menu_items'));
 
         add_action('template_redirect', array($this, 'attachment_redirect'));
         add_action('admin_init', array($this, 'options_update'));
