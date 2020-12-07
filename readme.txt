@@ -3,7 +3,7 @@ Contributors: ttoomey, samirillion
 Tags: wordpress dashboard, admin dashboard, dashboard, dashboard widgets, admin
 Donate link: https://www.covertnine.com/about
 Requires at least: 4.9.2
-Tested up to: 5.5.3
+Tested up to: 5.6.0
 Requires PHP: 7.1
 Stable tag: 1.2.4
 License: GPLv2 or later
