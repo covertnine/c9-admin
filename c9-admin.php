@@ -1,7 +1,7 @@
 <?php
 
 /**
- * C9 Admin Base
+ * C9 Admin Dashboard
  *
  * @package C9_Admin
  * @link    https://www.covertnine.com
