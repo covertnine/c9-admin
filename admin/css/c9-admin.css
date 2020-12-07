@@ -297,7 +297,11 @@ div.wp-menu-image:before {
 
 #adminmenu .wp-submenu-head,
 #adminmenu a.menu-top {
-    padding: 10px 15px;
+    padding: 10px 15px 20px 15px;
+}
+
+#adminmenu div.wp-menu-name {
+    padding: 8px 0px 0px 0px;
 }
 
 @media only screen and (max-width: 960px) {

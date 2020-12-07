@@ -1,7 +1,7 @@
 <?php
 
 /**
- * C9 Admin Base
+ * C9 Admin Dashboard
  *
  * @package C9_Admin
  * @link    https://www.covertnine.com
@@ -11,7 +11,7 @@
  * Plugin Name:       C9 Admin Dashboard
  * Plugin URI:        https://www.covertnine.com/c9-admin-dashboard-plugin
  * Description:       Essential WordPress admin features for managing client sites including customization of admin screens, labels, plugin/theme update screen visibility and more.
- * Version:           1.2.3
+ * Version:           1.2.4
  * Author:            COVERT NINE
  * Author URI:        https://www.covertnine.com
  * License:           GPL-2.0+
@@ -36,7 +36,7 @@ if (!defined('C9_ADMIN_ORPHAN_ATTACHMENT_REDIRECT_CODE')) {
 /**
  * Currently plugin version.
  */
-define('C9_ADMIN_VERSION', '1.2.3');
+define('C9_ADMIN_VERSION', '1.2.4');
 
 
 /**
