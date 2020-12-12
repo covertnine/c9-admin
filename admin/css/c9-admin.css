@@ -73,6 +73,14 @@ div#widgets-right .sidebar-name h3,
     font-weight: 700;
 }
 
+.components-button.has-icon.has-text.has-icon {
+    padding: 6px 16px;
+}
+
+.components-button.has-icon .dashicon {
+    margin-right: 6px;
+}
+
 div#widgets-right .sidebar-name h2,
 div#widgets-right .sidebar-name h3 {
     font-size: 13px;
@@ -295,6 +303,16 @@ div.wp-menu-image:before {
     letter-spacing: .6px;
 }
 
+@media only screen and (max-width: 675px) {
+
+    #adminmenu li>a .wp-menu-name,
+    .auto-fold #adminmenu li a {
+        font-size: 13px;
+        letter-spacing: .4px;
+    }
+
+}
+
 #adminmenu .wp-submenu-head,
 #adminmenu a.menu-top {
     padding: 10px 15px 20px 15px;
@@ -302,6 +320,13 @@ div.wp-menu-image:before {
 
 #adminmenu div.wp-menu-name {
     padding: 8px 0px 0px 0px;
+}
+
+
+@media only screen and (max-width: 675px) {
+    #adminmenu div.wp-menu-name {
+        padding: 8px 0px 0px 24px;
+    }
 }
 
 @media only screen and (max-width: 960px) {
@@ -704,7 +729,7 @@ body .dashicons :before {
 }
 
 .edit-post-sidebar p {
-    font-size: 12px
+    font-size: 10px;
 }
 
 .edit-post-sidebar .components-base-control .components-base-control__label,
@@ -745,13 +770,25 @@ body .dashicons :before {
 
 
 /* inspector toggle headings */
-.components-panel__body-title .components-panel__body-toggle.components-button,
-.components-panel__body {
+.components-panel__body-title .components-panel__body-toggle.components-button {
     font-size: 14px;
     font-weight: bold;
     text-transform: capitalize;
     color: #191e23;
     letter-spacing: .4px;
+}
+
+.components-panel__body {
+    color: #191e23;
+}
+
+.components-panel__body .components-radio-control__option {
+    font-size: 12px;
+    letter-spacing: 0px;
+}
+
+.components-panel__body .components-radio-control {
+    width: 100%;
 }
 
 .components-font-size-picker__controls .components-color-palette__clear {
