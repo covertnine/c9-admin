@@ -61,7 +61,7 @@ class C9_Admin
         }
 
         add_action('admin_menu', array($this, 'remove_admin_menu_items'));
-        add_action('admin_init', array($this, 'remove_custom_admin_menu_items'));
+        add_action('admin_menu', array($this, 'remove_custom_admin_menu_items'));
 
         add_action('template_redirect', array($this, 'attachment_redirect'));
         add_action('admin_init', array($this, 'options_update'));
@@ -197,7 +197,8 @@ class C9_Admin
     /**
      * Helper function to safely retrieve the value of `get_option($this->plugin_name)[$name]`
      */
-    private function c9_option($name) {
+    private function c9_option($name)
+    {
         $opt = get_option($this->plugin_name);
         return ((false !== $opt) && array_key_exists($name, $opt) && !empty($opt[$name]) ? $opt[$name] : false);
     }
@@ -205,7 +206,8 @@ class C9_Admin
     /**
      * Helper function to validate boolean form inputs
      */
-    private function c9_validate($input, $name) {
+    private function c9_validate($input, $name)
+    {
         return ((isset($input[$name]) && !empty($input[$name])) ? 1 : 0);
     }
 
