@@ -49,6 +49,10 @@ Yes. Click on Settings > C9 Admin and then check the Disable Custom Skin For Adm
 
 == Changelog ==
 
+v1.2.7
+
+Removing menu items action changed causing issues with some versions of 5.6.
+
 v1.2.6
 
 Remove menu items action changed.
