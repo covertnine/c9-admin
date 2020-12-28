@@ -1,0 +1,1 @@
+(()=>{"use strict";var o=window.jQuery;o((function(){o("body.block-editor-page").addClass("folded"),o(".c9-color-picker").wpColorPicker()}))})();

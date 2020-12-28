@@ -115,7 +115,7 @@ class C9_Admin
      */
     public function enqueue_styles()
     {
-        wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/c9-admin.css', array(), $this->version, 'all');
+        wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'dist/c9-admin.build.css', array(), $this->version, 'all');
 
         // Css rules for Color Picker
         wp_enqueue_style('wp-color-picker');
@@ -132,7 +132,7 @@ class C9_Admin
         wp_enqueue_script('hoverIntent', '', array('jquery'), $this->version, false);
 
         // Add the js file
-        wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/c9-admin.js', array('jquery', 'wp-color-picker'), $this->version, false);
+        wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'dist/c9-admin.build.js', array('jquery', 'wp-color-picker'), $this->version, false);
     }
 
     /**
