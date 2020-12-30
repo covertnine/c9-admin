@@ -5,7 +5,7 @@ Donate link: https://www.covertnine.com/about
 Requires at least: 4.9.2
 Tested up to: 5.6.0
 Requires PHP: 7.1
-Stable tag: 1.2.6
+Stable tag: 1.2.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: c9-admin
@@ -48,6 +48,10 @@ Yes. Click on Settings > C9 Admin and then check the Disable Custom Skin For Adm
 4. C9 Admin Settings - Control Admin Screens and Labels
 
 == Changelog ==
+
+v1.2.8
+
+Updating some styles for WP 5.6 in toolbar buttons. Added build tools and optimized admin files.
 
 v1.2.7
 

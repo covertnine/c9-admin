@@ -77,7 +77,7 @@ div#widgets-right .sidebar-name h3,
     padding: 6px 16px;
 }
 
-.components-button.has-icon .dashicon {
+.components-button.has-icon:not(.components-toolbar-button) .dashicon {
     margin-right: 6px;
 }
 
