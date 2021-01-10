@@ -5,7 +5,7 @@ Donate link: https://www.covertnine.com/about
 Requires at least: 4.9.2
 Tested up to: 5.6.0
 Requires PHP: 7.1
-Stable tag: 1.2.8
+Stable tag: 1.2.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: c9-admin
@@ -14,23 +14,33 @@ Domain Path: /languages
 Customize the look and functionality of the WordPress admin for your agency clients.
 
 == Description ==
-[COVERT NINE](https://www.covertnine.com)'s admin dashboard plugin for improving the design and functionality of the WordPress admin and dashboard. Includes settings and enhancements for hiding specific admin sections like Plugins, Posts, Comments, support for more file uploads like SVG and WEBM, sensible image upload size limits for high resolution images, a dashboard widget pointing to key admin pages in the customizer, and an interface for customizing admin labels.
+
+**Install and configure in less than two minutes**
+
+https://www.youtube.com/watch?v=KepdGC2ebcI
+
+[COVERT NINE](https://www.covertnine.com)'s admin dashboard plugin for improving the design and functionality of the WordPress admin and dashboard. Includes settings and enhancements for hiding specific admin sections like Plugins, Posts, Comments, support for more file uploads like SVG and WEBM, sensible image upload size limits for high-resolution images, a dashboard widget pointing to key admin pages in the customizer, and an interface for customizing admin labels.
 
 == Removes WordPress Dashboard Widgets ==
 Upon plugin activation, a new dashboard widget is added with links to key admin pages like widgets and menus, and disables dashboard widgets for WordPress Events, Activity, and Quick Draft.
 
-== Simplify the WordPress Admin Dashboard for Your Clients ==
-Hide specific developer sections of the admin like malware scanning, theme settings, and tools, and even hide the plugins and updates menus so users won't be tempted to update plugins that aren't ready to be updated. Re-label specific sections of the admin like "posts" to be more clear for users who use posts as news, or blog posts. The plugin also moves the navigation links/Menus out from under the Appearance Menu and moves it into the main admin menu bar.
+== Simplify the WordPress Admin dashboard for your clients upon activation ==
+Hide specific developer sections of the admin, theme settings, and tools, and even hide the plugins and updates menus. Re-label specific sections of the admin such as Posts to be more clear for users who use posts as news or blog posts. The plugin also moves the navigation links/Menus out from under the Appearance Menu and moves it into the main admin menu bar.
+
+If you’re using a [C9 Starter](https://wordpress.org/plugins/c9-starter) theme, Twenty Twenty One, or any [C9 WordPress Theme](https://www.covertnine.com/form/c9-beta), upload a logo using the customizer’s custom logo setting. The C9 Admin Dashboard plugin will add your logo to the admin, with the ability to change some of the admin login screen colors and sidebar colors, as seen in some of the plugin screenshots.
+
 
 === C9 WordPress Platform ===
 If you build websites for clients and like the C9 Admin Dashboard plugin, then you'll love our [block-based WordPress themes](https://www.covertnine.com/forms/c9-beta) that work in tandem with the [C9 Blocks plugin](https://wordpress.org/plugins/c9-blocks).
+
+For developing themes with C9, we recommend the [C9 Starter](https://wordpress.org/themes/c9-starter) theme that you can download directly from WordPress. C9 Blocks also works with the [C9 Work](https://wordpress.org/themes/c9-work) the C9 Music, and C9 Togo. All themes, child themes, and plugins are accessible from our early access list, which you can [sign up](https://www.covertnine.com/form/c9-beta) for on our site for free. Learn more about [C9 themes and plugins](https://www.covertnine.com/c9-blocks-plugin).
 
 == Installation ==
 To install the C9 Admin Plugin, do the following:
 
 1. Download and extract the file in your WordPress plugins folder
 2. Go to WordPress admin dashboard plugin page and activate
-3. Head to Settings> C9 Admin or click on the C9 Admin Settings button in the dashboard from the WordPress Admin to begin making changes to C9 Admin settings.
+3. Head to Settings> C9 Admin or click on the C9 Admin Settings button in the WordPress Admin home screen to begin making changes to C9 Admin Dashboard settings.
 
 == Frequently Asked Questions ==
 How do I find my plugins once I activate this plugin?
@@ -41,13 +51,23 @@ Can I disable the admin custom design?
 
 Yes. Click on Settings > C9 Admin and then check the Disable Custom Skin For Admin setting.
 
+How do I get the custom logo showing?
+
+If your theme supports the customizer logo, then that logo will show up in the admin after logging in on the side menu, and the login screen in place of the WordPress logo. Besides the 'upon-activation' benefits from C9 Admin Dashboard, the simple color settings allow you to customize your client admin site in addition to their frontend.
+
 == Screenshots ==
-1. C9 Admin Dashboard Widget
-2. C9 Admin Custom Skin Hover Style
-3. WordPress Block Editor with C9 Admin activated
-4. C9 Admin Settings - Control Admin Screens and Labels
+1. C9 Admin Dashboard screen with C9 Starter theme
+2. C9 Admin Dashboard screen with C9 Music theme
+3. C9 Admin Custom Skin Hover Style and C9 Admin plugin settings (Go here after activation)
+4. C9 Admin Dashboard Settings - Control Admin Screens and Labels with custom color settings
+5. Style for posts and page indexes with featured image thumbnail in preview.
+6. Style guide landing page template from C9 Blocks plugin with the block editor set to full screen.
+7. Style guide landing page template from C9 Blocks plugin with the block editor not set to full screen.
 
 == Changelog ==
+
+v1.2.9
+Updating readme, screenshots, documentation, and added YouTube video so you can see how to configure the plugin.
 
 v1.2.8
 
