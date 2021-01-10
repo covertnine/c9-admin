@@ -14,6 +14,11 @@ Domain Path: /languages
 Customize the look and functionality of the WordPress admin for your agency clients.
 
 == Description ==
+
+**Install and configure in less than two minutes**
+
+https://www.youtube.com/watch?v=KepdGC2ebcI
+
 [COVERT NINE](https://www.covertnine.com)'s admin dashboard plugin for improving the design and functionality of the WordPress admin and dashboard. Includes settings and enhancements for hiding specific admin sections like Plugins, Posts, Comments, support for more file uploads like SVG and WEBM, sensible image upload size limits for high-resolution images, a dashboard widget pointing to key admin pages in the customizer, and an interface for customizing admin labels.
 
 == Removes WordPress Dashboard Widgets ==
@@ -62,7 +67,7 @@ If your theme supports the customizer logo, then that logo will show up in the a
 == Changelog ==
 
 v1.2.9
-Updating readme screenshots and documentation.
+Updating readme, screenshots, documentation, and added YouTube video so you can see how to configure the plugin.
 
 v1.2.8
 
