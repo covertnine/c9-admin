@@ -33,7 +33,7 @@ If you’re using a [C9 Starter](https://wordpress.org/plugins/c9-starter) theme
 === C9 WordPress Platform ===
 If you build websites for clients and like the C9 Admin Dashboard plugin, then you'll love our [block-based WordPress themes](https://www.covertnine.com/forms/c9-beta) that work in tandem with the [C9 Blocks plugin](https://wordpress.org/plugins/c9-blocks).
 
-For developing themes with C9, we recommend the [C9 Starter](https://wordpress.org/themes/c9-starter) theme that you can download directly from WordPress. C9 Blocks also works with the [C9 Work](https://wordpress.org/themes/c9-work) the C9 Music, and C9 Togo. All themes, child themes, and plugins are accessible from our early access list, which you can [sign up](https://www.covertnine.com/form/c9-beta) for on our site for free. Learn more about [C9 themes and plugins](https://www.covertnine.com/c9-blocks-plugin).
+For developing themes with C9, we recommend the [C9 Starter](https://wordpress.org/themes/c9-starter) theme that you can download directly from WordPress. C9 Blocks also works with the [C9 Work](https://wordpress.org/themes/c9-work) the [C9 Music](https://music.covertnine.com) theme, and [C9 Togo](https://wordpress.org/themes/c9-togo). All themes, child themes, and plugins are accessible from our early access list, which you can [sign up](https://www.covertnine.com/form/c9-beta) for on our site for free. Learn more about [C9 themes and plugins](https://www.covertnine.com/c9-blocks-plugin).
 
 == Installation ==
 To install the C9 Admin Plugin, do the following:
