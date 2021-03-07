@@ -3,9 +3,9 @@ Contributors: ttoomey, samirillion
 Tags: wordpress dashboard, admin dashboard, dashboard, dashboard widgets, admin
 Donate link: https://www.covertnine.com/about
 Requires at least: 4.9.2
-Tested up to: 5.6.0
+Tested up to: 5.7
 Requires PHP: 7.1
-Stable tag: 1.2.9
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: c9-admin
@@ -33,7 +33,7 @@ If you’re using a [C9 Starter](https://wordpress.org/plugins/c9-starter) theme
 === C9 WordPress Platform ===
 If you build websites for clients and like the C9 Admin Dashboard plugin, then you'll love our [block-based WordPress themes](https://www.covertnine.com/forms/c9-beta) that work in tandem with the [C9 Blocks plugin](https://wordpress.org/plugins/c9-blocks).
 
-For developing themes with C9, we recommend the [C9 Starter](https://wordpress.org/themes/c9-starter) theme that you can download directly from WordPress. C9 Blocks also works with the [C9 Work](https://wordpress.org/themes/c9-work) the C9 Music, and C9 Togo. All themes, child themes, and plugins are accessible from our early access list, which you can [sign up](https://www.covertnine.com/form/c9-beta) for on our site for free. Learn more about [C9 themes and plugins](https://www.covertnine.com/c9-blocks-plugin).
+For developing themes with C9, we recommend the [C9 Starter](https://wordpress.org/themes/c9-starter) theme that you can download directly from WordPress. C9 Blocks also works with the [C9 Work](https://wordpress.org/themes/c9-work) the [C9 Music](https://music.covertnine.com) theme, and [C9 Togo](https://wordpress.org/themes/c9-togo). All themes, child themes, and plugins are accessible from our early access list, which you can [sign up](https://www.covertnine.com/form/c9-beta) for on our site for free. Learn more about [C9 themes and plugins](https://www.covertnine.com/c9-blocks-plugin).
 
 == Installation ==
 To install the C9 Admin Plugin, do the following:
@@ -65,6 +65,9 @@ If your theme supports the customizer logo, then that logo will show up in the a
 7. Style guide landing page template from C9 Blocks plugin with the block editor not set to full screen.
 
 == Changelog ==
+
+v1.3.0
+Compatible with WordPress 5.7.
 
 v1.2.9
 Updating readme, screenshots, documentation, and added YouTube video so you can see how to configure the plugin.
