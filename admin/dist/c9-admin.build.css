@@ -384,7 +384,7 @@ div.wp-menu-image:before {
 /* move over wp content for larger padded admin side menu*/
 #wpcontent,
 #wpfooter {
-  margin-left: 180px;
+  margin-left: 181px;
 }
 
 #adminmenu,
