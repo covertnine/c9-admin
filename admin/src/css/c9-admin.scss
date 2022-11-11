@@ -894,6 +894,11 @@ body .dashicons :before {
     width: 88%;
 }
 
+/* modal fix for c9 blocks */
+body .c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs {
+    margin-top: 20px;
+}
+
 .btn-c9admin-addpost:before {
     content: "\f109";
 }
