@@ -3,9 +3,9 @@ Contributors: ttoomey, samirillion
 Tags: wordpress dashboard, admin dashboard, dashboard, dashboard widgets, admin
 Donate link: https://www.covertnine.com/about
 Requires at least: 4.9.2
-Tested up to: 6.1.1
+Tested up to: 6.4
 Requires PHP: 7.1
-Stable tag: 1.3.3
+Stable tag: 1.3.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: c9-admin
@@ -65,6 +65,9 @@ If your theme supports the customizer logo, then that logo will show up in the a
 7. Style guide landing page template from C9 Blocks plugin with the block editor not set to full screen.
 
 == Changelog ==
+
+v1.3.4
+Tested with WordPress 6.4 for compatibility. Updated translations.
 
 v1.3.3
 Backend edits for WordPress 6.1.1 compatibility for the custom admin theme.

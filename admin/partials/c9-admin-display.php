@@ -379,6 +379,6 @@ $custom_all_files_label = $c9_option('custom_all_files_label');
 </div><!-- .c9-admin-settings-wrap-->
 
 <h3><?php echo esc_html_e('Have a suggestion for Tim + the team?', 'c9-admin'); ?></h3>
-<p><?php echo __('Don\'t just sit there; post it on our <a href="https://www.covertnine.com/community/" target="_blank">community forum</a>, and we\'ll respond personally.', 'c9-admin'); ?></p>
+<p><?php echo __('Don\'t just sit there; post it on our <a href="https://wordpress.org/support/plugin/c9-admin-dashboard/" target="_blank">support forum</a>, and we\'ll respond personally.', 'c9-admin'); ?></p>
 </div>
 <!-- .wrap-->
