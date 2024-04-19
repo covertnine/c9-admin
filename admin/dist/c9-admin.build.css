@@ -1,2 +1,966 @@
 @import url(https://fonts.googleapis.com/css?family=Muli:400,700,900&display=swap);
-.wrap h1,.wrap h2{line-height:1}.media-frame p{line-height:1.3}.wrap h1{font-size:40px}.wrap h2{font-size:22px}.wrap h4{margin:1em 0 .5em 0}.wp-admin .wrap,.wrap h1,.wrap h2,.wrap h3,.wrap h4,.widget-title h3,.widget-title h4,div#widgets-right .sidebar-name h2,div#widgets-right .sidebar-name h3,#wpwrap .components-button,#wpadminbar,#adminmenu,.wp-heading-inline,.c9-admin-settings-wrap,.postbox-header,.widgets-holder-wrap .description,#available-widgets .widget .widget-description,.metabox-prefs,.components-panel,.media-modal-content,.media-frame-content,.components-snackbar__content,.customize-control-title,#customize-theme-controls,.wp-full-overlay-sidebar-content,.components-notice__content,.components-placeholder,.edit-post-sidebar,.block-editor-block-inspector,.components-base-control,.components-placeholder,.components-placeholder>div,.editor-post-title__block .editor-post-title__input,.meta-box-sortables{font-family:"muli","helvetica neue",helvetica,sans-serif}.editor-post-trash.components-button,.components-button.is-tertiary,.components-panel__body .components-button.has-text{box-shadow:inset 0 0 0 .8px #e8e8e8}.components-panel__body h2~div>.components-button{margin-bottom:8px;box-shadow:inset 0 0 0 .8px #e8e8e8}.components-button~h5{margin-top:10px}.components-menu-group .components-button{text-transform:none;font-size:13px;letter-spacing:0px}.wp-core-ui .button-group.button-large .button,.wp-core-ui .button.button-large,.components-button.components-menu-item__button,.components-button.is-button.is-default,.meta-box-sortables h2 span,.post-publish-panel__postpublish-buttons .components-button,.wp-core-ui .button-primary,.wp-core-ui .button-secondary,#doaction,#doaction2,#post-query-submit,.wp-core-ui p .button,.wrap .page-title-action,.media-router .media-menu-item,#customize-controls .wp-core-ui .button,.wp-core-ui button.button{font-family:"muli","helvetica neue",helvetica,sans-serif;letter-spacing:1px;text-transform:uppercase;font-weight:700;font-size:11px;color:#191e23;text-decoration:none}.post-publish-panel__postpublish-buttons .components-button.is-primary,.post-publish-panel__postpublish-buttons .components-button.is-secondary{color:#fff !important;padding-left:2px !important;padding-right:2px !important;padding-top:8px !important;padding-bottom:8px !important;font-weight:700 !important;font-size:12px !important}.post-publish-panel__postpublish-buttons .components-button.is-secondary{color:#191e23 !important}.wrap .add-new-h2,.wrap .add-new-h2:active,.wrap .page-title-action,.wrap .page-title-action:active{font-family:"muli","helvetica neue",helvetica,sans-serif;letter-spacing:1px;text-transform:uppercase;font-weight:700;font-size:11px}.wp-core-ui button:not(.button-link):not(.is-tertiary):not(.is-secondary):not(.is-primary):not(.button):not(.edit-post-sidebar__panel-tab):not(.components-panel__body-toggle):not(.block-editor-button-block-appender):not(.has-icon):not(.has-icon.has-text):not(.is-small){font-family:"muli","helvetica neue",helvetica,sans-serif;letter-spacing:0px;box-shadow:none;text-transform:none;font-size:13px}.components-button.has-text.has-icon:hover,.components-button.has-text.has-icon:focus,.components-button.is-small:hover{box-shadow:inset 0 0 0 .8px var(--wp-admin-theme-color)}.c9-key-stepper .components-button{box-shadow:inset 0 0 0 .8px var(--gray);margin-top:5px}button.dashicons,button.dashicons:before{font-family:dashicons;font-size:20px}.button.dashicons.publish-settings:before{font-size:13px}.components-button.plugin-c9-panel-button{letter-spacing:.4px}.wp-core-ui .button,.wp-core-ui .button-primary,.wp-core-ui .button-secondary,#wpbody .wrap .button:not(.button-hero){padding:2px 12px}#wpbody .wrap .active-theme .button,.button.activate{text-transform:uppercase;font-size:10px;letter-spacing:.5px;padding:10px 12px 6px 12px}.media-router .media-menu-item{padding:8px 16px}#doaction,#doaction2,#post-query-submit,.wp-core-ui p .button,.wrap .page-title-action{color:#0073aa}.wp-core-ui .button.button-primary,.wp-core-ui button.button-primary{color:#fff}.wp-core-ui .updated .button-link,.wp-core-iu .button-link{text-transform:none;font-size:inherit}#screen-meta-links .show-settings{font-size:12px;letter-spacing:.6px}.components-placeholder{border:1px solid #191e23}body .dashicons,body .dashicons-before:before,body .dashicons :before{font-family:dashicons}.components-popover .components-toolbar .components-button{white-space:nowrap}.edit-post-header .components-button.editor-post-preview,.edit-post-header .components-button.editor-post-publish-button,.edit-post-header .components-button.editor-post-publish-panel__toggle,.edit-post-header .components-button.editor-post-save-draft,.edit-post-header .components-button.editor-post-switch-to-draft,.row-actions span a,.components-button.block-editor-post-preview__button-toggle{font-family:"muli","helvetica neue",helvetica,sans-serif;font-weight:700;font-size:11px;letter-spacing:.6px;text-transform:uppercase}@media only screen and (min-width: 600px){.edit-post-header__settings .components-button.is-tertiary{padding:6px 12px}}.widefat button.button-link.editinline{font-size:11px;text-transform:uppercase;letter-spacing:.5px;font-weight:700}.components-button.has-icon.has-text.has-icon{padding:6px 16px;letter-spacing:0px}.components-button.has-icon:not(.components-toolbar-button) .dashicon{margin-right:6px}div#widgets-right .sidebar-name h2,div#widgets-right .sidebar-name h3{font-size:13px}@media only screen and (min-width: 992px){.c9-admin-settings-wrap{display:-ms-grid;display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"col1 col2" "col3 col4";gap:30px}}.c9-admin-settings-wrap .col{max-width:450px}#wp-admin-bar-root-default #wp-admin-bar-wp-logo{display:none}#wpadminbar{background-color:#191e23;letter-spacing:.5px;text-transform:uppercase;font-weight:700;font-size:10px;line-height:1}#wpadminbar a,#wpadminbar *{letter-spacing:.1em;font-family:"muli","helvetica neue",helvetica,sans-serif;text-transform:uppercase;font-weight:700;font-size:11px;line-height:3.1}#adminmenu,#adminmenu .wp-submenu,#adminmenuback,#adminmenuwrap{background-color:#f4f4f4}#adminmenu .wp-submenu{left:180px}.dashicons,.dashicons-before:before{font-size:20px}#adminmenu a.wp-has-current-submenu:focus+.wp-submenu,#adminmenu .wp-has-submenu:focus .wp-submenu,#adminmenu .wp-has-submenu .wp-submenu{background-color:#191e23}#adminmenu .wp-submenu li{padding-left:4px;position:relative}#adminmenu .wp-not-current-submenu li>a,.folded #adminmenu .wp-has-current-submenu li>a{padding-left:10px;padding-right:5px}body:not(.block-editor-page) #adminmenu .wp-menu-open .wp-submenu li:before{content:"";height:100%;width:5px;border-left:1px solid #00b9eb;font-family:"font awesome";position:absolute;top:-50%;left:5px;border-bottom:1px solid #00b9eb}#adminmenu li.wp-menu-separator{display:none}#adminmenu .wp-has-current-submenu .wp-submenu,#adminmenu .opensub a.wp-has-current-submenu:focus+.wp-submenu,#adminmenu .wp-has-current-submenu .wp-submenu.sub-open,#adminmenu .wp-has-current-submenu.opensub .wp-submenu,#adminmenu a.wp-has-current-submenu:focus+.wp-submenu,.no-js li.wp-has-current-submenu:hover .wp-submenu{background-color:#f4f4f4;color:#23282d !important}#adminmenu .wp-has-current-submenu ul>li>a,.folded #adminmenu li.menu-top .wp-submenu>li>a{padding:8px 3px 8px 10px}body:not(.folded) #adminmenu .opensub.wp-has-current-submenu:focus+.wp-submenu li a,body:not(.folded) #adminmenu .opensub.wp-has-current-submenu:focus+.wp-submenu li a:focus #adminmenu .opensub.wp-has-current-submenu:focus+.wp-submenu li a,#adminmenu .opensub.wp-has-current-submenu:focus+.wp-submenu li a:focus{color:#23282d !important}.no-js li.wp-has-current-submenu:hover .wp-submenu{background-color:#23282d}#adminmenu li.current a.menu-top,#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,.folded #adminmenu li.current.menu-top,.folded #adminmenu li.wp-has-current-submenu{background-color:#23282d}ul#adminmenu a.wp-has-current-submenu:after,ul#adminmenu>li.current>a.current:after{display:none}#adminmenu div.wp-menu-image:before,div.wp-menu-image:before{color:#23282d}#adminmenu div.wp-menu-image{width:25px}#adminmenu .dashicons-before:before,#adminmenu .dashicons-before img{font-size:13px;width:13px;height:13px;line-height:20px}#adminmenu .wp-menu-image.svg{background-size:13px !important}#adminmenu div.wp-menu-image{margin-left:-10px}.folded #adminmenu div.wp-menu-image{margin-left:-15px}#adminmenu .opensub .wp-submenu li.current a,#adminmenu .wp-submenu li.current,#adminmenu .wp-submenu li.current a,#adminmenu .wp-submenu li.current a:focus,#adminmenu .wp-submenu li.current a:hover,#adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a,#adminmenu .wp-menu-open .wp-submenu a{color:#23282d}#adminmenu .wp-has-current-submenu:not(.opensub) .wp-submenu a{color:#23282d}#adminmenu .wp-has-submenu:not(.wp-menu-open) .wp-submenu a,#adminmenu li:not(.opensub):not(.wp-menu-open) .wp-submenu a{color:#fff}#collapse-button .collapse-button-icon:after,#collapse-button .collapse-button-label{line-height:20px;font:normal 11px/18px "muli","helvetica neue",helvetica,sans-serif;letter-spacing:.6px}#adminmenu .opensub:not(.wp-menu-open) .wp-submenu a{color:#fff}#adminmenu a{color:#191e23;letter-spacing:.6px}#adminmenu .wp-submenu a.current{font-weight:900}#adminmenu .wp-submenu li.current,#adminmenu .wp-submenu li.current a,#adminmenu .wp-submenu li.current a:focus,#adminmenu .wp-submenu li.current a:hover,#adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a,#adminmenu .wp-submenu a:focus,#adminmenu .wp-submenu a:hover,#adminmenu a:hover,#adminmenu li.menu-top>a:focus,#adminmenu li:not(.opensub) .wp-submenu a:hover{color:#00b9eb !important}#adminmenu li>a .wp-menu-name,.auto-fold #adminmenu li a{font-size:14px;letter-spacing:.6px}@media only screen and (max-width: 675px){#adminmenu li>a .wp-menu-name,.auto-fold #adminmenu li a{font-size:13px;letter-spacing:.4px}}#adminmenu .wp-submenu-head,#adminmenu a.menu-top{padding:10px 15px 20px 15px}#adminmenu div.wp-menu-name{padding:8px 0px 0px 0px}@media only screen and (max-width: 675px){#adminmenu div.wp-menu-name{padding:8px 0px 0px 24px}}@media only screen and (max-width: 960px){#adminmenu a.menu-top{padding:10px}}.c9-label{margin-top:15px}.c9-label.sr-only{display:none}.folded #adminmenu li.menu-top{height:54px}.folded #adminmenu a.menu-top{min-height:34px;height:34px;padding-top:10px;padding-bottom:10px}.block-editor-page #adminmenu .wp-submenu li.current a,.block-editor-page #adminmenu li:not(.opensub) .wp-submenu a{color:#fff !important}.block-editor-page #adminmenu .wp-submenu li.current a:hover,.block-editor-page #adminmenu li:not(.opensub) .wp-submenu a:hover{color:#00b9eb !important}.block-editor-page #adminmenu .wp-menu-open .wp-submenu{position:absolute;left:100%;top:0;display:none;background-color:#191e23 !important}.block-editor-page #adminmenu .wp-submenu{color:#191e23 !important}.block-editor-page #adminmenu .wp-menu-open:hover .wp-submenu{display:block}#wpcontent,#wpfooter{margin-left:181px}#adminmenu,#adminmenu .wp-submenu,#adminmenuback,#adminmenuwrap{width:180px}#adminmenu .wp-not-current-submenu .wp-submenu,.folded #adminmenu .wp-has-current-submenu .wp-submenu{width:180px}#adminmenuwrap{border-right:1px solid #e5e5e5}#adminmenu .opensub .wp-submenu{left:180px;background-color:#191e23}#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu.wp-menu-open{z-index:15}#adminmenu a.menu-top:focus+.wp-submenu,.js #adminmenu .opensub .wp-submenu,.js #adminmenu .sub-open,.no-js li.wp-has-submenu:hover .wp-submenu{top:0px}#adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover:after,.woocommerce-page .wp-has-current-submenu:after{display:none}#wpfooter #footer-left{display:none}.wp-list-table.widefat td.date,.widefat td.date p,.wp-list-table td.comments,.wp-list-table td.author a,.wp-list-table td.tags a,.tsf-seo-bar-wrap .tsf-seo-bar-item,.wp-list-table td.categories a{font-size:11px}.wp-list-table thead{background-color:#0073aa}.wp-list-table thead a,.wp-list-table thead th,.wp-list-table.widefat thead tr td,.wp-list-table.widefat thead tr th{color:#fff;font-weight:bold;font-family:"muli","helvetica neue",helvetica,sans-serif;font-size:13px;letter-spacing:.4px;text-transform:uppercase}.widefat th .comment-grey-bubble:before,.widefat th.asc a:focus span.sorting-indicator,.widefat th.asc:hover span.sorting-indicator,.widefat th.desc a:focus span.sorting-indicator,.widefat th.desc:hover span.sorting-indicator,.widefat th.sorted .sorting-indicator,.widefat .sorting-indicator:before{color:#fff}.editor-post-publish-panel,.components-base-control__label,.components-popover__content .components-menu-group__label,.components-modal__header .components-modal__header-heading,.components-checkbox-control__input-container .components-checkbox-control__label,.edit-post-options-modal__section-title,.edit-post-sidebar p.components-base-control__label,.edit-post-sidebar .components-panel__body>div>span,.edit-post-sidebar .components-base-control .components-base-control__label,.interface-complementary-area-header strong,.components-panel,.editor-post-publish-panel,.components-menu-item__button .components-menu-item__info-wrapper{font-size:14px;letter-spacing:0px}.components-panel__body>p,.components-toggle-control__label{letter-spacing:0px}.edit-post-sidebar .components-base-control__label,.components-truncate.components-text.components-input-control__label{font-size:14px !important;letter-spacing:0px !important}.components-base-control .components-base-control__label{font-weight:700}.components-panel__body h5,.interface-complementary-area h2{font-weight:700;font-size:16px;letter-spacing:0px}.edit-post-sidebar p.components-base-control__label,.edit-post-sidebar p.components-base-control__help,.components-panel__body .components-radio-control__option{font-size:12px;color:#757575;letter-spacing:0px}.block-editor-block-card__description{font-size:14px;color:#757575;letter-spacing:0px}.components-panel__body-title .components-panel__body-toggle.components-button{font-size:14px;font-weight:bold;text-transform:capitalize;color:#191e23;letter-spacing:.4px}.components-menu-item__button .components-menu-item__info-wrapper .components-menu-item__info{font-size:10px}.components-dropdown-menu__menu .components-menu-group .components-button.components-menu-item__button svg{height:20px;width:20px;margin-right:8px !important;margin-left:0px !important}.components-panel__body.plugin-c9-panel .components-button.is-large{height:auto}.components-panel__header .edit-post-sidebar__panel-tab{text-transform:none;letter-spacing:.4px;font-weight:700;opacity:.7}.edit-post-layout__inserter-panel p{line-height:1.2}.edit-post-sidebar__panel-tabs>ul{margin-top:10px}.editor-post-publish-panel p,.components-panel__body p{line-height:1.3}.edit-post-sidebar label{margin-bottom:0px}.components-base-control .components-base-control__field~p{margin-top:15px}.edit-post-sidebar .components-button.edit-post-sidebar__panel-tab.is-active{opacity:1}.edit-post-sidebar .components-base-control .components-base-control__field{margin-bottom:0}.c9-height-range-control .components-base-control__label{margin-bottom:40px}.c9-height-range-control .components-input-control__container{margin-left:20px !important}.components-panel__body{color:#191e23}.components-panel__body .components-radio-control{width:100%}.components-font-size-picker__controls .components-color-palette__clear{margin-top:17px}.components-popover__content{font-size:11px}@media only screen and (min-width: 600px){.block-editor-block-list__empty-block-inserter,.post-type-page .block-editor-block-list__empty-block-inserter{left:auto !important}}#dashboard-widgets .inside .c9-admin-dashboard-widget h3{font:bold 12px/1 "muli","helvetica neue",helvetica,sans-serif;text-transform:uppercase;color:#555d66;letter-spacing:.6px}.c9-admin-dashboard-widget ul{justify-content:space-between;align-items:center;display:-ms-flex;display:flex}.c9-admin-dashboard-widget ul li{flex-grow:1;flex-basis:0;flex-shrink:5}.c9-admin-dashboard-widget ul li:nth-child(even){margin-right:0px}.c9-admin-dashboard-widget ul li .btn-c9-admin{border:1px solid rgba(79,89,105,.2);font:bold 11px/13px "muli",sans-serif;text-transform:uppercase;border-radius:3px;letter-spacing:.6px;background:#005d8c;color:#fff;display:block;margin:0px 2px;text-align:center;height:80px;max-height:80px;min-height:80px;position:relative}@media only screen and (min-width: 1500px){.c9-admin-dashboard-widget ul li .btn-c9-admin{white-space:initial}}@media only screen and (max-width: 1260px){.c9-admin-dashboard-widget ul li .btn-c9-admin{white-space:initial}}.c9-admin-dashboard-widget ul li .btn-c9-admin:hover{border:1px solid #005d8c;background:#f1f1f1;color:#191e23}.c9-admin-dashboard-widget ul li .btn-c9-admin:before{display:block;font-family:"dashicons";font-size:25px;text-align:center;font-weight:400;position:absolute;top:20px;left:50%;transform:translateX(-50%)}.c9-admin-dashboard-widget ul li .btn-c9-admin span{display:block;position:absolute;top:42px;left:50%;transform:translateX(-50%);width:88%}.btn-c9admin-addpost:before{content:""}.btn-c9admin-addpage:before{content:""}.btn-c9admin-navigation:before{content:""}.btn-c9admin-footer:before{content:""}.btn-c9admin-theme:before{content:""}.btn-c9admin-settings:before{content:""}.btn-c9admin-reusable:before{content:""}.btn-c9admin-media:before{content:""}.btn-c9admin-blocks:before{content:""}.btn-c9admin-support:before{content:""}.btn-c9admin-docs:before{content:""}.btn-c9admin-account:before{content:""}.btn-c9wp-support:before{content:""}.btn-c9block-videos:before{content:""}.btn-c9blocks-overview:before{content:""}
+@charset "UTF-8";
+/*********************************************************************************/
+/* TABLE OF CONTENTS */
+/*********************************************************************************/
+/* All of the CSS for your admin-specific functionality should be
+* included in this file.*/
+/* */
+/* */
+/*
+1. Universal WordPress Admin Styles
+2. C9 Admin Dashboard Settings Page 
+3. Admin Menu Left Sidebar
+4. Inspector Sidebar on Block Editor
+5. Block Editor Main Container
+6. Admin Dashboard Widget
+ */
+/*********************************************************************************/
+/* 1. Universal WordPress Admin Styles
+/*********************************************************************************/
+.wrap h1,
+.wrap h2 {
+  line-height: 1;
+}
+
+.media-frame p {
+  line-height: 1.3;
+}
+
+.wrap h1 {
+  font-size: 40px;
+}
+
+.wrap h2 {
+  font-size: 22px;
+}
+
+.wrap h4 {
+  margin: 1em 0 0.5em 0;
+}
+
+/* c9-admin typography */
+.wp-admin .wrap,
+.wrap h1,
+.wrap h2,
+.wrap h3,
+.wrap h4,
+.widget-title h3,
+.widget-title h4,
+div#widgets-right .sidebar-name h2,
+div#widgets-right .sidebar-name h3,
+#wpwrap .components-button,
+#wpadminbar,
+#adminmenu,
+.wp-heading-inline,
+.c9-admin-settings-wrap,
+.postbox-header,
+.widgets-holder-wrap .description,
+#available-widgets .widget .widget-description,
+.metabox-prefs,
+.components-panel,
+.media-modal-content,
+.media-frame-content,
+.components-snackbar__content,
+.customize-control-title,
+#customize-theme-controls,
+.wp-full-overlay-sidebar-content,
+.components-notice__content,
+.components-placeholder,
+.edit-post-sidebar,
+.block-editor-block-inspector,
+.components-base-control,
+.components-placeholder,
+.components-placeholder > div,
+.editor-post-title__block .editor-post-title__input,
+.meta-box-sortables {
+  font-family: "muli", "helvetica neue", helvetica, sans-serif;
+}
+
+/* wp buttons */
+.editor-post-trash.components-button,
+.components-button.is-tertiary,
+.components-panel__body .components-button.has-text {
+  box-shadow: inset 0 0 0 0.8px #E8E8E8;
+}
+
+.components-panel__body h2 ~ div > .components-button {
+  margin-bottom: 8px;
+  box-shadow: inset 0 0 0 0.8px #E8E8E8;
+}
+
+.components-button ~ h5 {
+  margin-top: 10px;
+}
+
+.components-menu-group .components-button {
+  text-transform: none;
+  font-size: 13px;
+  letter-spacing: 0px;
+}
+
+/* add new page/post button */
+.wrap .wp-heading-inline + .page-title-action {
+  padding-top: 3px;
+}
+
+/* wp buttons fonts */
+.wp-core-ui .button-group.button-large .button,
+.wp-core-ui .button.button-large,
+.components-button.components-menu-item__button,
+.components-button.is-button.is-default,
+.meta-box-sortables h2 span,
+.post-publish-panel__postpublish-buttons .components-button,
+.wp-core-ui .button-primary,
+.wp-core-ui .button-secondary,
+#doaction,
+#doaction2,
+#post-query-submit,
+.wp-core-ui p .button,
+.wrap .page-title-action,
+.media-router .media-menu-item,
+#customize-controls .wp-core-ui .button,
+.wp-core-ui button.button {
+  font-family: "muli", "helvetica neue", helvetica, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 11px;
+  color: #191e23;
+  text-decoration: none;
+}
+
+.post-publish-panel__postpublish-buttons .components-button.is-primary,
+.post-publish-panel__postpublish-buttons .components-button.is-secondary {
+  color: #fff !important;
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+}
+
+.post-publish-panel__postpublish-buttons .components-button.is-secondary {
+  color: #191e23 !important;
+}
+
+.wrap .add-new-h2,
+.wrap .add-new-h2:active,
+.wrap .page-title-action,
+.wrap .page-title-action:active {
+  font-family: "muli", "helvetica neue", helvetica, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 11px;
+}
+
+.wp-core-ui button:not(.button-link):not(.is-tertiary):not(.is-secondary):not(.is-primary):not(.button):not(.edit-post-sidebar__panel-tab):not(.components-panel__body-toggle):not(.block-editor-button-block-appender):not(.has-icon):not(.has-icon.has-text):not(.is-small) {
+  font-family: "muli", "helvetica neue", helvetica, sans-serif;
+  letter-spacing: 0px;
+  box-shadow: none;
+  text-transform: none;
+  font-size: 13px;
+}
+
+.components-button.has-text.has-icon:hover,
+.components-button.has-text.has-icon:focus,
+.components-button.is-small:hover {
+  box-shadow: inset 0 0 0 0.8px var(--wp-admin-theme-color);
+}
+
+.c9-key-stepper .components-button {
+  box-shadow: inset 0 0 0 0.8px var(--gray);
+  margin-top: 5px;
+}
+
+button.dashicons,
+button.dashicons:before {
+  font-family: dashicons;
+  font-size: 20px;
+}
+
+.button.dashicons.publish-settings:before {
+  font-size: 13px;
+}
+
+.components-button.plugin-c9-panel-button {
+  letter-spacing: 0.4px;
+}
+
+.wp-core-ui .button,
+.wp-core-ui .button-primary,
+.wp-core-ui .button-secondary,
+#wpbody .wrap .button:not(.button-hero) {
+  padding: 2px 12px;
+}
+
+#wpbody .wrap .active-theme .button,
+.button.activate {
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  padding: 10px 12px 6px 12px;
+}
+
+/* tabs in media uploader */
+.media-router .media-menu-item {
+  padding: 8px 16px;
+}
+
+#doaction,
+#doaction2,
+#post-query-submit,
+.wp-core-ui p .button,
+.wrap .page-title-action {
+  color: #0073aa;
+}
+
+.wp-core-ui .button.button-primary,
+.wp-core-ui button.button-primary {
+  color: #fff;
+}
+
+.wp-core-ui .updated .button-link,
+.wp-core-iu .button-link {
+  text-transform: none;
+  font-size: inherit;
+}
+
+#screen-meta-links .show-settings {
+  font-size: 12px;
+  letter-spacing: 0.6px;
+}
+
+/* placeholder component */
+.components-placeholder {
+  border: 1px solid #191e23;
+}
+
+/* default dashicons */
+body .dashicons,
+body .dashicons-before:before,
+body .dashicons :before {
+  font-family: dashicons;
+}
+
+.components-popover .components-toolbar .components-button {
+  white-space: nowrap;
+}
+
+/* edit post header */
+.edit-post-header .components-button.editor-post-preview,
+.edit-post-header .components-button.editor-post-publish-button,
+.edit-post-header .components-button.editor-post-publish-panel__toggle,
+.edit-post-header .components-button.editor-post-save-draft,
+.edit-post-header .components-button.editor-post-switch-to-draft,
+.row-actions span a,
+.components-button.block-editor-post-preview__button-toggle {
+  font-family: "muli", "helvetica neue", helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 600px) {
+  .edit-post-header__settings .components-button.is-tertiary {
+    padding: 6px 12px;
+  }
+}
+.widefat button.button-link.editinline {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.components-button.has-icon.has-text.has-icon {
+  padding: 6px 16px;
+  letter-spacing: 0px;
+}
+
+.components-button.has-icon:not(.components-toolbar-button) .dashicon {
+  margin-right: 6px;
+}
+
+div#widgets-right .sidebar-name h2,
+div#widgets-right .sidebar-name h3 {
+  font-size: 13px;
+}
+
+/*********************************************************************************/
+/* 2. C9 Admin Dashboard Settings Page */
+/*********************************************************************************/
+@media only screen and (min-width: 992px) {
+  .c9-admin-settings-wrap {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "col1 col2" "col3 col4";
+    gap: 30px;
+  }
+}
+.c9-admin-settings-wrap .col {
+  max-width: 450px;
+}
+
+/*********************************************************************************/
+/* 3. Admin Menu Left Sidebar
+/*********************************************************************************/
+#wp-admin-bar-root-default #wp-admin-bar-wp-logo {
+  display: none;
+}
+
+#wpadminbar {
+  background-color: #191e23;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 1;
+}
+
+#wpadminbar a,
+#wpadminbar * {
+  letter-spacing: 0.1em;
+  font-family: "muli", "helvetica neue", helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 3.1;
+}
+
+#adminmenu,
+#adminmenu .wp-submenu,
+#adminmenuback,
+#adminmenuwrap {
+  background-color: #f4f4f4;
+}
+
+#adminmenu .wp-submenu {
+  left: 180px;
+}
+
+.dashicons,
+.dashicons-before:before {
+  font-size: 20px;
+}
+
+#adminmenu a.wp-has-current-submenu:focus + .wp-submenu,
+#adminmenu .wp-has-submenu:focus .wp-submenu,
+#adminmenu .wp-has-submenu .wp-submenu {
+  background-color: #191e23;
+}
+
+#adminmenu .wp-submenu li {
+  padding-left: 4px;
+  position: relative;
+}
+
+#adminmenu .wp-not-current-submenu li > a,
+.folded #adminmenu .wp-has-current-submenu li > a {
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+body:not(.block-editor-page) #adminmenu .wp-menu-open .wp-submenu li:before {
+  content: "";
+  height: 100%;
+  width: 5px;
+  border-left: 1px solid #00b9eb;
+  font-family: "font awesome";
+  position: absolute;
+  top: -50%;
+  left: 5px;
+  border-bottom: 1px solid #00b9eb;
+}
+
+#adminmenu li.wp-menu-separator {
+  display: none;
+}
+
+#adminmenu .wp-has-current-submenu .wp-submenu,
+#adminmenu .opensub a.wp-has-current-submenu:focus + .wp-submenu,
+#adminmenu .wp-has-current-submenu .wp-submenu.sub-open,
+#adminmenu .wp-has-current-submenu.opensub .wp-submenu,
+#adminmenu a.wp-has-current-submenu:focus + .wp-submenu,
+.no-js li.wp-has-current-submenu:hover .wp-submenu {
+  background-color: #f4f4f4;
+  color: #23282d !important;
+}
+
+#adminmenu .wp-has-current-submenu ul > li > a,
+.folded #adminmenu li.menu-top .wp-submenu > li > a {
+  padding: 8px 3px 8px 10px;
+}
+
+body:not(.folded) #adminmenu .opensub.wp-has-current-submenu:focus + .wp-submenu li a,
+body:not(.folded) #adminmenu .opensub.wp-has-current-submenu:focus + .wp-submenu li a:focus #adminmenu .opensub.wp-has-current-submenu:focus + .wp-submenu li a,
+#adminmenu .opensub.wp-has-current-submenu:focus + .wp-submenu li a:focus {
+  color: #23282d !important;
+}
+
+.no-js li.wp-has-current-submenu:hover .wp-submenu {
+  background-color: #23282d;
+}
+
+#adminmenu li.current a.menu-top,
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
+.folded #adminmenu li.current.menu-top,
+.folded #adminmenu li.wp-has-current-submenu {
+  background-color: #23282d;
+}
+
+/* hide admin menu triangles to right of active item */
+ul#adminmenu a.wp-has-current-submenu:after,
+ul#adminmenu > li.current > a.current:after {
+  display: none;
+}
+
+/* nav icons */
+#adminmenu div.wp-menu-image:before,
+div.wp-menu-image:before {
+  color: #23282d;
+}
+
+#adminmenu div.wp-menu-image {
+  width: 25px;
+}
+
+#adminmenu .dashicons-before:before,
+#adminmenu .dashicons-before img {
+  font-size: 13px;
+  width: 13px;
+  height: 13px;
+  line-height: 20px;
+}
+
+#adminmenu .wp-menu-image.svg {
+  background-size: 13px !important;
+}
+
+#adminmenu div.wp-menu-image {
+  margin-left: -10px;
+}
+
+.folded #adminmenu div.wp-menu-image {
+  margin-left: -15px;
+}
+
+/* nav links */
+#adminmenu .opensub .wp-submenu li.current a,
+#adminmenu .wp-submenu li.current,
+#adminmenu .wp-submenu li.current a,
+#adminmenu .wp-submenu li.current a:focus,
+#adminmenu .wp-submenu li.current a:hover,
+#adminmenu a.wp-has-current-submenu:focus + .wp-submenu li.current a,
+#adminmenu .wp-menu-open .wp-submenu a {
+  /* text-align: center; */
+  color: #23282d;
+}
+
+#adminmenu .wp-has-current-submenu:not(.opensub) .wp-submenu a {
+  color: #23282d;
+  /* text-align: center !important; */
+}
+
+#adminmenu .wp-has-submenu:not(.wp-menu-open) .wp-submenu a,
+#adminmenu li:not(.opensub):not(.wp-menu-open) .wp-submenu a {
+  color: #fff;
+}
+
+#collapse-button .collapse-button-icon:after,
+#collapse-button .collapse-button-label {
+  line-height: 20px;
+  font: normal 11px/18px "muli", "helvetica neue", helvetica, sans-serif;
+  letter-spacing: 0.6px;
+}
+
+/* submenu links are light cause they're on a dark bg*/
+/* creating problems on click */
+#adminmenu .opensub:not(.wp-menu-open) .wp-submenu a {
+  color: #ffffff;
+}
+
+#adminmenu a {
+  color: #191e23;
+  letter-spacing: 0.6px;
+}
+
+#adminmenu .wp-submenu a.current {
+  font-weight: 900;
+}
+
+#adminmenu .wp-submenu li.current,
+#adminmenu .wp-submenu li.current a,
+#adminmenu .wp-submenu li.current a:focus,
+#adminmenu .wp-submenu li.current a:hover,
+#adminmenu a.wp-has-current-submenu:focus + .wp-submenu li.current a,
+#adminmenu .wp-submenu a:focus,
+#adminmenu .wp-submenu a:hover,
+#adminmenu a:hover,
+#adminmenu li.menu-top > a:focus,
+#adminmenu li:not(.opensub) .wp-submenu a:hover {
+  color: #00b9eb !important;
+}
+
+#adminmenu li > a .wp-menu-name,
+.auto-fold #adminmenu li a {
+  font-size: 14px;
+  letter-spacing: 0.6px;
+}
+
+@media only screen and (max-width: 675px) {
+  #adminmenu li > a .wp-menu-name,
+.auto-fold #adminmenu li a {
+    font-size: 13px;
+    letter-spacing: 0.4px;
+  }
+}
+#adminmenu .wp-submenu-head,
+#adminmenu a.menu-top {
+  padding: 10px 15px 20px 15px;
+}
+
+#adminmenu div.wp-menu-name {
+  padding: 8px 0px 0px 0px;
+}
+
+@media only screen and (max-width: 675px) {
+  #adminmenu div.wp-menu-name {
+    padding: 8px 0px 0px 24px;
+  }
+}
+@media only screen and (max-width: 960px) {
+  #adminmenu a.menu-top {
+    padding: 10px;
+  }
+}
+.c9-label {
+  margin-top: 15px;
+}
+
+.c9-label.sr-only {
+  display: none;
+}
+
+.folded #adminmenu li.menu-top {
+  height: 54px;
+}
+
+.folded #adminmenu a.menu-top {
+  min-height: 34px;
+  height: 34px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.block-editor-page #adminmenu .wp-submenu li.current a,
+.block-editor-page #adminmenu li:not(.opensub) .wp-submenu a {
+  color: white !important;
+}
+
+.block-editor-page #adminmenu .wp-submenu li.current a:hover,
+.block-editor-page #adminmenu li:not(.opensub) .wp-submenu a:hover {
+  color: #00b9eb !important;
+}
+
+.block-editor-page #adminmenu .wp-menu-open .wp-submenu {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  display: none;
+  background-color: #191e23 !important;
+}
+
+.block-editor-page #adminmenu .wp-submenu {
+  color: #191e23 !important;
+}
+
+.block-editor-page #adminmenu .wp-menu-open:hover .wp-submenu {
+  display: block;
+}
+
+/* move over wp content for larger padded admin side menu*/
+#wpcontent,
+#wpfooter {
+  margin-left: 181px;
+}
+
+#adminmenu,
+#adminmenu .wp-submenu,
+#adminmenuback,
+#adminmenuwrap {
+  width: 180px;
+}
+
+#adminmenu .wp-not-current-submenu .wp-submenu,
+.folded #adminmenu .wp-has-current-submenu .wp-submenu {
+  width: 180px;
+}
+
+#adminmenuwrap {
+  border-right: 1px solid #e5e5e5;
+}
+
+#adminmenu .opensub .wp-submenu {
+  left: 180px;
+  background-color: #191e23;
+}
+
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu.wp-menu-open {
+  z-index: 15;
+}
+
+#adminmenu a.menu-top:focus + .wp-submenu,
+.js #adminmenu .opensub .wp-submenu,
+.js #adminmenu .sub-open,
+.no-js li.wp-has-submenu:hover .wp-submenu {
+  top: 0px;
+}
+
+/*hide submenu triangle*/
+#adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover:after,
+.woocommerce-page .wp-has-current-submenu:after {
+  display: none;
+}
+
+/*hide WP footer message*/
+#wpfooter #footer-left {
+  display: none;
+}
+
+/* WordPress Table Listings */
+.wp-list-table.widefat td.date,
+.widefat td.date p,
+.wp-list-table td.comments,
+.wp-list-table td.author a,
+.wp-list-table td.tags a,
+.tsf-seo-bar-wrap .tsf-seo-bar-item,
+.wp-list-table td.categories a {
+  font-size: 11px;
+}
+
+.wp-list-table thead {
+  background-color: #0073aa;
+}
+
+.wp-list-table thead a,
+.wp-list-table thead th,
+.wp-list-table.widefat thead tr td,
+.wp-list-table.widefat thead tr th {
+  color: #fff;
+  font-weight: bold;
+  font-family: "muli", "helvetica neue", helvetica, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.widefat th .comment-grey-bubble:before,
+.widefat th.asc a:focus span.sorting-indicator,
+.widefat th.asc:hover span.sorting-indicator,
+.widefat th.desc a:focus span.sorting-indicator,
+.widefat th.desc:hover span.sorting-indicator,
+.widefat th.sorted .sorting-indicator,
+.widefat .sorting-indicator:before {
+  color: #fff;
+}
+
+/*********************************************************************************/
+/* 4. Inspector Sidebar on Block Editor
+/*********************************************************************************/
+.editor-post-publish-panel,
+.components-base-control__label,
+.components-popover__content .components-menu-group__label,
+.components-modal__header .components-modal__header-heading,
+.components-checkbox-control__input-container .components-checkbox-control__label,
+.edit-post-options-modal__section-title,
+.edit-post-sidebar p.components-base-control__label,
+.edit-post-sidebar .components-panel__body > div > span,
+.edit-post-sidebar .components-base-control .components-base-control__label,
+.interface-complementary-area-header strong,
+.components-panel,
+.editor-post-publish-panel,
+.components-menu-item__button .components-menu-item__info-wrapper {
+  font-size: 14px;
+  letter-spacing: 0px;
+}
+
+.components-panel__body > p,
+.components-toggle-control__label {
+  letter-spacing: 0px;
+}
+
+.edit-post-sidebar .components-base-control__label,
+.components-truncate.components-text.components-input-control__label {
+  font-size: 14px !important;
+  letter-spacing: 0px !important;
+}
+
+.components-base-control .components-base-control__label {
+  font-weight: 700;
+}
+
+.components-panel__body h5,
+.interface-complementary-area h2 {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0px;
+}
+
+.edit-post-sidebar p.components-base-control__label,
+.edit-post-sidebar p.components-base-control__help,
+.components-panel__body .components-radio-control__option {
+  font-size: 12px;
+  color: #757575;
+  letter-spacing: 0px;
+}
+
+.block-editor-block-card__description {
+  font-size: 14px;
+  color: #757575;
+  letter-spacing: 0px;
+}
+
+/* inspector toggle headings */
+.components-panel__body-title .components-panel__body-toggle.components-button {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #191e23;
+  letter-spacing: 0.4px;
+}
+
+.components-menu-item__button .components-menu-item__info-wrapper .components-menu-item__info {
+  font-size: 10px;
+}
+
+.components-dropdown-menu__menu .components-menu-group .components-button.components-menu-item__button svg {
+  height: 20px;
+  width: 20px;
+  margin-right: 8px !important;
+  margin-left: 0px !important;
+}
+
+/* inspector buttons height */
+.components-panel__body.plugin-c9-panel .components-button.is-large {
+  height: auto;
+}
+
+.components-panel__header .edit-post-sidebar__panel-tab {
+  text-transform: none;
+  letter-spacing: 0.4px;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.edit-post-layout__inserter-panel p {
+  line-height: 1.2;
+}
+
+.edit-post-sidebar__panel-tabs > ul {
+  margin-top: 10px;
+}
+
+.editor-post-publish-panel p,
+.components-panel__body p {
+  line-height: 1.3;
+}
+
+.edit-post-sidebar label {
+  margin-bottom: 0px;
+}
+
+.components-base-control .components-base-control__field ~ p {
+  margin-top: 15px;
+}
+
+.edit-post-sidebar .components-button.edit-post-sidebar__panel-tab.is-active {
+  opacity: 1;
+}
+
+.edit-post-sidebar .components-base-control .components-base-control__field {
+  margin-bottom: 0;
+}
+
+/* vertical window height from c9 grid control */
+.c9-height-range-control .components-base-control__label {
+  margin-bottom: 40px;
+}
+
+.c9-height-range-control .components-input-control__container {
+  margin-left: 20px !important;
+}
+
+.components-panel__body {
+  color: #191e23;
+}
+
+.components-panel__body .components-radio-control {
+  width: 100%;
+}
+
+.components-font-size-picker__controls .components-color-palette__clear {
+  margin-top: 17px;
+}
+
+/*********************************************************************************/
+/* 5. Block Editor Main Container */
+/*********************************************************************************/
+/* tooltip pop over adjustments */
+/* URL tooltips in editor */
+.components-popover__content {
+  font-size: 11px;
+}
+
+/* fixes empty inserter overlap rule that is present in c9 blocks */
+@media only screen and (min-width: 600px) {
+  .block-editor-block-list__empty-block-inserter,
+.post-type-page .block-editor-block-list__empty-block-inserter {
+    left: auto !important;
+  }
+}
+/*********************************************************************************/
+/* 6. Admin Dashboard Widget */
+/*********************************************************************************/
+#dashboard-widgets .inside .c9-admin-dashboard-widget h3 {
+  font: bold 12px/1 "muli", "helvetica neue", helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #555d66;
+  letter-spacing: 0.6px;
+}
+
+.c9-admin-dashboard-widget ul {
+  justify-content: space-between;
+  align-items: center;
+  display: -ms-flex;
+  display: flex;
+}
+
+.c9-admin-dashboard-widget ul li {
+  flex-grow: 1;
+  flex-basis: 0;
+  flex-shrink: 5;
+}
+
+.c9-admin-dashboard-widget ul li:nth-child(even) {
+  margin-right: 0px;
+}
+
+.c9-admin-dashboard-widget ul li .btn-c9-admin {
+  border: 1px solid rgba(79, 89, 105, 0.2);
+  font: bold 11px/13px "muli", sans-serif;
+  text-transform: uppercase;
+  border-radius: 3px;
+  letter-spacing: 0.6px;
+  background: #005d8c;
+  color: #fff;
+  display: block;
+  margin: 0px 2px;
+  text-align: center;
+  height: 80px;
+  max-height: 80px;
+  min-height: 80px;
+  position: relative;
+  /* white-space: nowrap; */
+}
+
+@media only screen and (min-width: 1500px) {
+  .c9-admin-dashboard-widget ul li .btn-c9-admin {
+    white-space: initial;
+  }
+}
+@media only screen and (max-width: 1260px) {
+  .c9-admin-dashboard-widget ul li .btn-c9-admin {
+    white-space: initial;
+  }
+}
+.c9-admin-dashboard-widget ul li .btn-c9-admin:hover {
+  border: 1px solid #005d8c;
+  background: #f1f1f1;
+  color: #191e23;
+}
+
+.c9-admin-dashboard-widget ul li .btn-c9-admin:before {
+  display: block;
+  font-family: "dashicons";
+  font-size: 25px;
+  text-align: center;
+  font-weight: 400;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.c9-admin-dashboard-widget ul li .btn-c9-admin span {
+  display: block;
+  position: absolute;
+  top: 42px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 88%;
+}
+
+.btn-c9admin-addpost:before {
+  content: "";
+}
+
+.btn-c9admin-addpage:before {
+  content: "";
+}
+
+.btn-c9admin-navigation:before {
+  content: "";
+}
+
+.btn-c9admin-footer:before {
+  content: "";
+}
+
+.btn-c9admin-theme:before {
+  content: "";
+}
+
+.btn-c9admin-settings:before {
+  content: "";
+}
+
+.btn-c9admin-reusable:before {
+  content: "";
+}
+
+.btn-c9admin-media:before {
+  content: "";
+}
+
+.btn-c9admin-blocks:before {
+  content: "";
+}
+
+.btn-c9admin-support:before {
+  content: "";
+}
+
+.btn-c9admin-docs:before {
+  content: "";
+}
+
+.btn-c9admin-account:before {
+  content: "";
+}
+
+.btn-c9wp-support:before {
+  content: "";
+}
+
+.btn-c9block-videos:before {
+  content: "";
+}
+
+.btn-c9blocks-overview:before {
+  content: "";
+}

@@ -105,6 +105,11 @@ div#widgets-right .sidebar-name h3,
     letter-spacing: 0px;
 }
 
+/* add new page/post button */
+.wrap .wp-heading-inline + .page-title-action {
+    padding-top: 3px;
+}
+
 /* wp buttons fonts */
 .wp-core-ui .button-group.button-large .button,
 .wp-core-ui .button.button-large,

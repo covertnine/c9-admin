@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack --mode development --watch"
+    "start": "NODE_OPTIONS=--openssl-legacy-provider webpack --mode development --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

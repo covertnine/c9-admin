@@ -686,7 +686,7 @@ class C9_Admin
         <li><a href="https://c9.covertnine.com/" title="' . __('C9 Theme + Blocks Docs', 'c9-admin') . '" class="btn-c9-admin btn-c9admin-docs" target="_blank"><span>' . __('C9 Theme + Blocks Docs', 'c9-admin') . '</span></a></li>
         <li><a href="https://www.covertnine.com/account" title="' . __('COVERT NINE Account', 'c9-admin') . '" class="btn-c9-admin btn-c9admin-account" target="_blank"><span>' . __('C9 Account Dashboard', 'c9-admin') . '</span></a></li>
         <li><a href="https://www.covertnine.com/get-support" title="' . __('Get premium support from COVERT NINE', 'c9-admin') . '" class="btn-c9-admin btn-c9admin-support" target="_blank"><span>' . __('C9 Paid Support', 'c9-admin') . '</span></a></li>
-        <li><a href="https://wordpress.org/support/forums/" title="' . __('WordPress.org Support', 'c9-admin') . '" class="btn-c9-admin btn-c9wp-support" target="_blank"><span>' . __('WP.org Support', 'c9-admin') . '</span></a></li>
+        <li><a href="https://wordpress.org/support/plugin/c9-admin-dashboard/" title="' . __('WordPress.org Support', 'c9-admin') . '" class="btn-c9-admin btn-c9wp-support" target="_blank"><span>' . __('WP.org Support', 'c9-admin') . '</span></a></li>
         </ul>
         </div>
         ';
