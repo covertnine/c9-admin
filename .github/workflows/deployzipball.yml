@@ -13,7 +13,7 @@ jobs:
       - name: deploy files to server
         uses: sahilNR/release-upload-sftp@v4
         with:
-          package_name: 'c9-admin'
+          package_name: 'c9-admin-dashboard'
           username: ${{ secrets.C9CLOUD_USER }}
           server: ${{ secrets.C9CLOUD_HOST }}
           port: 22
